@@ -10,6 +10,7 @@ parts:
   # - caption: Creating, Reusing & Curating GEMs
   - caption: Necessary Software & Tools
     chapters:
+      - file: Vivarium_intro
       - file: Vivarium_interface_basics
   # - caption: Evaluating GEMs
   # - caption: Simulations
