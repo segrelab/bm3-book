@@ -4,12 +4,14 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Educational Resources
-  - caption: Ecology
-  - caption: Flux Balance Analysis
-  - caption: Creating, Reusing & Curating GEMs
+  # - caption: Educational Resources
+  # - caption: Ecology
+  # - caption: Flux Balance Analysis
+  # - caption: Creating, Reusing & Curating GEMs
   - caption: Necessary Software & Tools
-  - caption: Evaluating GEMs
-  - caption: Simulations
+    chapters:
+      - file: Vivarium_interface_basics
+  # - caption: Evaluating GEMs
+  # - caption: Simulations
 
 
