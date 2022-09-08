@@ -3,7 +3,13 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: Educational Resources
+  - caption: Ecology
+  - caption: Flux Balance Analysis
+  - caption: Creating, Reusing & Curating GEMs
+  - caption: Necessary Software & Tools
+  - caption: Evaluating GEMs
+  - caption: Simulations
+
+
