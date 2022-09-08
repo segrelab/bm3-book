@@ -4,7 +4,7 @@ Here we have compiled and expanded upon the reources listed in  "Enhancing Micro
 
 With these resources, we aim to provide training and resources to prepare scientists (of all backgrounds) to apply genome-scale metabolic modeling in microbiome studies.
 
-<!--- TODO: Insert picture --->
+![image](roadmap.png)
 
 The `Educational Prerequisites` section aim to fill the knowledge gaps for researchers of different backgrounds.
 
