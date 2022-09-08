@@ -1,0 +1,106 @@
+Traceback (most recent call last):
+  File "/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Imports and Notebook Utilities
+import os
+import copy
+import pylab as plt
+import numpy as np
+from scipy import constants
+import matplotlib.pyplot as plt
+import matplotlib
+
+# Process, Deriver, and Composer base classes
+from vivarium.core.process import Process, Deriver
+from vivarium.core.composer import Composer
+from vivarium.core.registry import process_registry
+
+# helper functions for composition
+from vivarium.core.composition import (
+    simulate_process,
+    process_in_experiment,
+    composer_in_experiment,
+    composite_in_experiment)
+
+# other vivarium imports
+from vivarium.core.engine import Engine, pp
+from vivarium.library.units import units
+
+# plotting functions
+from vivarium.plots.simulation_output import (
+    plot_simulation_output, plot_variables)
+from vivarium.plots.simulation_output import _save_fig_to_dir as save_fig_to_dir
+from vivarium.plots.agents_multigen import plot_agents_multigen
+from vivarium.plots.topology import plot_topology
+
+AVOGADRO = constants.N_A * 1 / units.mol
+
+store_cmap = matplotlib.cm.get_cmap('Dark2')
+dna_color = matplotlib.colors.to_rgba(store_cmap(0))
+rna_color = matplotlib.colors.to_rgba(store_cmap(1))
+protein_color = matplotlib.colors.to_rgba(store_cmap(2))
+global_color = matplotlib.colors.to_rgba(store_cmap(7))
+store_colors = {
+    'DNA': dna_color,
+    'DNA\n(counts)': dna_color,
+    'DNA\n(mg/mL)': dna_color,
+    'mRNA': rna_color,
+    'mRNA\n(counts)': rna_color,
+    'mRNA\n(mg/mL)': rna_color,
+    'Protein': protein_color,
+    'Protein\n(mg/mL)': protein_color,
+    'global': global_color}
+
+# plotting configurations
+topology_plot_config = {
+    'settings': {
+        'coordinates': {
+            'Tl': (-1,0),
+            'Tx': (-1,-1),
+            'Protein': (1,0),
+            'mRNA': (1,-1),
+            'DNA': (1,-2),
+        },
+        'node_distance': 3.0,
+        'process_color': 'k',
+        'store_colors': store_colors,
+        'dashed_edges': True,
+        'graph_format': 'vertical',
+        'color_edges': False},
+    'out_dir': 'out/'}
+
+plot_var_config = {
+    'row_height': 2,
+    'row_padding': 0.2,
+    'column_width': 10,
+    'out_dir': 'out'}
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn [2], line 4[0m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mos[39;00m
+[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mcopy[39;00m
+[0;32m----> 4[0m [38;5;28;01mimport[39;00m [38;5;21;01mpylab[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[1;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m [38;5;28;01mimport[39;00m constants
+
+[0;31mModuleNotFoundError[0m: No module named 'pylab'
+ModuleNotFoundError: No module named 'pylab'
+

@@ -1,11 +1,18 @@
-# Welcome to your Jupyter Book
+# Introduction
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Here we have compiled and expanded upon the reources listed in  "Enhancing Microbiome Research through Genome-Scale Metabolic Modeling" by Ankrah et al.
 
-Check out the content pages bundled with this sample book to see more.
+With these resources, we aim to provide training and resources to prepare scientists (of all backgrounds) to apply genome-scale metabolic modeling in microbiome studies.
+
+<!--- TODO: Insert picture --->
+
+The `Educational Prerequisites` section aim to fill the knowledge gaps for researchers of different backgrounds.
+
+The `Programming` and `Representing Biology with Math` sub-sections  may be more helpful for researchers with a biological background, where the `Biochemistry` and `Microbiology` sections may be helpful to computational researchers that do not have a biological background.
+
+The following sections (`Ecology` - `Simulations` ) are resources that will be helpful for all researchers, regardless of background.
+
+Feel free to skip around to whatever section is the most useful to you!
 
 ```{tableofcontents}
 ```
