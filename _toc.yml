@@ -11,7 +11,8 @@ parts:
   - caption: Necessary Software & Tools
     chapters:
       - file: Vivarium_intro
-      - file: Vivarium_interface_basics
+        sections:
+          - file: Vivarium_interface_basics
   # - caption: Evaluating GEMs
   # - caption: Simulations
 

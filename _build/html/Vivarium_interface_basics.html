@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Make a Process: minimal transcription &#8212; Becoming a Microbiome Metabolic Modeler</title>
+    <title>Interface Basics &#8212; Becoming a Microbiome Metabolic Modeler</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -127,9 +127,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   <strong>
-    1. Make a Process: minimal transcription
-   </strong>
+   Interface Basics
   </a>
  </li>
 </ul>
@@ -338,232 +336,224 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-a-process-minimal-transcription">
    <strong>
     1. Make a Process: minimal transcription
    </strong>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vivarium-s-basic-elements">
-     Vivarium’s basic elements
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vivarium-s-basic-elements">
+   Vivarium’s basic elements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#process-interface-protocol">
+     Process interface protocol
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constructor">
+     Constructor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ports-schema">
+     Ports Schema
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#process-interface-protocol">
-       Process interface protocol
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#advanced-ports-schema">
+       Advanced ports_schema
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#constructor">
-       Constructor
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ports-schema">
-       Ports Schema
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#advanced-ports-schema">
-         Advanced ports_schema
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id1">
-         Advanced ports_schema
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#initial-state">
-       Initial State
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#update-method">
-       Update Method
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Advanced ports_schema
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tx-a-deterministic-transcription-process">
-     Tx: a deterministic transcription process
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initial-state">
+     Initial State
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-tx-topology">
-       plot Tx topology
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-tx">
-       run Tx
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tl-a-deterministic-translation-process">
-     Tl: a deterministic translation process
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-method">
+     Update Method
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-tl">
-       run Tl
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tx-a-deterministic-transcription-process">
+   Tx: a deterministic transcription process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-tx-topology">
+     plot Tx topology
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-tx">
+     run Tx
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tl-a-deterministic-translation-process">
+   Tl: a deterministic translation process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-tl">
+     run Tl
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#make-a-composite">
    <strong>
     2. Make a Composite
    </strong>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#txtl-a-transcription-translation-composite">
-     TxTl: a transcription/translation composite
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#txtl-a-transcription-translation-composite">
+   TxTl: a transcription/translation composite
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#composition-protocol">
+     Composition protocol
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#composition-protocol">
-       Composition protocol
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#composite-constructor">
-         composite constructor
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#generate-topology">
-         generate topology
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#advanced-generate-topology">
-         advanced generate topology
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#txtl-composer">
-       TxTl Composer
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#composite-constructor">
+       composite constructor
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-txtl-topology">
-       plot TxTl topology
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#generate-topology">
+       generate topology
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-txtl">
-       run TxTl
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#advanced-generate-topology">
+       advanced generate topology
       </a>
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#txtl-composer">
+     TxTl Composer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-txtl-topology">
+     plot TxTl topology
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-txtl">
+     run TxTl
+    </a>
+   </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-complexity">
    <strong>
     3. Adding Complexity
    </strong>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#stochastictx-a-stochastic-transcription-process">
-     StochasticTx: a stochastic transcription process
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stochastictx-a-stochastic-transcription-process">
+   StochasticTx: a stochastic transcription process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-variable-timesteps">
+     plot variable timesteps
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-variable-timesteps">
-       plot variable timesteps
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#auxiliary-processes">
-     Auxiliary Processes
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#combining-stochastic-tx-with-deterministic-tl">
-     Combining stochastic Tx with deterministic Tl
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-stochastictxtl-topology">
-       plot StochasticTxTl topology
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-stochastictxtl">
-       run StochasticTxTl
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#auxiliary-processes">
+   Auxiliary Processes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#combining-stochastic-tx-with-deterministic-tl">
+   Combining stochastic Tx with deterministic Tl
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-stochastictxtl-topology">
+     plot StochasticTxTl topology
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-stochastictxtl">
+     run StochasticTxTl
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#growth-and-division">
    <strong>
     4. Growth and Division
    </strong>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hierarchical-embedding">
-     Hierarchical Embedding
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hierarchical-embedding">
+   Hierarchical Embedding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hierarchy-updates">
+   Hierarchy updates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colony-level-processes">
+   Colony-level processes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-composite-merge-to-combine-colony-processes-with-agents">
+     use composite.merge to combine colony processes with agents
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hierarchy-updates">
-     Hierarchy updates
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-hierarchy-topology-with-before-division">
+     plot hierarchy topology with before division
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#colony-level-processes">
-     Colony-level processes
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-hierarchy-topology-after-division">
+     plot hierarchy topology after division
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-composite-merge-to-combine-colony-processes-with-agents">
-       use composite.merge to combine colony processes with agents
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-hierarchy-topology-with-before-division">
-       plot hierarchy topology with before division
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-hierarchy-topology-after-division">
-       plot hierarchy topology after division
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-hierarchy-experiment">
-       run hierarchy experiment
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#colony-level-metrics">
-       Colony-level metrics
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-hierarchy-experiment">
+     run hierarchy experiment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#colony-level-metrics">
+     Colony-level metrics
+    </a>
    </li>
   </ul>
  </li>
@@ -576,7 +566,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>1. Make a Process: minimal transcription</h1>
+                <h1>Interface Basics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -586,232 +576,224 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-a-process-minimal-transcription">
    <strong>
     1. Make a Process: minimal transcription
    </strong>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vivarium-s-basic-elements">
-     Vivarium’s basic elements
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vivarium-s-basic-elements">
+   Vivarium’s basic elements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#process-interface-protocol">
+     Process interface protocol
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constructor">
+     Constructor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ports-schema">
+     Ports Schema
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#process-interface-protocol">
-       Process interface protocol
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#advanced-ports-schema">
+       Advanced ports_schema
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#constructor">
-       Constructor
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ports-schema">
-       Ports Schema
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#advanced-ports-schema">
-         Advanced ports_schema
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id1">
-         Advanced ports_schema
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#initial-state">
-       Initial State
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#update-method">
-       Update Method
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Advanced ports_schema
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tx-a-deterministic-transcription-process">
-     Tx: a deterministic transcription process
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initial-state">
+     Initial State
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-tx-topology">
-       plot Tx topology
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-tx">
-       run Tx
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tl-a-deterministic-translation-process">
-     Tl: a deterministic translation process
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-method">
+     Update Method
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-tl">
-       run Tl
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tx-a-deterministic-transcription-process">
+   Tx: a deterministic transcription process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-tx-topology">
+     plot Tx topology
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-tx">
+     run Tx
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tl-a-deterministic-translation-process">
+   Tl: a deterministic translation process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-tl">
+     run Tl
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#make-a-composite">
    <strong>
     2. Make a Composite
    </strong>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#txtl-a-transcription-translation-composite">
-     TxTl: a transcription/translation composite
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#txtl-a-transcription-translation-composite">
+   TxTl: a transcription/translation composite
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#composition-protocol">
+     Composition protocol
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#composition-protocol">
-       Composition protocol
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#composite-constructor">
-         composite constructor
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#generate-topology">
-         generate topology
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#advanced-generate-topology">
-         advanced generate topology
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#txtl-composer">
-       TxTl Composer
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#composite-constructor">
+       composite constructor
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-txtl-topology">
-       plot TxTl topology
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#generate-topology">
+       generate topology
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-txtl">
-       run TxTl
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#advanced-generate-topology">
+       advanced generate topology
       </a>
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#txtl-composer">
+     TxTl Composer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-txtl-topology">
+     plot TxTl topology
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-txtl">
+     run TxTl
+    </a>
+   </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adding-complexity">
    <strong>
     3. Adding Complexity
    </strong>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#stochastictx-a-stochastic-transcription-process">
-     StochasticTx: a stochastic transcription process
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stochastictx-a-stochastic-transcription-process">
+   StochasticTx: a stochastic transcription process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-variable-timesteps">
+     plot variable timesteps
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-variable-timesteps">
-       plot variable timesteps
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#auxiliary-processes">
-     Auxiliary Processes
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#combining-stochastic-tx-with-deterministic-tl">
-     Combining stochastic Tx with deterministic Tl
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-stochastictxtl-topology">
-       plot StochasticTxTl topology
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-stochastictxtl">
-       run StochasticTxTl
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#auxiliary-processes">
+   Auxiliary Processes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#combining-stochastic-tx-with-deterministic-tl">
+   Combining stochastic Tx with deterministic Tl
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-stochastictxtl-topology">
+     plot StochasticTxTl topology
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-stochastictxtl">
+     run StochasticTxTl
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#growth-and-division">
    <strong>
     4. Growth and Division
    </strong>
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hierarchical-embedding">
-     Hierarchical Embedding
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hierarchical-embedding">
+   Hierarchical Embedding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hierarchy-updates">
+   Hierarchy updates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colony-level-processes">
+   Colony-level processes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-composite-merge-to-combine-colony-processes-with-agents">
+     use composite.merge to combine colony processes with agents
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hierarchy-updates">
-     Hierarchy updates
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-hierarchy-topology-with-before-division">
+     plot hierarchy topology with before division
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#colony-level-processes">
-     Colony-level processes
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-hierarchy-topology-after-division">
+     plot hierarchy topology after division
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-composite-merge-to-combine-colony-processes-with-agents">
-       use composite.merge to combine colony processes with agents
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-hierarchy-topology-with-before-division">
-       plot hierarchy topology with before division
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#plot-hierarchy-topology-after-division">
-       plot hierarchy topology after division
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-hierarchy-experiment">
-       run hierarchy experiment
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#colony-level-metrics">
-       Colony-level metrics
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-hierarchy-experiment">
+     run hierarchy experiment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#colony-level-metrics">
+     Colony-level metrics
+    </a>
    </li>
   </ul>
  </li>
@@ -825,7 +807,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="interface-basics">
+<h1>Interface Basics<a class="headerlink" href="#interface-basics" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#uncomment to install vivarium-core</span>
 <span class="c1">#!pip install vivarium-core</span>
@@ -926,8 +910,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="make-a-process-minimal-transcription">
-<h1><strong>1. Make a Process: minimal transcription</strong><a class="headerlink" href="#make-a-process-minimal-transcription" title="Permalink to this headline">#</a></h1>
+<section id="make-a-process-minimal-transcription">
+<h2><strong>1. Make a Process: minimal transcription</strong><a class="headerlink" href="#make-a-process-minimal-transcription" title="Permalink to this headline">#</a></h2>
 <p>Transcription is the biological process by which RNA is synthesized from a DNA template.
 Here, we define a model with a single mRNA species, <span class="math notranslate nohighlight">\(C\)</span>, transcribed from a single gene, <span class="math notranslate nohighlight">\(G\)</span>, at transcription rate <span class="math notranslate nohighlight">\(k_{tsc}\)</span>.
 RNA also degrades at rate <span class="math notranslate nohighlight">\(k_{deg}\)</span>.</p>
@@ -941,7 +925,8 @@ $RNA_{C} \xrightarrow[]{k_{deg}} \emptyset$
 <br>
 <center>
 $\Delta RNA_{C} = (k_{tsc}[Gene_{G}] - k_{deg}[RNA_{C}]) \Delta t $ <br>
-</center><section id="vivarium-s-basic-elements">
+</center></section>
+<section id="vivarium-s-basic-elements">
 <h2>Vivarium’s basic elements<a class="headerlink" href="#vivarium-s-basic-elements" title="Permalink to this headline">#</a></h2>
 <p><strong>Processes</strong> can implement any kind of dynamical model - dynamic flux balance analysis, differential equation, stochastic process, Boolean logic, etc. <br />
 <strong>Stores</strong> are databases of state variables read by the Processes, with methods for applying each Processes’ updates.</p>
@@ -1130,7 +1115,7 @@ $\Delta RNA_{C} = (k_{tsc}[Gene_{G}] - k_{deg}[RNA_{C}]) \Delta t $ <br>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/tx_topology.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_14_1.png" src="_images/Vivarium_interface_basics_14_1.png" />
+<img alt="_images/Vivarium_interface_basics_15_1.png" src="_images/Vivarium_interface_basics_15_1.png" />
 </div>
 </div>
 </section>
@@ -1187,7 +1172,7 @@ Completed in 0.109325 seconds
 Writing out/tx_output.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_17_1.png" src="_images/Vivarium_interface_basics_17_1.png" />
+<img alt="_images/Vivarium_interface_basics_18_1.png" src="_images/Vivarium_interface_basics_18_1.png" />
 </div>
 </div>
 </section>
@@ -1289,16 +1274,16 @@ Completed in 0.427200 seconds
 Writing out/tl_output.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_22_1.png" src="_images/Vivarium_interface_basics_22_1.png" />
+<img alt="_images/Vivarium_interface_basics_23_1.png" src="_images/Vivarium_interface_basics_23_1.png" />
 </div>
 </div>
 </section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="make-a-composite">
-<h1><strong>2. Make a Composite</strong><a class="headerlink" href="#make-a-composite" title="Permalink to this headline">#</a></h1>
+<section id="make-a-composite">
+<h2><strong>2. Make a Composite</strong><a class="headerlink" href="#make-a-composite" title="Permalink to this headline">#</a></h2>
 <p>A <strong>Composite</strong> is a set of Processes and Stores. Vivarium constructs the Stores from the Processes’s port_schema methods and wires them up as instructed by a <strong>Topology</strong>. The only communication between Processes is through variables in shared Stores.</p>
-<center><img src="https://github.com/vivarium-collective/vivarium-notebooks/blob/main/notebooks/images/composite.png?raw=1" width=400/></center><section id="txtl-a-transcription-translation-composite">
+<center><img src="https://github.com/vivarium-collective/vivarium-notebooks/blob/main/notebooks/images/composite.png?raw=1" width=400/></center></section>
+<section id="txtl-a-transcription-translation-composite">
 <h2>TxTl: a transcription/translation composite<a class="headerlink" href="#txtl-a-transcription-translation-composite" title="Permalink to this headline">#</a></h2>
 <p>We demonstrate composition by combining the <code class="docutils literal notranslate"><span class="pre">Tx</span></code> and <code class="docutils literal notranslate"><span class="pre">Tl</span></code> processes.</p>
 <section id="composition-protocol">
@@ -1411,7 +1396,7 @@ Writing out/tl_output.pdf
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/txtl_topology.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_32_1.png" src="_images/Vivarium_interface_basics_32_1.png" />
+<img alt="_images/Vivarium_interface_basics_33_1.png" src="_images/Vivarium_interface_basics_33_1.png" />
 </div>
 </div>
 </section>
@@ -1471,18 +1456,18 @@ Completed in 1.15 seconds
 Writing out/txtl_output.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_35_1.png" src="_images/Vivarium_interface_basics_35_1.png" />
+<img alt="_images/Vivarium_interface_basics_36_1.png" src="_images/Vivarium_interface_basics_36_1.png" />
 </div>
 </div>
 </section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="adding-complexity">
-<h1><strong>3. Adding Complexity</strong><a class="headerlink" href="#adding-complexity" title="Permalink to this headline">#</a></h1>
+<section id="adding-complexity">
+<h2><strong>3. Adding Complexity</strong><a class="headerlink" href="#adding-complexity" title="Permalink to this headline">#</a></h2>
 <p>Process modularity allows modelers to iterate on model design by swapping out different models.
 We demonstrated this by replacing the deterministic Transcription Process with a Stochastic Transcription Process.</p>
 <p>Stochastic transcription requires variable timesteps, which Vivarium accomodates with multi-timestepping.</p>
-<center><img src="https://github.com/vivarium-collective/vivarium-notebooks/blob/main/notebooks/images/dynamics.png?raw=1" width=600/></center><section id="stochastictx-a-stochastic-transcription-process">
+<center><img src="https://github.com/vivarium-collective/vivarium-notebooks/blob/main/notebooks/images/dynamics.png?raw=1" width=600/></center></section>
+<section id="stochastictx-a-stochastic-transcription-process">
 <h2>StochasticTx: a stochastic transcription process<a class="headerlink" href="#stochastictx-a-stochastic-transcription-process" title="Permalink to this headline">#</a></h2>
 <p>This process uses the <a class="reference external" href="https://en.wikipedia.org/wiki/Gillespie_algorithm">Gillespie algorithm</a> in its <code class="docutils literal notranslate"><span class="pre">next_update()</span></code> method.</p>
 <div class="cell docutils container">
@@ -1668,7 +1653,7 @@ Created: 08/26/2021 at 16:53:24
 Completed in 0.460339 seconds
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_41_1.png" src="_images/Vivarium_interface_basics_41_1.png" />
+<img alt="_images/Vivarium_interface_basics_42_1.png" src="_images/Vivarium_interface_basics_42_1.png" />
 </div>
 </div>
 </section>
@@ -1763,7 +1748,7 @@ Completed in 0.460339 seconds
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/stochastic_txtl_topology.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_47_1.png" src="_images/Vivarium_interface_basics_47_1.png" />
+<img alt="_images/Vivarium_interface_basics_48_1.png" src="_images/Vivarium_interface_basics_48_1.png" />
 </div>
 </div>
 </section>
@@ -1790,16 +1775,16 @@ Completed in 0.818067 seconds
 Writing out/stochastic_txtl_output.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_49_1.png" src="_images/Vivarium_interface_basics_49_1.png" />
+<img alt="_images/Vivarium_interface_basics_50_1.png" src="_images/Vivarium_interface_basics_50_1.png" />
 </div>
 </div>
 </section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="growth-and-division">
-<h1><strong>4. Growth and Division</strong><a class="headerlink" href="#growth-and-division" title="Permalink to this headline">#</a></h1>
+<section id="growth-and-division">
+<h2><strong>4. Growth and Division</strong><a class="headerlink" href="#growth-and-division" title="Permalink to this headline">#</a></h2>
 <p>We here extend the Transcription/Translation model with division. This require many instances of the processes to run simultaneously in a single simulation. To support such phenomena, Vivarium adopts an agent-based modeling bigraphical formalism, with embedded compartments that can spawn new compartments during runtime.</p>
-<!-- <center><img src="images/tsc_trl_divide.png" width=700/></center> --><section id="hierarchical-embedding">
+<!-- <center><img src="images/tsc_trl_divide.png" width=700/></center> --></section>
+<section id="hierarchical-embedding">
 <h2>Hierarchical Embedding<a class="headerlink" href="#hierarchical-embedding" title="Permalink to this headline">#</a></h2>
 <p>To support this requirement, Processes can be embedded in a hierarchical representation of embedded compartments.
 Vivarium uses a bigraph formalism – a graph with embeddable nodes that can be placed within other nodes.</p>
@@ -2141,7 +2126,7 @@ Vivarium uses a bigraph formalism – a graph with embeddable nodes that can be 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/hierarchy_topology.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_60_1.png" src="_images/Vivarium_interface_basics_60_1.png" />
+<img alt="_images/Vivarium_interface_basics_61_1.png" src="_images/Vivarium_interface_basics_61_1.png" />
 </div>
 </div>
 </section>
@@ -2194,7 +2179,7 @@ Completed in 5.60 seconds
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/hierarchy_topology_2.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_63_1.png" src="_images/Vivarium_interface_basics_63_1.png" />
+<img alt="_images/Vivarium_interface_basics_64_1.png" src="_images/Vivarium_interface_basics_64_1.png" />
 </div>
 </div>
 </section>
@@ -2298,7 +2283,7 @@ Completed in 129.27 seconds
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/growth_division_output.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_71_1.png" src="_images/Vivarium_interface_basics_71_1.png" />
+<img alt="_images/Vivarium_interface_basics_72_1.png" src="_images/Vivarium_interface_basics_72_1.png" />
 </div>
 </div>
 </section>

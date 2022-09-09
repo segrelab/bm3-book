@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# # Interface Basics
+
 # In[1]:
 
 
@@ -86,7 +88,7 @@ plot_var_config = {
     'out_dir': 'out'}
 
 
-# # **1. Make a Process: minimal transcription**
+# ## **1. Make a Process: minimal transcription**
 # 
 # Transcription is the biological process by which RNA is synthesized from a DNA template.
 # Here, we define a model with a single mRNA species, $C$, transcribed from a single gene, $G$, at transcription rate $k_{tsc}$.
@@ -416,7 +418,7 @@ tl_output = tl_exp.emitter.get_timeseries()
 fig = plot_variables(tl_output,  **tl_plot_config)
 
 
-# # **2. Make a Composite**
+# ## **2. Make a Composite**
 # 
 # A **Composite** is a set of Processes and Stores. Vivarium constructs the Stores from the Processes's port_schema methods and wires them up as instructed by a **Topology**. The only communication between Processes is through variables in shared Stores.
 # 
@@ -567,7 +569,7 @@ txtl_output = txtl_experiment.emitter.get_timeseries()
 fig = plot_variables(txtl_output, **txtl_plot_config)
 
 
-# # **3. Adding Complexity** 
+# ## **3. Adding Complexity**
 # 
 # Process modularity allows modelers to iterate on model design by swapping out different models.
 # We demonstrated this by replacing the deterministic Transcription Process with a Stochastic Transcription Process. 
@@ -851,7 +853,7 @@ stochastic_txtl_output = stoch_experiment.emitter.get_timeseries()
 fig = plot_variables(stochastic_txtl_output, **stoch_plot_config)
 
 
-# # **4. Growth and Division**
+# ## **4. Growth and Division**
 # 
 # We here extend the Transcription/Translation model with division. This require many instances of the processes to run simultaneously in a single simulation. To support such phenomena, Vivarium adopts an agent-based modeling bigraphical formalism, with embedded compartments that can spawn new compartments during runtime. 
 # 
