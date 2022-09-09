@@ -4,20 +4,39 @@
 Vivarium is an "interface protocol" for connecting separate models,
 simulators, and data into a large, complex, and open-ended network
 that anyone can contribute to.
+
+## Vivarium allow you to modularize your modeling
 ![image](vivarium_short_slides/slide-2.png)
 
+In Comp bio you will a single simulator for a single type of mechanism,
+but you very quickly see what you can't do with your simulator.
+By embracing modularity you can add new modules, plug them in, and 
+run them.
+Imagine a multiscale system, where you have simulations within
+simulations within simulations. Each of these is uspported by some
+computaions processes which you can  then plug in.
+
 ## Vivarium offers an intuitive, modular design
+The basic elements on Vivarium are:
+1. Processes
+2. Stores
+
+### Processes
 * **Processes**: Consist of parameters, ports, and an update function
+
+#### Minimal Process: Transcription
+![image](vivarium_short_slides/slide-4.png)
+
+### Stores
 * **Stores**: Hold the state variables, map the variable names to their values,
 and apply the updates
+
+### Composites: Combining Modules
 * **Composites**: Bundles of processes and stores, wired together by
 their ports, and run together in time
 ![image](vivarium_short_slides/slide-3.png)
 
-## Minimal Process: Transcription
-![image](vivarium_short_slides/slide-4.png)
-
-## Minimal Composite: Transcription + Translation
+### Minimal Composite: Transcription + Translation
 ![image](vivarium_short_slides/slide-5.png)
 
 ## The Vivarium Engine Supports Multiple Timescales

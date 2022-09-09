@@ -6,17 +6,23 @@
 # In[1]:
 
 
-#uncomment to install vivarium-core
-#!pip install vivarium-core
+import numpy as np
 
 
 # In[2]:
 
 
+#uncomment to install vivarium-core
+#!pip install vivarium-core
+
+
+# In[3]:
+
+
 # Imports and Notebook Utilities
-import os
+# import os
 import copy
-import pylab as plt
+# import pylab as plt
 import numpy as np
 from scipy import constants
 import matplotlib.pyplot as plt
@@ -241,7 +247,7 @@ plot_var_config = {
 # 
 # According to [BioNumbers](https://bionumbers.hms.harvard.edu/bionumber.aspx?s=n&v=3&id=100043), the concentration of DNA in an *E. coli* cell is on the order of 11-18 mg/mL. The concentration of RNA is 75-120 mg/ml.
 
-# In[2]:
+# In[4]:
 
 
 class Tx(Process):
@@ -277,7 +283,7 @@ class Tx(Process):
 
 # ### plot Tx topology
 
-# In[3]:
+# In[5]:
 
 
 fig = plot_topology(Tx(), filename='tx_topology.pdf', **topology_plot_config)
@@ -285,7 +291,7 @@ fig = plot_topology(Tx(), filename='tx_topology.pdf', **topology_plot_config)
 
 # ### run Tx
 
-# In[4]:
+# In[6]:
 
 
 # tsc configuration
@@ -308,7 +314,7 @@ tx_plot_config = {
     **plot_var_config}
 
 
-# In[5]:
+# In[7]:
 
 
 # initialize
@@ -341,7 +347,7 @@ fig = plot_variables(tx_output,  **tx_plot_config)
 # According to [BioNumbers](https://bionumbers.hms.harvard.edu/bionumber.aspx?s=n&v=3&id=100043), the concentration of RNA in an *E. coli* cell is on the order of 75-120 mg/ml. The concentration of protein is 200-320 mg/ml.
 # 
 
-# In[6]:
+# In[8]:
 
 
 class Tl(Process):
@@ -375,7 +381,7 @@ class Tl(Process):
 
 # ### run Tl
 
-# In[7]:
+# In[9]:
 
 
 # trl configuration
@@ -398,7 +404,7 @@ tl_plot_config = {
     **plot_var_config}
 
 
-# In[8]:
+# In[10]:
 
 
 # initialize
@@ -486,7 +492,7 @@ fig = plot_variables(tl_output,  **tl_plot_config)
 
 # ### TxTl Composer
 
-# In[9]:
+# In[11]:
 
 
 class TxTl(Composer):
@@ -513,7 +519,7 @@ class TxTl(Composer):
 
 # ### plot TxTl topology
 
-# In[10]:
+# In[12]:
 
 
 txtl_topology_plot_config = copy.deepcopy(topology_plot_config)
@@ -523,7 +529,7 @@ fig = plot_topology(TxTl(), filename='txtl_topology.pdf', **topology_plot_config
 
 # ### run TxTl
 
-# In[11]:
+# In[13]:
 
 
 # tsc_trl configuration
@@ -551,7 +557,7 @@ tl_initial_state = {
     'Protein': {'X': 0.0 * units.mg / units.mL}}
 
 
-# In[12]:
+# In[14]:
 
 
 # construct TxTl
@@ -580,7 +586,7 @@ fig = plot_variables(txtl_output, **txtl_plot_config)
 # ## StochasticTx: a stochastic transcription process
 # This process uses the [Gillespie algorithm](https://en.wikipedia.org/wiki/Gillespie_algorithm) in its `next_update()` method.
 
-# In[13]:
+# In[15]:
 
 
 stoch_exp_settings = {
@@ -617,7 +623,7 @@ stoch_plot_config = {
     **plot_var_config}
 
 
-# In[14]:
+# In[16]:
 
 
 class StochasticTx(Process):
@@ -733,7 +739,7 @@ class StochasticTx(Process):
 
 # ### plot variable timesteps
 
-# In[15]:
+# In[17]:
 
 
 stoch_tx_process = StochasticTx(tx_config)
@@ -767,14 +773,14 @@ plt.savefig('out/stochastic_timesteps.pdf')
 
 # ## Combining stochastic Tx with deterministic Tl
 
-# In[16]:
+# In[18]:
 
 
 # configuration data
 mw_config = {'C': 1e8 * units.g / units.mol}
 
 
-# In[17]:
+# In[19]:
 
 
 class StochasticTxTl(Composer):
@@ -811,7 +817,7 @@ class StochasticTxTl(Composer):
 
 # ### plot StochasticTxTl topology
 
-# In[18]:
+# In[20]:
 
 
 # plot topology after merge
@@ -839,7 +845,7 @@ fig = plot_topology(
 
 # ### run StochasticTxTl
 
-# In[19]:
+# In[21]:
 
 
 # make the experiment
@@ -872,7 +878,7 @@ fig = plot_variables(stochastic_txtl_output, **stoch_plot_config)
 # 
 # <center><img src="https://github.com/vivarium-collective/vivarium-notebooks/blob/main/notebooks/images/constructive.png?raw=1" width=600/></center>
 
-# In[20]:
+# In[22]:
 
 
 # add imported division processes
@@ -955,7 +961,7 @@ class TxTlDivision(Composer):
 
 # ## Colony-level processes
 
-# In[21]:
+# In[23]:
 
 
 from vivarium.library.units import Quantity
@@ -986,7 +992,7 @@ class ColonyVolume(Deriver):
                         'initial': 0.0 * units.fL}}}}
 
 
-# In[22]:
+# In[24]:
 
 
 # configure hierarchy
@@ -1169,7 +1175,7 @@ for node_id in hierarchy_topology_plot_config['settings']['remove_nodes']:
 
 # ### use composite.merge to combine colony processes with agents
 
-# In[23]:
+# In[25]:
 
 
 # make a txtl composite, embedded under an agents store
@@ -1187,7 +1193,7 @@ hierarchy_composite.merge(composite=colony_composite, topology=colony_topology)
 
 # ### plot hierarchy topology with before division
 
-# In[24]:
+# In[26]:
 
 
 fig = plot_topology(
@@ -1198,7 +1204,7 @@ fig = plot_topology(
 
 # ### plot hierarchy topology after division
 
-# In[25]:
+# In[27]:
 
 
 # initial state
@@ -1224,7 +1230,7 @@ hierarchy_experiment1 = composite_in_experiment(
 hierarchy_experiment1.update(2000)
 
 
-# In[26]:
+# In[28]:
 
 
 fig = plot_topology(

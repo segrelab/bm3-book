@@ -319,19 +319,43 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vivarium-allow-you-to-modularize-your-modeling">
+   Vivarium allow you to modularize your modeling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vivarium-offers-an-intuitive-modular-design">
    Vivarium offers an intuitive, modular design
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#minimal-process-transcription">
-   Minimal Process: Transcription
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#minimal-composite-transcription-translation">
-   Minimal Composite: Transcription + Translation
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#processes">
+     Processes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#minimal-process-transcription">
+       Minimal Process: Transcription
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stores">
+     Stores
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#composites-combining-modules">
+     Composites: Combining Modules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#minimal-composite-transcription-translation">
+     Minimal Composite: Transcription + Translation
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-vivarium-engine-supports-multiple-timescales">
@@ -439,19 +463,43 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vivarium-allow-you-to-modularize-your-modeling">
+   Vivarium allow you to modularize your modeling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#vivarium-offers-an-intuitive-modular-design">
    Vivarium offers an intuitive, modular design
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#minimal-process-transcription">
-   Minimal Process: Transcription
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#minimal-composite-transcription-translation">
-   Minimal Composite: Transcription + Translation
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#processes">
+     Processes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#minimal-process-transcription">
+       Minimal Process: Transcription
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stores">
+     Stores
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#composites-combining-modules">
+     Composites: Combining Modules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#minimal-composite-transcription-translation">
+     Minimal Composite: Transcription + Translation
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-vivarium-engine-supports-multiple-timescales">
@@ -550,27 +598,55 @@ title="Print to PDF"
 <h2>Vivarium is a software tool<a class="headerlink" href="#vivarium-is-a-software-tool" title="Permalink to this headline">#</a></h2>
 <p>Vivarium is an “interface protocol” for connecting separate models,
 simulators, and data into a large, complex, and open-ended network
-that anyone can contribute to.
-<img alt="image" src="_images/slide-2.png" /></p>
+that anyone can contribute to.</p>
+</section>
+<section id="vivarium-allow-you-to-modularize-your-modeling">
+<h2>Vivarium allow you to modularize your modeling<a class="headerlink" href="#vivarium-allow-you-to-modularize-your-modeling" title="Permalink to this headline">#</a></h2>
+<p><img alt="image" src="_images/slide-2.png" /></p>
+<p>In Comp bio you will a single simulator for a single type of mechanism,
+but you very quickly see what you can’t do with your simulator.
+By embracing modularity you can add new modules, plug them in, and
+run them.
+Imagine a multiscale system, where you have simulations within
+simulations within simulations. Each of these is uspported by some
+computaions processes which you can  then plug in.</p>
 </section>
 <section id="vivarium-offers-an-intuitive-modular-design">
 <h2>Vivarium offers an intuitive, modular design<a class="headerlink" href="#vivarium-offers-an-intuitive-modular-design" title="Permalink to this headline">#</a></h2>
+<p>The basic elements on Vivarium are:</p>
+<ol class="simple">
+<li><p>Processes</p></li>
+<li><p>Stores</p></li>
+</ol>
+<section id="processes">
+<h3>Processes<a class="headerlink" href="#processes" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><strong>Processes</strong>: Consist of parameters, ports, and an update function</p></li>
+</ul>
+<section id="minimal-process-transcription">
+<h4>Minimal Process: Transcription<a class="headerlink" href="#minimal-process-transcription" title="Permalink to this headline">#</a></h4>
+<p><img alt="image" src="_images/slide-4.png" /></p>
+</section>
+</section>
+<section id="stores">
+<h3>Stores<a class="headerlink" href="#stores" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
 <li><p><strong>Stores</strong>: Hold the state variables, map the variable names to their values,
 and apply the updates</p></li>
+</ul>
+</section>
+<section id="composites-combining-modules">
+<h3>Composites: Combining Modules<a class="headerlink" href="#composites-combining-modules" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
 <li><p><strong>Composites</strong>: Bundles of processes and stores, wired together by
 their ports, and run together in time
 <img alt="image" src="_images/slide-3.png" /></p></li>
 </ul>
 </section>
-<section id="minimal-process-transcription">
-<h2>Minimal Process: Transcription<a class="headerlink" href="#minimal-process-transcription" title="Permalink to this headline">#</a></h2>
-<p><img alt="image" src="_images/slide-4.png" /></p>
-</section>
 <section id="minimal-composite-transcription-translation">
-<h2>Minimal Composite: Transcription + Translation<a class="headerlink" href="#minimal-composite-transcription-translation" title="Permalink to this headline">#</a></h2>
+<h3>Minimal Composite: Transcription + Translation<a class="headerlink" href="#minimal-composite-transcription-translation" title="Permalink to this headline">#</a></h3>
 <p><img alt="image" src="_images/slide-5.png" /></p>
+</section>
 </section>
 <section id="the-vivarium-engine-supports-multiple-timescales">
 <h2>The Vivarium Engine Supports Multiple Timescales<a class="headerlink" href="#the-vivarium-engine-supports-multiple-timescales" title="Permalink to this headline">#</a></h2>

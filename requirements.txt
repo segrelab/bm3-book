@@ -3,7 +3,6 @@ matplotlib
 numpy
 
 scipy
-copy
 
 vivarium-core
 

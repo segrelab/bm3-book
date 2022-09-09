@@ -120,15 +120,22 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="Vivarium_intro.html">
    Vivarium
   </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Interface Basics
-  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Interface Basics
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -811,6 +818,13 @@ title="Print to PDF"
 <h1>Interface Basics<a class="headerlink" href="#interface-basics" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#uncomment to install vivarium-core</span>
 <span class="c1">#!pip install vivarium-core</span>
 </pre></div>
@@ -820,9 +834,9 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imports and Notebook Utilities</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="c1"># import os</span>
 <span class="kn">import</span> <span class="nn">copy</span>
-<span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># import pylab as plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">constants</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -892,20 +906,6 @@ title="Print to PDF"
     <span class="s1">&#39;row_padding&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
     <span class="s1">&#39;column_width&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
     <span class="s1">&#39;out_dir&#39;</span><span class="p">:</span> <span class="s1">&#39;out&#39;</span><span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">copy</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">constants</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pylab&#39;
 </pre></div>
 </div>
 </div>
@@ -1115,7 +1115,7 @@ $\Delta RNA_{C} = (k_{tsc}[Gene_{G}] - k_{deg}[RNA_{C}]) \Delta t $ <br>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/tx_topology.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_15_1.png" src="_images/Vivarium_interface_basics_15_1.png" />
+<img alt="_images/Vivarium_interface_basics_16_1.png" src="_images/Vivarium_interface_basics_16_1.png" />
 </div>
 </div>
 </section>
@@ -1167,12 +1167,14 @@ $\Delta RNA_{C} = (k_{tsc}[Gene_{G}] - k_{deg}[RNA_{C}]) \Delta t $ <br>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation ID: TX
-Created: 08/24/2022 at 22:18:15
-Completed in 0.109325 seconds
+Created: 09/09/2022 at 09:53:23
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Completed in 0.105468 seconds
 Writing out/tx_output.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_18_1.png" src="_images/Vivarium_interface_basics_18_1.png" />
+<img alt="_images/Vivarium_interface_basics_19_2.png" src="_images/Vivarium_interface_basics_19_2.png" />
 </div>
 </div>
 </section>
@@ -1269,12 +1271,12 @@ Protein also degrades at rate <span class="math notranslate nohighlight">\(k_{de
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation ID: TL
-Created: 08/26/2021 at 16:53:19
-Completed in 0.427200 seconds
+Created: 09/09/2022 at 09:53:24
+Completed in 0.102368 seconds
 Writing out/tl_output.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_23_1.png" src="_images/Vivarium_interface_basics_23_1.png" />
+<img alt="_images/Vivarium_interface_basics_24_1.png" src="_images/Vivarium_interface_basics_24_1.png" />
 </div>
 </div>
 </section>
@@ -1396,7 +1398,7 @@ Writing out/tl_output.pdf
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/txtl_topology.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_33_1.png" src="_images/Vivarium_interface_basics_33_1.png" />
+<img alt="_images/Vivarium_interface_basics_34_1.png" src="_images/Vivarium_interface_basics_34_1.png" />
 </div>
 </div>
 </section>
@@ -1451,12 +1453,16 @@ Writing out/tl_output.pdf
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation ID: TXTL
-Created: 08/26/2021 at 16:53:20
-Completed in 1.15 seconds
-Writing out/txtl_output.pdf
+Created: 09/09/2022 at 09:53:24
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_36_1.png" src="_images/Vivarium_interface_basics_36_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Completed in 0.342217 seconds
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/txtl_output.pdf
+</pre></div>
+</div>
+<img alt="_images/Vivarium_interface_basics_37_3.png" src="_images/Vivarium_interface_basics_37_3.png" />
 </div>
 </div>
 </section>
@@ -1649,11 +1655,11 @@ We demonstrated this by replacing the deterministic Transcription Process with a
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation ID: stochastic_txtl
-Created: 08/26/2021 at 16:53:24
-Completed in 0.460339 seconds
+Created: 09/09/2022 at 09:53:25
+Completed in 0.144198 seconds
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_42_1.png" src="_images/Vivarium_interface_basics_42_1.png" />
+<img alt="_images/Vivarium_interface_basics_43_1.png" src="_images/Vivarium_interface_basics_43_1.png" />
 </div>
 </div>
 </section>
@@ -1748,7 +1754,7 @@ Completed in 0.460339 seconds
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/stochastic_txtl_topology.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_48_1.png" src="_images/Vivarium_interface_basics_48_1.png" />
+<img alt="_images/Vivarium_interface_basics_49_1.png" src="_images/Vivarium_interface_basics_49_1.png" />
 </div>
 </div>
 </section>
@@ -1770,12 +1776,14 @@ Completed in 0.460339 seconds
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation ID: stochastic_txtl
-Created: 08/26/2021 at 16:53:25
-Completed in 0.818067 seconds
-Writing out/stochastic_txtl_output.pdf
+Created: 09/09/2022 at 09:53:26
+Completed in 0.316449 seconds
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_50_1.png" src="_images/Vivarium_interface_basics_50_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/stochastic_txtl_output.pdf
+</pre></div>
+</div>
+<img alt="_images/Vivarium_interface_basics_51_2.png" src="_images/Vivarium_interface_basics_51_2.png" />
 </div>
 </div>
 </section>
@@ -2126,7 +2134,11 @@ Vivarium uses a bigraph formalism – a graph with embeddable nodes that can be 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/hierarchy_topology.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_61_1.png" src="_images/Vivarium_interface_basics_61_1.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:520: UserWarning: Incompatible schema assignment at (&#39;agents&#39;, &#39;0&#39;, &#39;RNA&#39;, &#39;C&#39;). Trying to assign the value &lt;function divide_set at 0x12a151900&gt; to key divider, which already has the value &lt;function divide_split at 0x12a151a20&gt;.
+  warnings.warn(
+</pre></div>
+</div>
+<img alt="_images/Vivarium_interface_basics_62_2.png" src="_images/Vivarium_interface_basics_62_2.png" />
 </div>
 </div>
 </section>
@@ -2160,8 +2172,16 @@ Vivarium uses a bigraph formalism – a graph with embeddable nodes that can be 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation ID: hierarchy_experiment
-Created: 08/26/2021 at 16:53:27
-Completed in 5.60 seconds
+Created: 09/09/2022 at 09:53:27
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:520: UserWarning: Incompatible schema assignment at (&#39;agents&#39;, &#39;00&#39;, &#39;RNA&#39;, &#39;C&#39;). Trying to assign the value &lt;function divide_set at 0x12a151900&gt; to key divider, which already has the value &lt;function divide_split at 0x12a151a20&gt;.
+  warnings.warn(
+/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:520: UserWarning: Incompatible schema assignment at (&#39;agents&#39;, &#39;01&#39;, &#39;RNA&#39;, &#39;C&#39;). Trying to assign the value &lt;function divide_set at 0x12a151900&gt; to key divider, which already has the value &lt;function divide_split at 0x12a151a20&gt;.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Completed in 1.77 seconds
 </pre></div>
 </div>
 </div>
@@ -2176,10 +2196,83 @@ Completed in 5.60 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/hierarchy_topology_2.pdf
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plot_topology</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">txtl_composite1</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;hierarchy_topology_2.pdf&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="o">**</span><span class="n">hierarchy_topology_plot_config2</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/plots/topology.py:492,</span> in <span class="ni">plot_topology</span><span class="nt">(composite, settings, out_dir, filename)</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span> <span class="c1"># make networkx graph</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span> <span class="n">remove_nodes</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;remove_nodes&#39;</span><span class="p">,</span> <span class="p">[])</span>
+<span class="ne">--&gt; </span><span class="mi">492</span> <span class="n">g</span><span class="p">,</span> <span class="n">place_edges</span> <span class="o">=</span> <span class="n">get_networkx_graph</span><span class="p">(</span><span class="n">composite</span><span class="p">,</span> <span class="n">remove_nodes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span> <span class="n">settings</span><span class="p">[</span><span class="s1">&#39;place_edges&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">place_edges</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span> <span class="c1"># make graph figure</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/plots/topology.py:176,</span> in <span class="ni">get_networkx_graph</span><span class="nt">(composite, remove_nodes)</span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span> <span class="n">remove_nodes</span> <span class="o">=</span> <span class="n">remove_nodes</span> <span class="ow">or</span> <span class="p">[]</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span> <span class="c1"># get the nodes and edges from the composite</span>
+<span class="ne">--&gt; </span><span class="mi">176</span> <span class="n">process_nodes</span><span class="p">,</span> <span class="n">store_nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">place_edges</span> <span class="o">=</span> <span class="n">get_bigraph</span><span class="p">(</span><span class="n">composite</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="c1"># remove specified nodes</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="n">process_nodes</span> <span class="o">=</span> <span class="n">remove</span><span class="p">(</span><span class="n">remove_nodes</span><span class="p">,</span> <span class="n">node_list</span><span class="o">=</span><span class="n">process_nodes</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/plots/topology.py:64,</span> in <span class="ni">get_bigraph</span><span class="nt">(composite)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="n">processes</span> <span class="o">=</span> <span class="n">composite</span><span class="p">[</span><span class="s1">&#39;processes&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="n">steps</span> <span class="o">=</span> <span class="n">composite</span><span class="p">[</span><span class="s1">&#39;steps&#39;</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">64</span> <span class="n">hierarchy_object</span> <span class="o">=</span> <span class="n">generate_state</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="n">processes</span><span class="o">=</span><span class="n">processes</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>     <span class="n">topology</span><span class="o">=</span><span class="n">topology</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span>     <span class="n">initial_state</span><span class="o">=</span><span class="p">{},</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>     <span class="n">steps</span><span class="o">=</span><span class="n">steps</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="c1"># get path to processes and stores, name them by their paths</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="c1"># leaf_paths = hierarchy_object.depth(filter_function=lambda x: x.inner == {})</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="n">process_paths</span> <span class="o">=</span> <span class="n">hierarchy_object</span><span class="o">.</span><span class="n">depth</span><span class="p">(</span><span class="n">filter_function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">Process</span><span class="p">))</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:49,</span> in <span class="ni">generate_state</span><span class="nt">(processes, topology, initial_state, steps, flow)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="n">store</span> <span class="o">=</span> <span class="n">Store</span><span class="p">({})</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="n">steps</span> <span class="o">=</span> <span class="n">steps</span> <span class="ow">or</span> <span class="p">{}</span>
+<span class="ne">---&gt; </span><span class="mi">49</span> <span class="n">store</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(),</span> <span class="n">processes</span><span class="p">,</span> <span class="n">steps</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">topology</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="n">store</span><span class="o">.</span><span class="n">build_topology_views</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="k">return</span> <span class="n">store</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:2000,</span> in <span class="ni">Store.generate</span><span class="nt">(self, path, processes, steps, flow, topology, initial_state)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1992</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1993</span><span class="sd"> Generate a subtree of this store at the given path.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1994</span><span class="sd"> The processes will be mapped into locations in the tree by the</span>
+<span class="g g-Whitespace">   </span><span class="mi">1995</span><span class="sd"> topology, and once everything is constructed the initial_state</span>
+<span class="g g-Whitespace">   </span><span class="mi">1996</span><span class="sd"> will be applied.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1997</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1999</span> <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_establish_path</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="p">{})</span>
+<span class="ne">-&gt; </span><span class="mi">2000</span> <span class="n">target</span><span class="o">.</span><span class="n">_generate_paths</span><span class="p">(</span><span class="n">processes</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">topology</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2001</span> <span class="n">target</span><span class="o">.</span><span class="n">_generate_paths</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">topology</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2002</span> <span class="n">target</span><span class="o">.</span><span class="n">_apply_subschemas</span><span class="p">()</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:1975,</span> in <span class="ni">Store._generate_paths</span><span class="nt">(self, processes, flow, topology)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1973</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1974</span>     <span class="bp">self</span><span class="o">.</span><span class="n">inner</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">Store</span><span class="p">({},</span> <span class="n">outer</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1975</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">_generate_paths</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1976</span>     <span class="n">subprocess</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1977</span>     <span class="n">subflow</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1978</span>     <span class="n">subtopology</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1979</span> <span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:1951,</span> in <span class="ni">Store._generate_paths</span><span class="nt">(self, processes, flow, topology)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1929</span> <span class="sd">&quot;&quot;&quot;Set up state :term:`hierarchy` with stores.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1930</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1931</span><span class="sd"> Recursively creates the entire state hierarchy rooted at</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1948</span><span class="sd">     topology: The topology.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1949</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1950</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">subprocess</span> <span class="ow">in</span> <span class="n">processes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="ne">-&gt; </span><span class="mi">1951</span>     <span class="n">subtopology</span> <span class="o">=</span> <span class="n">topology</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1952</span>     <span class="n">subflow</span> <span class="o">=</span> <span class="n">flow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="k">if</span> <span class="n">flow</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1953</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">subprocess</span><span class="p">,</span> <span class="n">Process</span><span class="p">):</span>
+
+<span class="ne">KeyError</span>: &#39;0&#39;
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_64_1.png" src="_images/Vivarium_interface_basics_64_1.png" />
 </div>
 </div>
 </section>
@@ -2283,7 +2376,7 @@ Completed in 129.27 seconds
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/growth_division_output.pdf
 </pre></div>
 </div>
-<img alt="_images/Vivarium_interface_basics_72_1.png" src="_images/Vivarium_interface_basics_72_1.png" />
+<img alt="_images/Vivarium_interface_basics_73_1.png" src="_images/Vivarium_interface_basics_73_1.png" />
 </div>
 </div>
 </section>
