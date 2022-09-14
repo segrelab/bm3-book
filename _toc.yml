@@ -15,6 +15,7 @@ parts:
       sections:
         - file: optimization/graphical-solution.md
         - file: optimization/numerical-solution.md
+        - file: optimization/duality.md
         - file: optimization/code-solution.md
   - caption: Flux Balance Analysis
     chapters:
