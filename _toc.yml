@@ -5,14 +5,26 @@ format: jb-book
 root: intro
 parts:
   # - caption: Educational Resources
-  # - caption: Ecology
-  # - caption: Flux Balance Analysis
+  - caption: Ecology
+    chapters:
+      - file: ecology/cavaliere_summary.md
+  - caption: Mathematical Optimization
+    chapters:
+      - file: optimization/fundamentals.md
+      - file: optimization/linear_programming.md
+  - caption: Flux Balance Analysis
+    chapters:
+      - file: fba/what_is_fba.md
+      - file: fba/graphical-solution.md
+      - file: fba/numerical-solution.md
+      - file: fba/code-solution.md
+      - file: fba/fba-units.md
   # - caption: Creating, Reusing & Curating GEMs
   - caption: Necessary Software & Tools
     chapters:
-      - file: Vivarium_intro
+      - file: software_and_tools/vivarium/Vivarium_intro.md
         sections:
-          - file: Vivarium_interface_basics
+          - file: software_and_tools/vivarium/Vivarium_interface_basics.ipynb
   # - caption: Evaluating GEMs
   # - caption: Simulations
 

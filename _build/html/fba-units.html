@@ -113,6 +113,18 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
+  Flux Balance Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="graphical-solution.html">
+   Graphical Solution
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
   Necessary Software &amp; Tools
  </span>
 </p>
@@ -316,6 +328,11 @@ title="Print to PDF"
    How to translate media units to flux units
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#daniel-s-thoughts">
+   Daniel’s thoughts
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -340,6 +357,11 @@ title="Print to PDF"
    How to translate media units to flux units
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#daniel-s-thoughts">
+   Daniel’s thoughts
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -354,6 +376,23 @@ title="Print to PDF"
 <h1>A Note about FBA Units<a class="headerlink" href="#a-note-about-fba-units" title="Permalink to this headline">#</a></h1>
 <section id="how-to-translate-media-units-to-flux-units">
 <h2>How to translate media units to flux units<a class="headerlink" href="#how-to-translate-media-units-to-flux-units" title="Permalink to this headline">#</a></h2>
+<p>Straight up use the concentration of the media</p>
+<p>The units are kind of arbitraty at some point, the relative magnitude is most importnat at some point</p>
+<p>Just use the concentrations</p>
+<p>All the fluxes are in micromolar per your favorite unit of time</p>
+<p>Unless you actually have specific uptake fluxes, use that</p>
+<p>Just pick a unit of concentration that makes your numbers look nice</p>
+<p>Only talk about relative nubers</p>
+</section>
+<section id="daniel-s-thoughts">
+<h2>Daniel’s thoughts<a class="headerlink" href="#daniel-s-thoughts" title="Permalink to this headline">#</a></h2>
+<p>The only thing you can confidently say is that the cells cannot use the whole media’s amount in one hr</p>
+<p>Have to think of the time unit over which it is taken up</p>
+<p>You have the MM in COMETS that converts the concentation into the flux
+Can do a rough estimate of the Vmax and the Km to get in the order of magnitude</p>
+<p>Some of the old literature omparing to chemostat experriments can use that actual numbers</p>
+<p>Do culutures in a box and see how much actual O2 is there and is taken up</p>
+<p>There are a ton of people who don’t set any uptake bnounds bc its hard</p>
 </section>
 </section>
 
