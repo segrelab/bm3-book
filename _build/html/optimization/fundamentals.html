@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="linear_programming.html" />
+    <link rel="next" title="Linear Programming" href="linear_programming.html" />
     <link rel="prev" title="Cooperation in Microbial Communities and their Biotechnological Application" href="../ecology/cavaliere_summary.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -138,6 +138,28 @@ const thebe_selector_output = ".output, .cell_output"
    Fundamentals
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="linear_programming.html">
+   Linear Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="graphical-solution.html">
+     Graphical Solution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="duality.html">
+     Duality Theory
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -148,11 +170,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../fba/what_is_fba.html">
    What is FBA?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../fba/graphical-solution.html">
-   Graphical Solution
   </a>
  </li>
  <li class="toctree-l1">
@@ -171,8 +188,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../software_and_tools/vivarium/Vivarium_intro.html">
    Vivarium
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -362,8 +379,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mathematical-optimization-and-modeling">
-   Mathematical Optimization and Modeling
+  <a class="reference internal nav-link" href="#so-what-is-mathematical-optimization-anyway">
+   So, what is mathematical optimization anyway?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimization-vocabulary">
+   Optimization Vocabulary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-optimization-problems">
+   Types of Optimization Problems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-mathematical-optimization-is-important-to-metabolic-modelers">
+   Why Mathematical Optimization is Important to Metabolic Modelers
   </a>
  </li>
 </ul>
@@ -386,8 +418,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mathematical-optimization-and-modeling">
-   Mathematical Optimization and Modeling
+  <a class="reference internal nav-link" href="#so-what-is-mathematical-optimization-anyway">
+   So, what is mathematical optimization anyway?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimization-vocabulary">
+   Optimization Vocabulary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-optimization-problems">
+   Types of Optimization Problems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-mathematical-optimization-is-important-to-metabolic-modelers">
+   Why Mathematical Optimization is Important to Metabolic Modelers
   </a>
  </li>
 </ul>
@@ -402,35 +449,72 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="fundamentals">
 <h1>Fundamentals<a class="headerlink" href="#fundamentals" title="Permalink to this headline">#</a></h1>
-<p>This section will review the fundamentals of mathematical optimization and modeling.</p>
-<section id="mathematical-optimization-and-modeling">
-<h2>Mathematical Optimization and Modeling<a class="headerlink" href="#mathematical-optimization-and-modeling" title="Permalink to this headline">#</a></h2>
-<!---Imagine uses for optimization-->
-<p>Mathematical optimization (programming) systematically identifies the best solution out of a set of possible choices
-with respect to a pre-specified criterion. The general form of an optimization problem is as follows:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \textrm{minimize (or maximize)} f(x) \\
-    \textrm{subject to} \\
-    h(x) = 0 \\
-    g(x) \leq o \\
-    x  \in S
-\end{split}\]</div>
-<p>Where:</p>
+<!--- Comic idea: A joke about a murderer or sth having an M.O.--->
+<p>This section will review the fundamentals of mathematical optimization.</p>
+<section id="so-what-is-mathematical-optimization-anyway">
+<h2>So, what is mathematical optimization anyway?<a class="headerlink" href="#so-what-is-mathematical-optimization-anyway" title="Permalink to this headline">#</a></h2>
+<p>“Optimization” comes from the same root as “optimal”, which means best. When you
+optimize something, you are “making it best”.</p>
+<p>But “best” can vary. If you’re a football player, you might want to <strong>maximize</strong> your running yards, and also <strong>minimize</strong> your fumbles. Both maximizing and minimizing are types of optimization problems.</p>
+<p>Mathematical optimization is a branch of applied mathematics that is useful in many different fields, including biology.
+In biology, mathematical optimization can be used to:</p>
+<!--- TODO --->
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(x\)</span> is a <span class="math notranslate nohighlight">\(N\)</span>-dimensional vector referred to as, the vector of variables</p></li>
-<li><p><span class="math notranslate nohighlight">\(S\)</span> is the set from which the elements of <span class="math notranslate nohighlight">\(x\)</span> assume values</p>
-<ul>
-<li><p>For example. <span class="math notranslate nohighlight">\(S\)</span> can be the set of real, non-negative real or non-negative integers. In general, variables in an
-optimization problem can be continuous, discrete (integer) or combinations thereof. The former is used to
-capture the continuously varying properties of a system (e.g., concentrations), whereas the latter is used for
-discrete decision-making (e.g., whether to eliminate a reaction).</p></li>
-</ul>
-</li>
-<li><p><span class="math notranslate nohighlight">\(f(x)\)</span> is referred to as the <em>objective function</em> and serves as a mathematical description of the desired property
-that should be optimized (i.e. maximized or minimized)</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
+<li><p>…</p></li>
 </ul>
 </section>
+<section id="optimization-vocabulary">
+<h2>Optimization Vocabulary<a class="headerlink" href="#optimization-vocabulary" title="Permalink to this headline">#</a></h2>
+<p>Your basic optimization problem consists of…</p>
+<ul class="simple">
+<li><p>The <strong>objective function</strong>, <span class="math notranslate nohighlight">\(f(x)\)</span>, which is the output you’re trying to maximize or minimize.</p></li>
+<li><p>Variables, <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(x_3\)</span> and so on, which are the inputs – things you can control. They are abbreviated <span class="math notranslate nohighlight">\(x_n\)</span> to refer to individuals or <span class="math notranslate nohighlight">\(x\)</span> to refer to them as a group (also called a set).</p></li>
+<li><p>Constraints, which are equations that place limits on how big or small some variables can get.</p>
+<ul>
+<li><p>Equality constraints are usually noted <span class="math notranslate nohighlight">\(h_n(x)\)</span></p></li>
+<li><p>Inequality constraints are noted <span class="math notranslate nohighlight">\(g_n(x)\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>Let’s use this vocabulary to describe a real world optimization problem.
+A football coach is planning practices for his running backs.</p>
+<ul class="simple">
+<li><p>His main goal is to maximize running yards – this will
+become his objective function.</p></li>
+<li><p>He can make his athletes spend practice time in the weight
+room; running sprints; or practicing ball protection. The
+amount of time spent on each is a variable.</p></li>
+<li><p>However, there are limits to the total amount of time he
+has. Also, if he completely sacrifices ball protection he may
+see running yards go up, but also fumbles, so he may place
+an upper limit on the amount of fumbles he considers
+acceptable. These are constraints.
+Note that the variables influence the objective function and
+the constraints place limits on the domain of the variables.</p></li>
+</ul>
+</section>
+<section id="types-of-optimization-problems">
+<h2>Types of Optimization Problems<a class="headerlink" href="#types-of-optimization-problems" title="Permalink to this headline">#</a></h2>
+<p>Types of Optimization Problems</p>
+<ul class="simple">
+<li><p>Some problems have constraints and some do not.</p></li>
+<li><p>There can be one variable or many.</p></li>
+<li><p>Variables can be discrete (for example, only have integer
+values) or continuous.</p></li>
+<li><p>Some problems are static (do not change over time) while
+some are dynamic (continual adjustments must be made as
+changes occur).</p></li>
+<li><p>Systems can be deterministic (specific causes produce specific
+effects) or stochastic (involve randomness/ probability).</p></li>
+<li><p>Equations can be linear (graph to lines) or
+nonlinear (graph to curves)</p></li>
+</ul>
+</section>
+<section id="why-mathematical-optimization-is-important-to-metabolic-modelers">
+<h2>Why Mathematical Optimization is Important to Metabolic Modelers<a class="headerlink" href="#why-mathematical-optimization-is-important-to-metabolic-modelers" title="Permalink to this headline">#</a></h2>
+<!--- TODO: Or make ot "to Biology?"></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -470,7 +554,7 @@ that should be optimized (i.e. maximized or minimized)</p></li>
     <a class='right-next' id="next-link" href="linear_programming.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Linear Programming</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

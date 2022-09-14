@@ -4,6 +4,10 @@
 format: jb-book
 root: intro
 parts:
+  - caption: Getting Started
+    chapters: 
+      - file: setup.md
+      - file: ed_yong.md
   # - caption: Educational Resources
   - caption: Ecology
     chapters:
@@ -12,11 +16,11 @@ parts:
     chapters:
       - file: optimization/fundamentals.md
       - file: optimization/linear_programming.md
-      sections:
-        - file: optimization/graphical-solution.md
-        - file: optimization/numerical-solution.md
-        - file: optimization/duality.md
-        - file: optimization/code-solution.md
+        sections:
+          - file: optimization/graphical-solution.md
+          - file: optimization/numerical_solution.md
+          - file: optimization/duality.md
+          - file: optimization/code_solution.md
   - caption: Flux Balance Analysis
     chapters:
       - file: fba/what_is_fba.md
