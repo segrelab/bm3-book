@@ -12,12 +12,13 @@ parts:
     chapters:
       - file: optimization/fundamentals.md
       - file: optimization/linear_programming.md
+      sections:
+        - file: optimization/graphical-solution.md
+        - file: optimization/numerical-solution.md
+        - file: optimization/code-solution.md
   - caption: Flux Balance Analysis
     chapters:
       - file: fba/what_is_fba.md
-      - file: fba/graphical-solution.md
-      - file: fba/numerical-solution.md
-      - file: fba/code-solution.md
       - file: fba/fba-units.md
   # - caption: Creating, Reusing & Curating GEMs
   - caption: Necessary Software & Tools
