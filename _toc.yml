@@ -19,8 +19,9 @@ parts:
         sections:
           - file: optimization/graphical-solution.md
           - file: optimization/numerical_solution.md
-          - file: optimization/duality.md
+          - file: optimization/simplex_from_scratch.ipynb
           - file: optimization/code_solution.md
+          - file: optimization/duality.md
   - caption: Flux Balance Analysis
     chapters:
       - file: fba/what_is_fba.md
