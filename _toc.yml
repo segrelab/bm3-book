@@ -26,6 +26,7 @@ parts:
     chapters:
       - file: fba/what_is_fba.md
       - file: fba/fba-units.md
+      - file: fba/Daniel_FBA_tutorial.ipynb
   # - caption: Creating, Reusing & Curating GEMs
   - caption: Necessary Software & Tools
     chapters:
