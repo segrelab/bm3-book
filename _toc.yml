@@ -26,13 +26,19 @@ parts:
     chapters:
       - file: fba/what_is_fba.md
       - file: fba/fba-units.md
-      - file: fba/Daniel_FBA_tutorial.ipynb
+      - file: fba/fba_from_scratch.md
+        sections:
+          - file: fba/elementary_example.ipynb
+          - file: fba/intermediate_example.ipynb
   # - caption: Creating, Reusing & Curating GEMs
   - caption: Necessary Software & Tools
     chapters:
       - file: software_and_tools/vivarium/Vivarium_intro.md
         sections:
           - file: software_and_tools/vivarium/Vivarium_interface_basics.ipynb
+      - file: software_and_tools/cobra/cobra.mb
+        sections:
+          - file: software_and_tools/cobrapy.ipynb
   # - caption: Evaluating GEMs
   # - caption: Simulations
 
