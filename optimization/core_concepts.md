@@ -154,6 +154,56 @@ You can stand on any point $x$ within $I$ and you will always be able to reach o
 ![Number line drawing](figs/open_set_w_person.jpg)
 
 ## Isolated Points and Discrete Sets
+While interior points have wiggle room, there are other points that do not. What if no one in my neighborhood is part of my set except for myself?
+
+We call these points isolated points. If you stand on an isolated point, you cannot reach your arms, everything you touch is not a part of your set.
+
+Sets that are made up entirely of isolated points are called discrete sets.
+
+Suppose that I have a subset of the real line, $A$, that looks like this:
+
+![Set A]()
+
+I want to know what it would look like to be a point that stand alone from the set in my $\epsilon$-neighborhood.
+
+First off, I know what I wouldn't look like. I wouldn't look like one of the interior points, where all of my neighbors are part of $A$.
+
+![Interior point of A]()
+
+We want to look at the opposite of that, when none of my neighbors (within an $\epsilon$ arm's reach) are a part of $A$. The singleton part of our set is a candaidate for such a point.
+
+If you imagine standing on thie point and reaching out your arms, nothing you touch would be a member of $A$. 
+
+![Isolated point of A]()
+
+This point is like a hermit, living up on a mountain top with no neighbors or friends from its set.
+
+Of course, if you had very long arms you could reach a neighbor, so to be an isolated point, there just has to be one positive value for $\epsilon$ where this is true to be considered an isolated point.
+
+Lets come up with a more mathematical definition for what makes a point an isolated point.
+
+Let $A \subseteq \real$, and $x \in A$.
+$x$ is an isolated point of $A$ if there exists $\epsilon > 0$:
+
+$B_\epsilon(x) \cap A = \{x\}$
+
+In plain english this means, that my armspan and A have only me in common for at least one positive lengths of my arms.
+
+Another term for an isolate point, is to say they are **bounded away** from the rest of the set $A$ by at least $\epsilon$.
+
+A set is called a **discrete set** if all of its points are isolated.
+
+The model example for a discrete set is the set of integers as a subset of the real number line ($\Z$).
+
+If we diagram out the set of integers on the number line, it looks like a a bunch of these isolated points, disconnected from one another.
+
+![Z on a number line]()
+
+All of these integers are bounded away from the rest of the set by a minimum distance of 1, so theres no other integer within a shorter arms reach than that.
+
+If we pick any arbitrary integer and stand on that point, as long as my $\epsilon$ arms are shorter than 1, we satisify the defintion of an isolated points.
+
+![Isolated point of Z]()
 
 ## Boundary Points of a Set
 
