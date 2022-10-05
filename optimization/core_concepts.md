@@ -162,19 +162,19 @@ Sets that are made up entirely of isolated points are called discrete sets.
 
 Suppose that I have a subset of the real line, $A$, that looks like this:
 
-![Set A]()
+![Set A](figs/discrete_set.jpg)
 
 I want to know what it would look like to be a point that stand alone from the set in my $\epsilon$-neighborhood.
 
 First off, I know what I wouldn't look like. I wouldn't look like one of the interior points, where all of my neighbors are part of $A$.
 
-![Interior point of A]()
+![Interior point of A](figs/discrete_set_interior_point.jpg)
 
 We want to look at the opposite of that, when none of my neighbors (within an $\epsilon$ arm's reach) are a part of $A$. The singleton part of our set is a candaidate for such a point.
 
 If you imagine standing on thie point and reaching out your arms, nothing you touch would be a member of $A$. 
 
-![Isolated point of A]()
+![Isolated point of A](figs/discrete_set_iso_point.jpg)
 
 This point is like a hermit, living up on a mountain top with no neighbors or friends from its set.
 
@@ -197,13 +197,13 @@ The model example for a discrete set is the set of integers as a subset of the r
 
 If we diagram out the set of integers on the number line, it looks like a a bunch of these isolated points, disconnected from one another.
 
-![Z on a number line]()
+![Z on a number line](figs/integers.jpg)
 
 All of these integers are bounded away from the rest of the set by a minimum distance of 1, so theres no other integer within a shorter arms reach than that.
 
 If we pick any arbitrary integer and stand on that point, as long as my $\epsilon$ arms are shorter than 1, we satisify the defintion of an isolated points.
 
-![Isolated point of Z]()
+![Isolated point of Z](figs/integers_iso_point.jpg)
 
 ## Boundary Points of a Set
 
