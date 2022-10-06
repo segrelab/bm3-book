@@ -9,7 +9,7 @@ and these are goin tobe fundamental to our definition of what gets to be an open
 
 Our story begins with a subset $A$ of the real numbers $\real$. as well as a point $x$ inside of that subset.
 
-![Number line drawing](figs/figures/Slide1.png)
+![Number line drawing](figs/int_pts/ex_set.png)
 
 We can write this mathematically by saying:
 
@@ -25,7 +25,7 @@ question probably depends on how long your arms are! If you reach out too far, e
 make your arms really really short to make this happen, but as long as there is some
 small positive length of your arms that stays within your set, you are an interior point.
 
-![Number line drawing](figs/figures/Slide2.png)
+![Number line drawing](figs/int_pts/ex_set_person.png)
 
 The fundamental notion that goes into this defintion is an 
 **"$\epsilon$-Neighborhood"** or "$\epsilon$-Ball"- a ball of radius $\epsilon$ 
@@ -34,14 +34,14 @@ arms (by convention our arms will always be the same length, so that we are
 reaching equal distances on both sides), and since it is a length $\epsilon$ can
 never be negative.
 
-![An epsilon ball](figs/epsilon-ball.jpeg)
+![An epsilon ball](figs/int_pts/epsilon-ball.jpeg)
 
 The $\epsilon$ neighborhood is the set (that we are going to call $B_\epsilon(x)$)
 that consists of all the real numbers which are at a distance of less than 
 $\epsilon$ away from us at $x$. So that would be the open interval from $x-\epsilon$
 to $x+\epsilon$
 
-![Number line drawing](figs/figures/Slide3.png)
+![Number line drawing](figs/int_pts/ex_set_labeled.png)
 
 We can formally define the $\epsilon$-neighborhood at $x$ as the set $B_\epsilon(x) = (x-\epsilon, x+\epsilon)=\{t \in \real: |x-t| < \epsilon\}$.
 
@@ -71,7 +71,7 @@ singleton point at 6.
 
 First, lets sketch it out:
 
-![Number line drawing](figs/figures/Slide4.png)
+![Number line drawing](figs/int_pts/ex.png)
 
 -2 is a solid circle since we are including -2, 4 will be an open circle since we are
 not including 4 and another solid circle at 6.
@@ -83,7 +83,7 @@ Where can I stand and stretch my arms?
 The first place to test, is right smack in the middle, anywhere between -2 and 4 but not at one of those end points. Is it possible for me to stand and stretch out my arms as 1, or $-\sqrt2$ or $\pi$? Any of those numbers are between -2 and 4. Yes, I cans stretch out my arms even if it has to be a very small amount, even if I'm standing at 3.999 there is some small little radius I can stretch out and my
 $\epsilon$-neighborhood be entirely contained within A.
 
-![Number line drawing](figs/figures/Slide5.png)
+![Number line drawing](figs/int_pts/ex_pt_1.png)
 
 So if x is any point between -2 and 4, exxclusuve of the endpoints, then $x$ is going
 to be one of the interior points of $A$. 
@@ -96,7 +96,7 @@ never be an interior point. This is a fundamental rule of interior points, **to 
 interior point of $A$, the point has to first be an element of that set**. So 4 is 
 NOT and interior point.
 
-![Number line drawing](figs/figures/Slide6.png)
+![Number line drawing](figs/int_pts/ex_pt_2.png)
 
 What about 6?
 
@@ -105,7 +105,7 @@ without leaving the set? The answer this time in no. No matter how short my arms
 as soon as I reach out to either side (i.e to 5.99 or 6.01), I am outside of A. So
 even though 6 is an element of $A$ is does not get to be an interior point.
 
-![Number line drawing](figs/figures/Slide7.png)
+![Number line drawing](figs/int_pts/ex_pt_3.png)
 
 As you might imagine, the same is true about -2. When I stand at -2 and reach out my arms to both sides, ther is one direction that I can reach, but if I reach to the left (i.e. to the more negative side of the number line),  there are no more elements
 of $A$ for me to touch, no matter how short my arm is. SO -2 also does not get to be
@@ -113,7 +113,7 @@ an interior point of $A$. This is an example of a key part of the definition of 
 interior point, the $\epsilon$-neighborhood must go on both sides of the point and
 be centered at the point.
 
-![Number line drawing](figs/figures/Slide8.png)
+![Number line drawing](figs/int_pts/ex_pt_4.png)
 
 So taking stock, the interior of $A$ is going to consist of only the real numbers between -2 and 4 but its not going to include -2 because of the arm that reaches outside of $A$ and it's not going to icnlude 4 because 4 wasn't in the set in the first place and it's not going to include 6 because no matter how short my arms are at 6 I can't reach out without touching something that's outside of the set. So the interior should consist just of the open interval -2 to 4, or:
 
@@ -135,7 +135,7 @@ really have an edge.
 Now that we know what an interior point is, we can say that an **open set is a set
 whose points are all interior points**.
 
-![An open set](figs/open-set.jpg)
+![An open set](figs/open_sets/diagram.jpg)
 
 More mathematically, a subset $A \subseteq \real$ is an open set is every point $x \in A$ is an interior point of $A$.
 
@@ -147,11 +147,11 @@ We've previouslty defined the interior of a set- the set of all of its interior 
 
 The most obvious example of an open set may be a finite open interval, an open interval from point A to point B, exclusive of those points.
 
-![Number line drawing](figs/open_set_number_line.jpg)
+![Number line drawing](figs/open_sets/open_set_number_line.jpg)
 
 You can stand on any point $x$ within $I$ and you will always be able to reach out your arms, even if it is just a small amount. Even as you approach very close to either endpoint $a$ or $b$, because they are not included you will always be able to get that wiggle room.
 
-![Number line drawing](figs/open_set_w_person.jpg)
+![Number line drawing](figs/open_sets/open_set_w_person.jpg)
 
 ## Isolated Points and Discrete Sets
 While interior points have wiggle room, there are other points that do not. What if no one in my neighborhood is part of my set except for myself?
@@ -162,19 +162,19 @@ Sets that are made up entirely of isolated points are called discrete sets.
 
 Suppose that I have a subset of the real line, $A$, that looks like this:
 
-![Set A](figs/discrete_set.jpg)
+![Set A](figs/iso_pts/discrete_set.jpg)
 
 I want to know what it would look like to be a point that stand alone from the set in my $\epsilon$-neighborhood.
 
 First off, I know what I wouldn't look like. I wouldn't look like one of the interior points, where all of my neighbors are part of $A$.
 
-![Interior point of A](figs/discrete_set_interior_point.jpg)
+![Interior point of A](figs/iso_pts/discrete_set_interior_point.jpg)
 
 We want to look at the opposite of that, when none of my neighbors (within an $\epsilon$ arm's reach) are a part of $A$. The singleton part of our set is a candaidate for such a point.
 
 If you imagine standing on thie point and reaching out your arms, nothing you touch would be a member of $A$. 
 
-![Isolated point of A](figs/discrete_set_iso_point.jpg)
+![Isolated point of A](figs/iso_pts/discrete_set_iso_point.jpg)
 
 This point is like a hermit, living up on a mountain top with no neighbors or friends from its set.
 
@@ -197,13 +197,65 @@ The model example for a discrete set is the set of integers as a subset of the r
 
 If we diagram out the set of integers on the number line, it looks like a a bunch of these isolated points, disconnected from one another.
 
-![Z on a number line](figs/integers.jpg)
+![Z on a number line](figs/iso_pts/integers.jpg)
 
 All of these integers are bounded away from the rest of the set by a minimum distance of 1, so theres no other integer within a shorter arms reach than that.
 
 If we pick any arbitrary integer and stand on that point, as long as my $\epsilon$ arms are shorter than 1, we satisify the defintion of an isolated points.
 
-![Isolated point of Z](figs/integers_iso_point.jpg)
+![Isolated point of Z](figs/iso_pts/integers_iso_point.jpg)
 
 ## Boundary Points of a Set
+We've defined what an open set is, and now we want to define its opposite- a **closed set**. A simplistic definition that may come to mind is that a closed set is a set that includes its endpoints.
+
+The problem with that definition is that we do not know how to define the endpoints.
+
+Lets take a look at the following se, $A$:
+
+![Set](figs/bnd_pts/A.jpg)
+
+Test 
+$\R$
+
+Intuitively, we may want to say that the points "on the edge" of $A$ should be the boundary points.
+
+![Set with candidate boundary points](figs/bnd_pts/A_w_candidates.jpg)
+
+If we imagine standing on point $x$, and sticking our arms out, we will be able to reach elements that are in $A$ on one side, and elements that are not in $A$ on the other.
+
+![X person](figs/bnd_pts/x_person.jpg)
+
+Or more mathematically,
+
+$B_\epsilon(x) \cap A \neq 0 \textrm{and} $B_\epsilon(x) \cap A^C \neq 0$
+
+Now, if we imagine standing on point $y$, we satisfy this definition, and are therefore a boundary point, even though $y$ is not an element of $A$. This is an immportant distinction from interior points, **points not in $A$ can still be boundary points of $A$.
+
+![Y person](figs/bnd_pts/y_person.jpg)
+
+So we can proceed out mathematical definition of a boundary point by defining $A$ as a subset of the real numbers, and our boundary point $x$ as a member of the real numbers, rather than as a member of $A$:
+
+Let $A \subseteq \real$ and $x \in \real$:
+
+Now if we stand on the isolated point, point $z$, you may think that it is not a boundary point, because your arms are only touching elements outside of $A$, and nothing within it.
+
+![Z person](figs/bnd_pts/z_person.jpg)
+
+But remember our defintion of the $\epsilon$-neighborhood ($B_\epsilon(x)$) implicitly includes the point itself. So our defintion $B_\epsilon(x) \cap A \neq 0 \textrm{and} $B_\epsilon(x) \cap A^C \neq 0$ is still true for point $z$ and it is therefore a boundary point.
+
+Now imagine, standing at this point $p$ and reaching your arms out extra far, so that you are able to reach outside of $A$. Does this make it a boundary point?
+
+![Long arms](figs/bnd_pts/long_arms.jpg)
+
+No! So to modify our definition we will say that for **all** $\epsilon$ values we must satisify our definition of a boundary point.
+
+Bringing together all of our definitions we can say that:
+`````{admonition} Definition: Boundary Point
+:class: tip
+Let $A \subseteq \real$ be a real subset and $x \in \real% be a real nuber.
+
+We call $x$ a **boundary point** of $A$ if for all $\epsilon > 0$ we have both
+
+$B_\epsilon(x) \cap A \neq 0 \textrm{and} $B_\epsilon(x) \cap A^C \neq 0$
+`````
 

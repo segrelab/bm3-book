@@ -206,4 +206,56 @@ If we pick any arbitrary integer and stand on that point, as long as my $\epsilo
 ![Isolated point of Z](figs/iso_pts/integers_iso_point.jpg)
 
 ## Boundary Points of a Set
+We've defined what an open set is, and now we want to define its opposite- a **closed set**. A simplistic definition that may come to mind is that a closed set is a set that includes its endpoints.
+
+The problem with that definition is that we do not know how to define the endpoints.
+
+Lets take a look at the following se, $A$:
+
+![Set](figs/bnd_pts/A.jpg)
+
+Test 
+$\R$
+
+Intuitively, we may want to say that the points "on the edge" of $A$ should be the boundary points.
+
+![Set with candidate boundary points](figs/bnd_pts/A_w_candidates.jpg)
+
+If we imagine standing on point $x$, and sticking our arms out, we will be able to reach elements that are in $A$ on one side, and elements that are not in $A$ on the other.
+
+![X person](figs/bnd_pts/x_person.jpg)
+
+Or more mathematically,
+
+$B_\epsilon(x) \cap A \neq 0 \textrm{and} $B_\epsilon(x) \cap A^C \neq 0$
+
+Now, if we imagine standing on point $y$, we satisfy this definition, and are therefore a boundary point, even though $y$ is not an element of $A$. This is an immportant distinction from interior points, **points not in $A$ can still be boundary points of $A$.
+
+![Y person](figs/bnd_pts/y_person.jpg)
+
+So we can proceed out mathematical definition of a boundary point by defining $A$ as a subset of the real numbers, and our boundary point $x$ as a member of the real numbers, rather than as a member of $A$:
+
+Let $A \subseteq \real$ and $x \in \real$:
+
+Now if we stand on the isolated point, point $z$, you may think that it is not a boundary point, because your arms are only touching elements outside of $A$, and nothing within it.
+
+![Z person](figs/bnd_pts/z_person.jpg)
+
+But remember our defintion of the $\epsilon$-neighborhood ($B_\epsilon(x)$) implicitly includes the point itself. So our defintion $B_\epsilon(x) \cap A \neq 0 \textrm{and} $B_\epsilon(x) \cap A^C \neq 0$ is still true for point $z$ and it is therefore a boundary point.
+
+Now imagine, standing at this point $p$ and reaching your arms out extra far, so that you are able to reach outside of $A$. Does this make it a boundary point?
+
+![Long arms](figs/bnd_pts/long_arms.jpg)
+
+No! So to modify our definition we will say that for **all** $\epsilon$ values we must satisify our definition of a boundary point.
+
+Bringing together all of our definitions we can say that:
+`````{admonition} Definition: Boundary Point
+:class: tip
+Let $A \subseteq \real$ be a real subset and $x \in \real% be a real nuber.
+
+We call $x$ a **boundary point** of $A$ if for all $\epsilon > 0$ we have both
+
+$B_\epsilon(x) \cap A \neq 0 \textrm{and} $B_\epsilon(x) \cap A^C \neq 0$
+`````
 
