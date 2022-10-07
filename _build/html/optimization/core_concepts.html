@@ -464,6 +464,11 @@ title="Print to PDF"
    Boundary Points of a Set
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accumulation-points-and-closure-of-a-set">
+   Accumulation Points and Closure of a Set
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -501,6 +506,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#boundary-points-of-a-set">
    Boundary Points of a Set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accumulation-points-and-closure-of-a-set">
+   Accumulation Points and Closure of a Set
   </a>
  </li>
 </ul>
@@ -594,6 +604,12 @@ be centered at the point.</p>
 <p><img alt="Number line drawing" src="../_images/ex_pt_4.png" /></p>
 <p>So taking stock, the interior of <span class="math notranslate nohighlight">\(A\)</span> is going to consist of only the real numbers between -2 and 4 but its not going to include -2 because of the arm that reaches outside of <span class="math notranslate nohighlight">\(A\)</span> and it’s not going to icnlude 4 because 4 wasn’t in the set in the first place and it’s not going to include 6 because no matter how short my arms are at 6 I can’t reach out without touching something that’s outside of the set. So the interior should consist just of the open interval -2 to 4, or:</p>
 <p><span class="math notranslate nohighlight">\(\textrm{int}(A) = (-2, 4)\)</span></p>
+<div class="tip admonition">
+<p class="admonition-title">Definition: Interior Point</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \real\)</span> be a real subset and $x \in A%</p>
+<p><span class="math notranslate nohighlight">\(x\)</span> is an <strong>interior point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> such that</p>
+<p><span class="math notranslate nohighlight">\(B_\epsilon(x) \subseteq A\)</span></p>
+</div>
 </section>
 <section id="open-sets">
 <h2>Open Sets<a class="headerlink" href="#open-sets" title="Permalink to this headline">#</a></h2>
@@ -617,6 +633,11 @@ whose points are all interior points</strong>.</p>
 <p><img alt="Number line drawing" src="../_images/open_set_number_line.jpg" /></p>
 <p>You can stand on any point <span class="math notranslate nohighlight">\(x\)</span> within <span class="math notranslate nohighlight">\(I\)</span> and you will always be able to reach out your arms, even if it is just a small amount. Even as you approach very close to either endpoint <span class="math notranslate nohighlight">\(a\)</span> or <span class="math notranslate nohighlight">\(b\)</span>, because they are not included you will always be able to get that wiggle room.</p>
 <p><img alt="Number line drawing" src="../_images/open_set_w_person.jpg" /></p>
+<div class="tip admonition">
+<p class="admonition-title">Definition: Open Set</p>
+<p>A subset <span class="math notranslate nohighlight">\(A \subseteq \real\)</span> is an <strong>open set</strong> is every point <span class="math notranslate nohighlight">\(x \in A\)</span> is an interior point of A</p>
+<p>int<span class="math notranslate nohighlight">\((A) = A\)</span></p>
+</div>
 </section>
 <section id="isolated-points-and-discrete-sets">
 <h2>Isolated Points and Discrete Sets<a class="headerlink" href="#isolated-points-and-discrete-sets" title="Permalink to this headline">#</a></h2>
@@ -646,6 +667,12 @@ whose points are all interior points</strong>.</p>
 <p>All of these integers are bounded away from the rest of the set by a minimum distance of 1, so theres no other integer within a shorter arms reach than that.</p>
 <p>If we pick any arbitrary integer and stand on that point, as long as my <span class="math notranslate nohighlight">\(\epsilon\)</span> arms are shorter than 1, we satisify the defintion of an isolated points.</p>
 <p><img alt="Isolated point of Z" src="../_images/integers_iso_point.jpg" /></p>
+<div class="tip admonition">
+<p class="admonition-title">Definition: Isolated Point</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \real\)</span> be a real subset and $x \in A%</p>
+<p><span class="math notranslate nohighlight">\(x\)</span> is an <strong>isolated point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> such that</p>
+<p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A = \{x\}\)</span></p>
+</div>
 </section>
 <section id="boundary-points-of-a-set">
 <h2>Boundary Points of a Set<a class="headerlink" href="#boundary-points-of-a-set" title="Permalink to this headline">#</a></h2>
@@ -678,6 +705,9 @@ whose points are all interior points</strong>.</p>
 <p>We call <span class="math notranslate nohighlight">\(x\)</span> a <strong>boundary point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if for all <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> we have both</p>
 <p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A \neq 0 \textrm{and} \)</span>B_\epsilon(x) \cap A^C \neq 0$</p>
 </div>
+</section>
+<section id="accumulation-points-and-closure-of-a-set">
+<h2>Accumulation Points and Closure of a Set<a class="headerlink" href="#accumulation-points-and-closure-of-a-set" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 

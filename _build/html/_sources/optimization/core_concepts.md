@@ -119,6 +119,15 @@ So taking stock, the interior of $A$ is going to consist of only the real number
 
 $\textrm{int}(A) = (-2, 4)$
 
+`````{admonition} Definition: Interior Point
+:class: tip
+Let $A \subseteq \real$ be a real subset and $x \in A%
+
+$x$ is an **interior point** of $A$ if there exists $\epsilon > 0$ such that
+
+$B_\epsilon(x) \subseteq A$
+`````
+
 ## Open Sets
 There's an old saying, that no matter how far you run towards the horizon between the earth and the sky you are 
 never going to reach it. The real number line is kind of like that too, no matter 
@@ -152,6 +161,13 @@ The most obvious example of an open set may be a finite open interval, an open i
 You can stand on any point $x$ within $I$ and you will always be able to reach out your arms, even if it is just a small amount. Even as you approach very close to either endpoint $a$ or $b$, because they are not included you will always be able to get that wiggle room.
 
 ![Number line drawing](figs/open_sets/open_set_w_person.jpg)
+
+`````{admonition} Definition: Open Set
+:class: tip
+A subset $A \subseteq \real$ is an **open set** is every point $x \in A$ is an interior point of A
+
+int$(A) = A$
+`````
 
 ## Isolated Points and Discrete Sets
 While interior points have wiggle room, there are other points that do not. What if no one in my neighborhood is part of my set except for myself?
@@ -204,6 +220,15 @@ All of these integers are bounded away from the rest of the set by a minimum dis
 If we pick any arbitrary integer and stand on that point, as long as my $\epsilon$ arms are shorter than 1, we satisify the defintion of an isolated points.
 
 ![Isolated point of Z](figs/iso_pts/integers_iso_point.jpg)
+
+`````{admonition} Definition: Isolated Point
+:class: tip
+Let $A \subseteq \real$ be a real subset and $x \in A%
+
+$x$ is an **isolated point** of $A$ if there exists $\epsilon > 0$ such that
+
+$B_\epsilon(x) \cap A = \{x\}$
+`````
 
 ## Boundary Points of a Set
 We've defined what an open set is, and now we want to define its opposite- a **closed set**. A simplistic definition that may come to mind is that a closed set is a set that includes its endpoints.
@@ -259,3 +284,4 @@ We call $x$ a **boundary point** of $A$ if for all $\epsilon > 0$ we have both
 $B_\epsilon(x) \cap A \neq 0 \textrm{and} $B_\epsilon(x) \cap A^C \neq 0$
 `````
 
+## Accumulation Points and Closure of a Set
