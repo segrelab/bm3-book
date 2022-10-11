@@ -1,4 +1,5 @@
 # Core Concepts and Definitions
+
 We start by introducing basic properties of sets and functions necessary for establishing conditions for the (i) existence and (ii) uniqueness of a global optimum value. These definitions also introduce formal mathematical language and reasoning used in optimization textbooks and articles.
 
 ## Interior Points and the Interior of a Set
@@ -8,13 +9,13 @@ This is going to be an important idea because it is going to allow us to speak a
 of breathing room around them and which do not. It is those points with a little bit of breathing room that we can interior points,
 and these are goin tobe fundamental to our definition of what gets to be an open set. 
 
-Our story begins with a subset $A$ of the real numbers $\real$. as well as a point $x$ inside of that subset.
+Our story begins with a subset $A$ of the real numbers $\mathbb{R}$. as well as a point $x$ inside of that subset.
 
 ![Number line drawing](figs/int_pts/ex_set.png)
 
 We can write this mathematically by saying:
 
-Let $A \subseteq \real$ be a real subset, and $x \in A$.
+Let $A \subseteq \mathbb{R}$ be a real subset, and $x \in A$.
 
 And now we want to ask ourselves if the point $x$ has a little bit of wiggle room
 around it without leaving the set. Any points that have this wigge room are called an
@@ -44,7 +45,7 @@ to $x+\epsilon$
 
 ![Number line drawing](figs/int_pts/ex_set_labeled.png)
 
-We can formally define the $\epsilon$-neighborhood at $x$ as the set $B_\epsilon(x) = (x-\epsilon, x+\epsilon)=\{t \in \real: |x-t| < \epsilon\}$.
+We can formally define the $\epsilon$-neighborhood at $x$ as the set $B_\epsilon(x) = (x-\epsilon, x+\epsilon)=\{t \in \mathbb{R}: |x-t| < \epsilon\}$.
 
 We want to call $x$ an interior point of $A$ if its true that if my arms are short enough, I can reach out to both sides of myself and not touch anything that's outside of $A$.
 
@@ -122,7 +123,7 @@ $\textrm{int}(A) = (-2, 4)$
 
 `````{admonition} Definition: Interior Point
 :class: tip
-Let $A \subseteq \real$ be a real subset and $x \in A%
+Let $A \subseteq \mathbb{R}$ be a real subset and $x \in A%
 
 $x$ is an **interior point** of $A$ if there exists $\epsilon > 0$ such that
 
@@ -147,7 +148,7 @@ whose points are all interior points**.
 
 ![An open set](figs/open_sets/diagram.jpg)
 
-More mathematically, a subset $A \subseteq \real$ is an open set is every point $x \in A$ is an interior point of $A$.
+More mathematically, a subset $A \subseteq \mathbb{R}$ is an open set is every point $x \in A$ is an interior point of $A$.
 
 We can spell this out explicitly with the definition of an interior point: 
 
@@ -165,7 +166,7 @@ You can stand on any point $x$ within $I$ and you will always be able to reach o
 
 `````{admonition} Definition: Open Set
 :class: tip
-A subset $A \subseteq \real$ is an **open set** is every point $x \in A$ is an interior point of A
+A subset $A \subseteq \mathbb{R}$ is an **open set** is every point $x \in A$ is an interior point of A
 
 int$(A) = A$
 `````
@@ -199,7 +200,7 @@ Of course, if you had very long arms you could reach a neighbor, so to be an iso
 
 Lets come up with a more mathematical definition for what makes a point an isolated point.
 
-Let $A \subseteq \real$, and $x \in A$.
+Let $A \subseteq \mathbb{R}$, and $x \in A$.
 $x$ is an isolated point of $A$ if there exists $\epsilon > 0$:
 
 $B_\epsilon(x) \cap A = \{x\}$
@@ -224,7 +225,7 @@ If we pick any arbitrary integer and stand on that point, as long as my $\epsilo
 
 `````{admonition} Definition: Isolated Point
 :class: tip
-Let $A \subseteq \real$ be a real subset and $x \in A%
+Let $A \subseteq \mathbb{R}$ be a real subset and $x \in A$
 
 $x$ is an **isolated point** of $A$ if there exists $\epsilon > 0$ such that
 
@@ -239,9 +240,6 @@ The problem with that definition is that we do not know how to define the endpoi
 Lets take a look at the following se, $A$:
 
 ![Set](figs/bnd_pts/A.jpg)
-
-Test 
-$\R$
 
 Intuitively, we may want to say that the points "on the edge" of $A$ should be the boundary points.
 
@@ -261,7 +259,7 @@ Now, if we imagine standing on point $y$, we satisfy this definition, and are th
 
 So we can proceed out mathematical definition of a boundary point by defining $A$ as a subset of the real numbers, and our boundary point $x$ as a member of the real numbers, rather than as a member of $A$:
 
-Let $A \subseteq \real$ and $x \in \real$:
+Let $A \subseteq \mathbb{R}$ and $x \in \mathbb{R}$:
 
 Now if we stand on the isolated point, point $z$, you may think that it is not a boundary point, because your arms are only touching elements outside of $A$, and nothing within it.
 
@@ -278,7 +276,7 @@ No! So to modify our definition we will say that for **all** $\epsilon$ values w
 Bringing together all of our definitions we can say that:
 `````{admonition} Definition: Boundary Point
 :class: tip
-Let $A \subseteq \real$ be a real subset and $x \in \real% be a real nuber.
+Let $A \subseteq \mathbb{R}$ be a real subset and $x \in \mathbb{R}% be a real nuber.
 
 We call $x$ a **boundary point** of $A$ if for all $\epsilon > 0$ we have both
 
@@ -310,7 +308,7 @@ Specifically an accumulation point touches an element of $A$ that is not itself 
 
 `````{admonition} Definition: Accumulation Point
 :class: tip
-Let $A \subseteq \real$ be a real subset and $x \in \real% be a real nuber.
+Let $A \subseteq \mathbb{R}$ be a real subset and $x \in \mathbb{R}% be a real nuber.
 
 We call $x$ a **accumulation point** of $A$ if for all $\epsilon > 0$ there exists $y \in A$ such that
 
@@ -328,19 +326,51 @@ We can then create a superset that includes A and all of its accumulation points
 
 We can now create a continuum of the set $A$ in relation to its boundary points.
 
-If we have a set $A$:
-
-![A]()
-
-We can first define the interior points ($A^{\mathrm{o}}$), which includes none of its boundary points, $A \setminus \delta A$.
-
-![int(A)]()
+If we have a set $A$, ee can first define the interior points ($A^{\mathrm{o}}$), which includes none of its boundary points, $A \setminus \delta A$.
 
 And we can then define the closure of A, which includes all of the boundary points, specifically the union of $A$ and its accumulation points, $A \cup A'$
-
-![cl(A)]()
 
 So that:
 $A^{\mathrm{o}} \subseteq A \subseteq \bar{A}$
 
 ![Spectrum](figs/closure/spectrum.jpg)
+
+## Closed Sets
+
+The intuituion behind a closed set is that anything that can touch the set is in the set.
+
+The simplest example of a closed set is **the** closed set from point $a$ to $b$, or $A = {a, b}$.
+
+![The closed set from a to b]()
+
+To be a closed set, $A$ must include all of its boundary points, including its accumulation points.
+
+We know that all of the interior points of the set are accumulation points since there those points will always be able to reach another element of $A$.
+
+![Interior accumulation points of A](figs/closed_sets/closed_set_int_points.jpg)
+
+The final points, $a$ and $b$ are also accumulation points because they can also reach a point of $A$ other than themselves.
+
+![Boundary accumulation points of A](figs/closed_sets/closed_set_bnd_pts.jpg)
+
+We could also draw a discrete set that looks like this:
+
+![A discrete set]()
+
+This set is a closed set because every point is a boundary point, since its $\epsilon$-neighborhood includes a point of $A$ (itself) and points outstide of $A$.
+
+![A discrete point is a boundary point](figs/closed_sets/integers_bnd_pts.jpg)
+
+But does this mean that all discrete sets are closed sets?
+
+To answer that question, lets look at the set $A = \{2^{-n}: n \geq 0\}$.
+
+![A]()
+
+Each of these points is a bounary point, since even though the points are getting closer, there will always be an $\epsilon$-neighborhood that reaches outside of $A$.
+
+![A boundary points](figs/closed_sets/discrete_set_bnd_pts.jpg)
+
+But there is one boundary point that is not included in the set at the point 0. Even though 0 is not in the set it is an accumulation point because it can always reach a point of $A$, no matter how small the $\epsilon$-neighborhood is.
+
+![0 is an accumulation point](figs/closed_sets/discrete_set_acc_pt.jpg)

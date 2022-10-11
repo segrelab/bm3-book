@@ -1,5 +1,7 @@
 # Core Concepts and Definitions
 
+We start by introducing basic properties of sets and functions necessary for establishing conditions for the (i) existence and (ii) uniqueness of a global optimum value. These definitions also introduce formal mathematical language and reasoning used in optimization textbooks and articles.
+
 ## Interior Points and the Interior of a Set
 What does it mean for a point to be an interior point of a set?
 
@@ -7,13 +9,13 @@ This is going to be an important idea because it is going to allow us to speak a
 of breathing room around them and which do not. It is those points with a little bit of breathing room that we can interior points,
 and these are goin tobe fundamental to our definition of what gets to be an open set. 
 
-Our story begins with a subset $A$ of the real numbers $\real$. as well as a point $x$ inside of that subset.
+Our story begins with a subset $A$ of the real numbers $\mathbb{R}$. as well as a point $x$ inside of that subset.
 
 ![Number line drawing](figs/int_pts/ex_set.png)
 
 We can write this mathematically by saying:
 
-Let $A \subseteq \real$ be a real subset, and $x \in A$.
+Let $A \subseteq \mathbb{R}$ be a real subset, and $x \in A$.
 
 And now we want to ask ourselves if the point $x$ has a little bit of wiggle room
 around it without leaving the set. Any points that have this wigge room are called an
@@ -43,7 +45,7 @@ to $x+\epsilon$
 
 ![Number line drawing](figs/int_pts/ex_set_labeled.png)
 
-We can formally define the $\epsilon$-neighborhood at $x$ as the set $B_\epsilon(x) = (x-\epsilon, x+\epsilon)=\{t \in \real: |x-t| < \epsilon\}$.
+We can formally define the $\epsilon$-neighborhood at $x$ as the set $B_\epsilon(x) = (x-\epsilon, x+\epsilon)=\{t \in \mathbb{R}: |x-t| < \epsilon\}$.
 
 We want to call $x$ an interior point of $A$ if its true that if my arms are short enough, I can reach out to both sides of myself and not touch anything that's outside of $A$.
 
@@ -121,7 +123,7 @@ $\textrm{int}(A) = (-2, 4)$
 
 `````{admonition} Definition: Interior Point
 :class: tip
-Let $A \subseteq \real$ be a real subset and $x \in A%
+Let $A \subseteq \mathbb{R}$ be a real subset and $x \in A%
 
 $x$ is an **interior point** of $A$ if there exists $\epsilon > 0$ such that
 
@@ -146,7 +148,7 @@ whose points are all interior points**.
 
 ![An open set](figs/open_sets/diagram.jpg)
 
-More mathematically, a subset $A \subseteq \real$ is an open set is every point $x \in A$ is an interior point of $A$.
+More mathematically, a subset $A \subseteq \mathbb{R}$ is an open set is every point $x \in A$ is an interior point of $A$.
 
 We can spell this out explicitly with the definition of an interior point: 
 
@@ -164,7 +166,7 @@ You can stand on any point $x$ within $I$ and you will always be able to reach o
 
 `````{admonition} Definition: Open Set
 :class: tip
-A subset $A \subseteq \real$ is an **open set** is every point $x \in A$ is an interior point of A
+A subset $A \subseteq \mathbb{R}$ is an **open set** is every point $x \in A$ is an interior point of A
 
 int$(A) = A$
 `````
@@ -198,7 +200,7 @@ Of course, if you had very long arms you could reach a neighbor, so to be an iso
 
 Lets come up with a more mathematical definition for what makes a point an isolated point.
 
-Let $A \subseteq \real$, and $x \in A$.
+Let $A \subseteq \mathbb{R}$, and $x \in A$.
 $x$ is an isolated point of $A$ if there exists $\epsilon > 0$:
 
 $B_\epsilon(x) \cap A = \{x\}$
@@ -223,7 +225,7 @@ If we pick any arbitrary integer and stand on that point, as long as my $\epsilo
 
 `````{admonition} Definition: Isolated Point
 :class: tip
-Let $A \subseteq \real$ be a real subset and $x \in A%
+Let $A \subseteq \mathbb{R}$ be a real subset and $x \in A%
 
 $x$ is an **isolated point** of $A$ if there exists $\epsilon > 0$ such that
 
@@ -260,7 +262,7 @@ Now, if we imagine standing on point $y$, we satisfy this definition, and are th
 
 So we can proceed out mathematical definition of a boundary point by defining $A$ as a subset of the real numbers, and our boundary point $x$ as a member of the real numbers, rather than as a member of $A$:
 
-Let $A \subseteq \real$ and $x \in \real$:
+Let $A \subseteq \mathbb{R}$ and $x \in \mathbb{R}$:
 
 Now if we stand on the isolated point, point $z$, you may think that it is not a boundary point, because your arms are only touching elements outside of $A$, and nothing within it.
 
@@ -277,11 +279,61 @@ No! So to modify our definition we will say that for **all** $\epsilon$ values w
 Bringing together all of our definitions we can say that:
 `````{admonition} Definition: Boundary Point
 :class: tip
-Let $A \subseteq \real$ be a real subset and $x \in \real% be a real nuber.
+Let $A \subseteq \mathbb{R}$ be a real subset and $x \in \mathbb{R}% be a real nuber.
 
 We call $x$ a **boundary point** of $A$ if for all $\epsilon > 0$ we have both
 
 $B_\epsilon(x) \cap A \neq 0 \textrm{and} $B_\epsilon(x) \cap A^C \neq 0$
 `````
 
-## Accumulation Points and Closure of a Set
+## Accumulation Points
+Most simply, accumulation points are points that have a lot of the set on one side and no set on the other side.
+
+Let's take a look at our set $A$ where we defined 4 boundary points:
+
+![Boundary points of A](figs/accumulation_pts/A_bnd.jpg)
+
+Some boundary points are qualitatively different from others, there are some that really are "on the edge" of $A$.
+
+We know that isolated points will always be boundary poitns, because by definition they will always reach a point of $A$ themselves, and points outside of $A$.
+
+But you can also be a boundary point without being in $A$ yourself. In order to be a boundary point in this case, you have to be able to touch a point of $A$ no matter how short your arms are.
+
+For a boundary point, this point within $A$ can be yourself, like in isolated points.
+
+But the point within $A$ could also be a point other than yourself, as is the case with a boundary point that is not a member of $A$ itself.
+
+The term accumulation point differentiates between these two types of boundary points.
+
+Specifically an accumulation point touches an element of $A$ that is not itself no matter how short its arms get. We denote this point other than ourself ($x$) as the point $y$.
+
+![Accumulation of A](figs/accumulation_pts/A_acc.jpg)
+
+`````{admonition} Definition: Accumulation Point
+:class: tip
+Let $A \subseteq \mathbb{R}$ be a real subset and $x \in \mathbb{R}% be a real nuber.
+
+We call $x$ a **accumulation point** of $A$ if for all $\epsilon > 0$ there exists $y \in A$ such that
+
+$y \neq x$ and $y \in B_\epsilon(x) \cap A$
+`````
+
+For our set $A$, the accumumation points include the non isolated boundary points and all of the interior points.
+
+Interior points are by definition accumulation points because everything they touch is an element of $A$.
+
+We call the set of all the interior points of $A$ the **derived set** or $A'$, it is important to note that not all memebers of $A'$ will be members of $A$.
+
+## Closure of a Set
+We can then create a superset that includes A and all of its accumulation points, and we call this the **closure of $A$** or $\bar{A}$.
+
+We can now create a continuum of the set $A$ in relation to its boundary points.
+
+If we have a set $A$, ee can first define the interior points ($A^{\mathrm{o}}$), which includes none of its boundary points, $A \setminus \delta A$.
+
+And we can then define the closure of A, which includes all of the boundary points, specifically the union of $A$ and its accumulation points, $A \cup A'$
+
+So that:
+$A^{\mathrm{o}} \subseteq A \subseteq \bar{A}$
+
+![Spectrum](figs/closure/spectrum.jpg)

@@ -465,8 +465,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accumulation-points-and-closure-of-a-set">
-   Accumulation Points and Closure of a Set
+  <a class="reference internal nav-link" href="#accumulation-points">
+   Accumulation Points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closure-of-a-set">
+   Closure of a Set
   </a>
  </li>
 </ul>
@@ -509,8 +514,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#accumulation-points-and-closure-of-a-set">
-   Accumulation Points and Closure of a Set
+  <a class="reference internal nav-link" href="#accumulation-points">
+   Accumulation Points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closure-of-a-set">
+   Closure of a Set
   </a>
  </li>
 </ul>
@@ -525,16 +535,17 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="core-concepts-and-definitions">
 <h1>Core Concepts and Definitions<a class="headerlink" href="#core-concepts-and-definitions" title="Permalink to this headline">#</a></h1>
+<p>We start by introducing basic properties of sets and functions necessary for establishing conditions for the (i) existence and (ii) uniqueness of a global optimum value. These definitions also introduce formal mathematical language and reasoning used in optimization textbooks and articles.</p>
 <section id="interior-points-and-the-interior-of-a-set">
 <h2>Interior Points and the Interior of a Set<a class="headerlink" href="#interior-points-and-the-interior-of-a-set" title="Permalink to this headline">#</a></h2>
 <p>What does it mean for a point to be an interior point of a set?</p>
 <p>This is going to be an important idea because it is going to allow us to speak about which points inisde of a set hava a little bit
 of breathing room around them and which do not. It is those points with a little bit of breathing room that we can interior points,
 and these are goin tobe fundamental to our definition of what gets to be an open set.</p>
-<p>Our story begins with a subset <span class="math notranslate nohighlight">\(A\)</span> of the real numbers <span class="math notranslate nohighlight">\(\real\)</span>. as well as a point <span class="math notranslate nohighlight">\(x\)</span> inside of that subset.</p>
+<p>Our story begins with a subset <span class="math notranslate nohighlight">\(A\)</span> of the real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. as well as a point <span class="math notranslate nohighlight">\(x\)</span> inside of that subset.</p>
 <p><img alt="Number line drawing" src="../_images/ex_set.png" /></p>
 <p>We can write this mathematically by saying:</p>
-<p>Let <span class="math notranslate nohighlight">\(A \subseteq \real\)</span> be a real subset, and <span class="math notranslate nohighlight">\(x \in A\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset, and <span class="math notranslate nohighlight">\(x \in A\)</span>.</p>
 <p>And now we want to ask ourselves if the point <span class="math notranslate nohighlight">\(x\)</span> has a little bit of wiggle room
 around it without leaving the set. Any points that have this wigge room are called an
 <strong>“interior point”</strong>.</p>
@@ -556,7 +567,7 @@ that consists of all the real numbers which are at a distance of less than
 <span class="math notranslate nohighlight">\(\epsilon\)</span> away from us at <span class="math notranslate nohighlight">\(x\)</span>. So that would be the open interval from <span class="math notranslate nohighlight">\(x-\epsilon\)</span>
 to <span class="math notranslate nohighlight">\(x+\epsilon\)</span></p>
 <p><img alt="Number line drawing" src="../_images/ex_set_labeled.png" /></p>
-<p>We can formally define the <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood at <span class="math notranslate nohighlight">\(x\)</span> as the set <span class="math notranslate nohighlight">\(B_\epsilon(x) = (x-\epsilon, x+\epsilon)=\{t \in \real: |x-t| &lt; \epsilon\}\)</span>.</p>
+<p>We can formally define the <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood at <span class="math notranslate nohighlight">\(x\)</span> as the set <span class="math notranslate nohighlight">\(B_\epsilon(x) = (x-\epsilon, x+\epsilon)=\{t \in \mathbb{R}: |x-t| &lt; \epsilon\}\)</span>.</p>
 <p>We want to call <span class="math notranslate nohighlight">\(x\)</span> an interior point of <span class="math notranslate nohighlight">\(A\)</span> if its true that if my arms are short enough, I can reach out to both sides of myself and not touch anything that’s outside of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p>To make this mathmatical we can say that the <span class="math notranslate nohighlight">\(\epsilon\)</span> neightborhood at <span class="math notranslate nohighlight">\(x\)</span>
 (everything you can touch) is a subset of A, or:</p>
@@ -606,7 +617,7 @@ be centered at the point.</p>
 <p><span class="math notranslate nohighlight">\(\textrm{int}(A) = (-2, 4)\)</span></p>
 <div class="tip admonition">
 <p class="admonition-title">Definition: Interior Point</p>
-<p>Let <span class="math notranslate nohighlight">\(A \subseteq \real\)</span> be a real subset and $x \in A%</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset and $x \in A%</p>
 <p><span class="math notranslate nohighlight">\(x\)</span> is an <strong>interior point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> such that</p>
 <p><span class="math notranslate nohighlight">\(B_\epsilon(x) \subseteq A\)</span></p>
 </div>
@@ -625,7 +636,7 @@ really have an edge.</p>
 <p>Now that we know what an interior point is, we can say that an <strong>open set is a set
 whose points are all interior points</strong>.</p>
 <p><img alt="An open set" src="../_images/diagram.jpg" /></p>
-<p>More mathematically, a subset <span class="math notranslate nohighlight">\(A \subseteq \real\)</span> is an open set is every point <span class="math notranslate nohighlight">\(x \in A\)</span> is an interior point of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>More mathematically, a subset <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> is an open set is every point <span class="math notranslate nohighlight">\(x \in A\)</span> is an interior point of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p>We can spell this out explicitly with the definition of an interior point:</p>
 <p>A is an open set if for ALL <span class="math notranslate nohighlight">\(x \in A\)</span> there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> such that <span class="math notranslate nohighlight">\(B_\epsilon(x) \subseteq A\)</span>.</p>
 <p>We’ve previouslty defined the interior of a set- the set of all of its interior points. Because an open set has interior points for all of its points, for an open set <span class="math notranslate nohighlight">\(\textrm{int}(A) = A\)</span>.</p>
@@ -635,7 +646,7 @@ whose points are all interior points</strong>.</p>
 <p><img alt="Number line drawing" src="../_images/open_set_w_person.jpg" /></p>
 <div class="tip admonition">
 <p class="admonition-title">Definition: Open Set</p>
-<p>A subset <span class="math notranslate nohighlight">\(A \subseteq \real\)</span> is an <strong>open set</strong> is every point <span class="math notranslate nohighlight">\(x \in A\)</span> is an interior point of A</p>
+<p>A subset <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> is an <strong>open set</strong> is every point <span class="math notranslate nohighlight">\(x \in A\)</span> is an interior point of A</p>
 <p>int<span class="math notranslate nohighlight">\((A) = A\)</span></p>
 </div>
 </section>
@@ -655,7 +666,7 @@ whose points are all interior points</strong>.</p>
 <p>This point is like a hermit, living up on a mountain top with no neighbors or friends from its set.</p>
 <p>Of course, if you had very long arms you could reach a neighbor, so to be an isolated point, there just has to be one positive value for <span class="math notranslate nohighlight">\(\epsilon\)</span> where this is true to be considered an isolated point.</p>
 <p>Lets come up with a more mathematical definition for what makes a point an isolated point.</p>
-<p>Let <span class="math notranslate nohighlight">\(A \subseteq \real\)</span>, and <span class="math notranslate nohighlight">\(x \in A\)</span>.
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span>, and <span class="math notranslate nohighlight">\(x \in A\)</span>.
 <span class="math notranslate nohighlight">\(x\)</span> is an isolated point of <span class="math notranslate nohighlight">\(A\)</span> if there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A = \{x\}\)</span></p>
 <p>In plain english this means, that my armspan and A have only me in common for at least one positive lengths of my arms.</p>
@@ -669,7 +680,7 @@ whose points are all interior points</strong>.</p>
 <p><img alt="Isolated point of Z" src="../_images/integers_iso_point.jpg" /></p>
 <div class="tip admonition">
 <p class="admonition-title">Definition: Isolated Point</p>
-<p>Let <span class="math notranslate nohighlight">\(A \subseteq \real\)</span> be a real subset and $x \in A%</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset and $x \in A%</p>
 <p><span class="math notranslate nohighlight">\(x\)</span> is an <strong>isolated point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> such that</p>
 <p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A = \{x\}\)</span></p>
 </div>
@@ -691,7 +702,7 @@ whose points are all interior points</strong>.</p>
 <p>Now, if we imagine standing on point <span class="math notranslate nohighlight">\(y\)</span>, we satisfy this definition, and are therefore a boundary point, even though <span class="math notranslate nohighlight">\(y\)</span> is not an element of <span class="math notranslate nohighlight">\(A\)</span>. This is an immportant distinction from interior points, **points not in <span class="math notranslate nohighlight">\(A\)</span> can still be boundary points of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p><img alt="Y person" src="../_images/y_person.jpg" /></p>
 <p>So we can proceed out mathematical definition of a boundary point by defining <span class="math notranslate nohighlight">\(A\)</span> as a subset of the real numbers, and our boundary point <span class="math notranslate nohighlight">\(x\)</span> as a member of the real numbers, rather than as a member of <span class="math notranslate nohighlight">\(A\)</span>:</p>
-<p>Let <span class="math notranslate nohighlight">\(A \subseteq \real\)</span> and <span class="math notranslate nohighlight">\(x \in \real\)</span>:</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>:</p>
 <p>Now if we stand on the isolated point, point <span class="math notranslate nohighlight">\(z\)</span>, you may think that it is not a boundary point, because your arms are only touching elements outside of <span class="math notranslate nohighlight">\(A\)</span>, and nothing within it.</p>
 <p><img alt="Z person" src="../_images/z_person.jpg" /></p>
 <p>But remember our defintion of the <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood (<span class="math notranslate nohighlight">\(B_\epsilon(x)\)</span>) implicitly includes the point itself. So our defintion <span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A \neq 0 \textrm{and} \)</span>B_\epsilon(x) \cap A^C \neq 0<span class="math notranslate nohighlight">\( is still true for point \)</span>z$ and it is therefore a boundary point.</p>
@@ -701,13 +712,43 @@ whose points are all interior points</strong>.</p>
 <p>Bringing together all of our definitions we can say that:</p>
 <div class="tip admonition">
 <p class="admonition-title">Definition: Boundary Point</p>
-<p>Let <span class="math notranslate nohighlight">\(A \subseteq \real\)</span> be a real subset and $x \in \real% be a real nuber.</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset and $x \in \mathbb{R}% be a real nuber.</p>
 <p>We call <span class="math notranslate nohighlight">\(x\)</span> a <strong>boundary point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if for all <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> we have both</p>
 <p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A \neq 0 \textrm{and} \)</span>B_\epsilon(x) \cap A^C \neq 0$</p>
 </div>
 </section>
-<section id="accumulation-points-and-closure-of-a-set">
-<h2>Accumulation Points and Closure of a Set<a class="headerlink" href="#accumulation-points-and-closure-of-a-set" title="Permalink to this headline">#</a></h2>
+<section id="accumulation-points">
+<h2>Accumulation Points<a class="headerlink" href="#accumulation-points" title="Permalink to this headline">#</a></h2>
+<p>Most simply, accumulation points are points that have a lot of the set on one side and no set on the other side.</p>
+<p>Let’s take a look at our set <span class="math notranslate nohighlight">\(A\)</span> where we defined 4 boundary points:</p>
+<p><img alt="Boundary points of A" src="../_images/A_bnd.jpg" /></p>
+<p>Some boundary points are qualitatively different from others, there are some that really are “on the edge” of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>We know that isolated points will always be boundary poitns, because by definition they will always reach a point of <span class="math notranslate nohighlight">\(A\)</span> themselves, and points outside of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>But you can also be a boundary point without being in <span class="math notranslate nohighlight">\(A\)</span> yourself. In order to be a boundary point in this case, you have to be able to touch a point of <span class="math notranslate nohighlight">\(A\)</span> no matter how short your arms are.</p>
+<p>For a boundary point, this point within <span class="math notranslate nohighlight">\(A\)</span> can be yourself, like in isolated points.</p>
+<p>But the point within <span class="math notranslate nohighlight">\(A\)</span> could also be a point other than yourself, as is the case with a boundary point that is not a member of <span class="math notranslate nohighlight">\(A\)</span> itself.</p>
+<p>The term accumulation point differentiates between these two types of boundary points.</p>
+<p>Specifically an accumulation point touches an element of <span class="math notranslate nohighlight">\(A\)</span> that is not itself no matter how short its arms get. We denote this point other than ourself (<span class="math notranslate nohighlight">\(x\)</span>) as the point <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p><img alt="Accumulation of A" src="../_images/A_acc.jpg" /></p>
+<div class="tip admonition">
+<p class="admonition-title">Definition: Accumulation Point</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset and $x \in \mathbb{R}% be a real nuber.</p>
+<p>We call <span class="math notranslate nohighlight">\(x\)</span> a <strong>accumulation point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if for all <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> there exists <span class="math notranslate nohighlight">\(y \in A\)</span> such that</p>
+<p><span class="math notranslate nohighlight">\(y \neq x\)</span> and <span class="math notranslate nohighlight">\(y \in B_\epsilon(x) \cap A\)</span></p>
+</div>
+<p>For our set <span class="math notranslate nohighlight">\(A\)</span>, the accumumation points include the non isolated boundary points and all of the interior points.</p>
+<p>Interior points are by definition accumulation points because everything they touch is an element of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>We call the set of all the interior points of <span class="math notranslate nohighlight">\(A\)</span> the <strong>derived set</strong> or <span class="math notranslate nohighlight">\(A'\)</span>, it is important to note that not all memebers of <span class="math notranslate nohighlight">\(A'\)</span> will be members of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+</section>
+<section id="closure-of-a-set">
+<h2>Closure of a Set<a class="headerlink" href="#closure-of-a-set" title="Permalink to this headline">#</a></h2>
+<p>We can then create a superset that includes A and all of its accumulation points, and we call this the <strong>closure of <span class="math notranslate nohighlight">\(A\)</span></strong> or <span class="math notranslate nohighlight">\(\bar{A}\)</span>.</p>
+<p>We can now create a continuum of the set <span class="math notranslate nohighlight">\(A\)</span> in relation to its boundary points.</p>
+<p>If we have a set <span class="math notranslate nohighlight">\(A\)</span>, ee can first define the interior points (<span class="math notranslate nohighlight">\(A^{\mathrm{o}}\)</span>), which includes none of its boundary points, <span class="math notranslate nohighlight">\(A \setminus \delta A\)</span>.</p>
+<p>And we can then define the closure of A, which includes all of the boundary points, specifically the union of <span class="math notranslate nohighlight">\(A\)</span> and its accumulation points, <span class="math notranslate nohighlight">\(A \cup A'\)</span></p>
+<p>So that:
+<span class="math notranslate nohighlight">\(A^{\mathrm{o}} \subseteq A \subseteq \bar{A}\)</span></p>
+<p><img alt="Spectrum" src="../_images/spectrum.jpg" /></p>
 </section>
 </section>
 
