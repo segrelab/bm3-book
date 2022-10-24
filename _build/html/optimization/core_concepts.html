@@ -1,0 +1,851 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Core Concepts and Definitions &#8212; Becoming a Microbiome Metabolic Modeler</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Convex Analysis" href="convex_analysis.html" />
+    <link rel="prev" title="Fundamentals" href="fundamentals.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/bu_microbiome_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Becoming a Microbiome Metabolic Modeler</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../setup.html">
+   Set-Up
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ed_yong.html">
+   Get Excited!
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ecology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ecology/cavaliere_summary.html">
+   Cooperation in Microbial Communities and their Biotechnological Application
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Mathematical Optimization
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="fundamentals.html">
+   Fundamentals
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Core Concepts and Definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="convex_analysis.html">
+     Convex Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="linear_programming.html">
+   Linear Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="graphical-solution.html">
+     Graphical Solution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="numerical_solution.html">
+     Numerical Solution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="code_solution.html">
+     Simplex Algorithm from Scratch in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="duality.html">
+     Duality Theory
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Flux Balance Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fba/what_is_fba.html">
+   What is FBA?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../fba/fba-units.html">
+   A Note about FBA Units
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../fba/fba_from_scratch.html">
+   FBA from scratch
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fba/elementary_example.html">
+     FBA from Scratch: Elementary Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fba/intermediate_example.html">
+     Intermediate Example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Necessary Software &amp; Tools
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../software_and_tools/vivarium/Vivarium_intro.html">
+   Vivarium
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../software_and_tools/vivarium/Vivarium_interface_basics.html">
+     Interface Basics
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/hgscott/bm3-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/hgscott/bm3-book/issues/new?title=Issue%20on%20page%20%2Foptimization/core_concepts.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/optimization/core_concepts.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interior-points-and-the-interior-of-a-set">
+   Interior Points and the Interior of a Set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-sets">
+   Open Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isolated-points-and-discrete-sets">
+   Isolated Points and Discrete Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-points-of-a-set">
+   Boundary Points of a Set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accumulation-points">
+   Accumulation Points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closure-of-a-set">
+   Closure of a Set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closed-sets">
+   Closed Sets
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Core Concepts and Definitions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interior-points-and-the-interior-of-a-set">
+   Interior Points and the Interior of a Set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-sets">
+   Open Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#isolated-points-and-discrete-sets">
+   Isolated Points and Discrete Sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-points-of-a-set">
+   Boundary Points of a Set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accumulation-points">
+   Accumulation Points
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closure-of-a-set">
+   Closure of a Set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#closed-sets">
+   Closed Sets
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="core-concepts-and-definitions">
+<h1>Core Concepts and Definitions<a class="headerlink" href="#core-concepts-and-definitions" title="Permalink to this headline">#</a></h1>
+<p>We start by introducing basic properties of sets and functions necessary for establishing conditions for the (i) existence and (ii) uniqueness of a global optimum value. These definitions also introduce formal mathematical language and reasoning used in optimization textbooks and articles.</p>
+<section id="interior-points-and-the-interior-of-a-set">
+<h2>Interior Points and the Interior of a Set<a class="headerlink" href="#interior-points-and-the-interior-of-a-set" title="Permalink to this headline">#</a></h2>
+<p>What does it mean for a point to be an interior point of a set?</p>
+<p>This is going to be an important idea because it is going to allow us to speak about which points inisde of a set hava a little bit
+of breathing room around them and which do not. It is those points with a little bit of breathing room that we can interior points,
+and these are goin tobe fundamental to our definition of what gets to be an open set.</p>
+<p>Our story begins with a subset <span class="math notranslate nohighlight">\(A\)</span> of the real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. as well as a point <span class="math notranslate nohighlight">\(x\)</span> inside of that subset.</p>
+<p><img alt="Number line drawing" src="../_images/ex_set.png" /></p>
+<p>We can write this mathematically by saying:</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset, and <span class="math notranslate nohighlight">\(x \in A\)</span>.</p>
+<p>And now we want to ask ourselves if the point <span class="math notranslate nohighlight">\(x\)</span> has a little bit of wiggle room
+around it without leaving the set. Any points that have this wigge room are called an
+<strong>“interior point”</strong>.</p>
+<p>Imagine you are standing on the real number line at the point <span class="math notranslate nohighlight">\(x\)</span>. Can you reach out
+your arms, even just a little bit, and not touch any elements outside of <span class="math notranslate nohighlight">\(A\)</span>? This
+question probably depends on how long your arms are! If you reach out too far, eventually you are going to touch something outside of your set, so you might need to
+make your arms really really short to make this happen, but as long as there is some
+small positive length of your arms that stays within your set, you are an interior point.</p>
+<p><img alt="Number line drawing" src="../_images/ex_set_person.png" /></p>
+<p>The fundamental notion that goes into this defintion is an
+<strong>“<span class="math notranslate nohighlight">\(\epsilon\)</span>-Neighborhood”</strong> or “<span class="math notranslate nohighlight">\(\epsilon\)</span>-Ball”- a ball of radius <span class="math notranslate nohighlight">\(\epsilon\)</span>
+around the point <span class="math notranslate nohighlight">\(x\)</span>. In our example, <span class="math notranslate nohighlight">\(\epsilon\)</span> would be the length of one of your
+arms (by convention our arms will always be the same length, so that we are
+reaching equal distances on both sides), and since it is a length <span class="math notranslate nohighlight">\(\epsilon\)</span> can
+never be negative.</p>
+<p><img alt="An epsilon ball" src="../_images/epsilon-ball.jpeg" /></p>
+<p>The <span class="math notranslate nohighlight">\(\epsilon\)</span> neighborhood is the set (that we are going to call <span class="math notranslate nohighlight">\(B_\epsilon(x)\)</span>)
+that consists of all the real numbers which are at a distance of less than
+<span class="math notranslate nohighlight">\(\epsilon\)</span> away from us at <span class="math notranslate nohighlight">\(x\)</span>. So that would be the open interval from <span class="math notranslate nohighlight">\(x-\epsilon\)</span>
+to <span class="math notranslate nohighlight">\(x+\epsilon\)</span></p>
+<p><img alt="Number line drawing" src="../_images/ex_set_labeled.png" /></p>
+<p>We can formally define the <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood at <span class="math notranslate nohighlight">\(x\)</span> as the set <span class="math notranslate nohighlight">\(B_\epsilon(x) = (x-\epsilon, x+\epsilon)=\{t \in \mathbb{R}: |x-t| &lt; \epsilon\}\)</span>.</p>
+<p>We want to call <span class="math notranslate nohighlight">\(x\)</span> an interior point of <span class="math notranslate nohighlight">\(A\)</span> if its true that if my arms are short enough, I can reach out to both sides of myself and not touch anything that’s outside of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>To make this mathmatical we can say that the <span class="math notranslate nohighlight">\(\epsilon\)</span> neightborhood at <span class="math notranslate nohighlight">\(x\)</span>
+(everything you can touch) is a subset of <span class="math notranslate nohighlight">\(A\)</span>, or:</p>
+<p><strong><span class="math notranslate nohighlight">\(x\)</span> is an interior point if <span class="math notranslate nohighlight">\(B_\epsilon(x) \subseteq A\)</span></strong></p>
+<p>This definition just says that I am an interior point if I have an <span class="math notranslate nohighlight">\(\epsilon\)</span>-ball, even if it is a really really small one, as long as it has a positive radius, centered at me which is entirely within the set A.</p>
+<p>All we need is one example, we don’t need this to be true for a bunch of differnet
+arm lengths or radii- we just need a single positive value of <span class="math notranslate nohighlight">\(\epsilon\)</span> where this
+is true to be able to call our point an interior point.</p>
+<p>All of the interior points of a set are called the interior of the set, i.e. the
+<strong>interior of <span class="math notranslate nohighlight">\(A\)</span></strong> (int(<span class="math notranslate nohighlight">\(A\)</span>) of <span class="math notranslate nohighlight">\(A^{\mathrm{o}}\)</span>) is the set of all interior
+points of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>Now lets take an example:</p>
+<p>What is the interior of <span class="math notranslate nohighlight">\(A = [-2,4)\cap\{6\}\)</span>?</p>
+<p>Our set A is the interval from -2 to 4, includsive of -2 unioned together with the
+singleton point at 6.</p>
+<p>First, lets sketch it out:</p>
+<p><img alt="Number line drawing" src="../_images/ex.png" /></p>
+<p>-2 is a solid circle since we are including -2, 4 will be an open circle since we are
+not including 4 and another solid circle at 6.</p>
+<p>Now lets figure out what points are interiour points of <span class="math notranslate nohighlight">\(A\)</span> by imagning standing at various points in this set and then ask the question can I reach out my arms without leaving the set, even if my arms have to really really tiny.</p>
+<p>Where can I stand and stretch my arms?</p>
+<p>The first place to test, is right smack in the middle, anywhere between -2 and 4 but not at one of those end points. Is it possible for me to stand and stretch out my arms as 1, or <span class="math notranslate nohighlight">\(-\sqrt2\)</span> or <span class="math notranslate nohighlight">\(\pi\)</span>? Any of those numbers are between -2 and 4. Yes, I cans stretch out my arms even if it has to be a very small amount, even if I’m standing at 3.999 there is some small little radius I can stretch out and my
+<span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood be entirely contained within <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p><img alt="Number line drawing" src="../_images/ex_pt_1.png" /></p>
+<p>So if x is any point between -2 and 4, exxclusuve of the endpoints, then <span class="math notranslate nohighlight">\(x\)</span> is going
+to be one of the interior points of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>But that does not cover the endpoints.</p>
+<p>Can I stand at number 4 and stretch out my arms? Well the problem here is that there
+is nowhere for me to stand. Because our set <span class="math notranslate nohighlight">\(A\)</span> does not include the point 4, 4 could
+never be an interior point. This is a fundamental rule of interior points, <strong>to be an
+interior point of <span class="math notranslate nohighlight">\(A\)</span>, the point has to first be an element of that set</strong>. So 4 is
+NOT and interior point.</p>
+<p><img alt="Number line drawing" src="../_images/ex_pt_2.png" /></p>
+<p>What about 6?</p>
+<p>I can stand at 6 because it is an element of <span class="math notranslate nohighlight">\(A\)</span>, but can I stretch out my arms
+without leaving the set? The answer this time in no. No matter how short my arms are
+as soon as I reach out to either side (i.e to 5.99 or 6.01), I am outside of <span class="math notranslate nohighlight">\(A\)</span>. So
+even though 6 is an element of <span class="math notranslate nohighlight">\(A\)</span> is does not get to be an interior point.</p>
+<p><img alt="Number line drawing" src="../_images/ex_pt_3.png" /></p>
+<p>As you might imagine, the same is true about -2. When I stand at -2 and reach out my arms to both sides, ther is one direction that I can reach, but if I reach to the left (i.e. to the more negative side of the number line),  there are no more elements
+of <span class="math notranslate nohighlight">\(A\)</span> for me to touch, no matter how short my arm is. So -2 also does not get to be
+an interior point of <span class="math notranslate nohighlight">\(A\)</span>. This is an example of a key part of the definition of an
+interior point, the <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood must go on both sides of the point and
+be centered at the point.</p>
+<p><img alt="Number line drawing" src="../_images/ex_pt_4.png" /></p>
+<p>So taking stock, the interior of <span class="math notranslate nohighlight">\(A\)</span> is going to consist of only the real numbers between -2 and 4 but its not going to include -2 because of the arm that reaches outside of <span class="math notranslate nohighlight">\(A\)</span> and it’s not going to icnlude 4 because 4 wasn’t in the set in the first place and it’s not going to include 6 because no matter how short my arms are at 6 I can’t reach out without touching something that’s outside of the set. So the interior should consist just of the open interval -2 to 4, or:</p>
+<p><span class="math notranslate nohighlight">\(\textrm{int}(A) = (-2, 4)\)</span></p>
+<div class="tip admonition">
+<p class="admonition-title">Definition: Interior Point</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset and <span class="math notranslate nohighlight">\(x \in A\)</span></p>
+<p><span class="math notranslate nohighlight">\(x\)</span> is an <strong>interior point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> such that</p>
+<p><span class="math notranslate nohighlight">\(B_\epsilon(x) \subseteq A\)</span></p>
+</div>
+</section>
+<section id="open-sets">
+<h2>Open Sets<a class="headerlink" href="#open-sets" title="Permalink to this headline">#</a></h2>
+<p>There’s an old saying, that no matter how far you run towards the horizon between the earth and the sky you are
+never going to reach it. The real number line is kind of like that too, no matter
+how far on the real number line that we run out towards the left or the right we’re
+never going to fall off the end of number line because there are always more real
+numbers.</p>
+<p>This makes the real number line a really nice set to work with- if we have a function
+on the real number line we can never fall off the function’s graph.</p>
+<p>Our goal in this section is to find other sets that also have that property, they don’t
+really have an edge.</p>
+<p>Now that we know what an interior point is, we can say that an <strong>open set is a set
+whose points are all interior points</strong>.</p>
+<p><img alt="An open set" src="../_images/diagram.jpg" /></p>
+<p>More mathematically, a subset <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> is an open set is every point <span class="math notranslate nohighlight">\(x \in A\)</span> is an interior point of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>We can spell this out explicitly with the definition of an interior point:</p>
+<p>A is an open set if for ALL <span class="math notranslate nohighlight">\(x \in A\)</span> there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> such that <span class="math notranslate nohighlight">\(B_\epsilon(x) \subseteq A\)</span>.</p>
+<p>We’ve previouslty defined the interior of a set- the set of all of its interior points. Because an open set has interior points for all of its points, for an open set <span class="math notranslate nohighlight">\(\textrm{int}(A) = A\)</span>.</p>
+<p>The most obvious example of an open set may be a finite open interval, an open interval from point <span class="math notranslate nohighlight">\(a\)</span> to point <span class="math notranslate nohighlight">\(b\)</span>, exclusive of those points.</p>
+<p><img alt="Number line drawing" src="../_images/open_set_number_line.jpg" /></p>
+<p>You can stand on any point <span class="math notranslate nohighlight">\(x\)</span> within <span class="math notranslate nohighlight">\(I\)</span> and you will always be able to reach out your arms, even if it is just a small amount. Even as you approach very close to either endpoint <span class="math notranslate nohighlight">\(a\)</span> or <span class="math notranslate nohighlight">\(b\)</span>, because they are not included you will always be able to get that wiggle room.</p>
+<p><img alt="Number line drawing" src="../_images/open_set_w_person.jpg" /></p>
+<div class="tip admonition">
+<p class="admonition-title">Definition: Open Set</p>
+<p>A subset <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> is an <strong>open set</strong> is every point <span class="math notranslate nohighlight">\(x \in A\)</span> is an interior point of A</p>
+<p>int<span class="math notranslate nohighlight">\((A) = A\)</span></p>
+</div>
+</section>
+<section id="isolated-points-and-discrete-sets">
+<h2>Isolated Points and Discrete Sets<a class="headerlink" href="#isolated-points-and-discrete-sets" title="Permalink to this headline">#</a></h2>
+<p>While interior points have wiggle room, there are other points that do not. What if no one in my neighborhood is part of my set except for myself?</p>
+<p>We call these points isolated points. If you stand on an isolated point, you cannot reach your arms, everything you touch is not a part of your set.</p>
+<p>Sets that are made up entirely of isolated points are called discrete sets.</p>
+<p>Suppose that I have a subset of the real line, <span class="math notranslate nohighlight">\(A\)</span>, that looks like this:</p>
+<p><img alt="Set A" src="../_images/discrete_set.jpg" /></p>
+<p>I want to know what it would look like to be a point that stand alone from the set in my <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood.</p>
+<p>First off, I know what I wouldn’t look like. I wouldn’t look like one of the interior points, where all of my neighbors are part of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p><img alt="Interior point of A" src="../_images/discrete_set_interior_point.jpg" /></p>
+<p>We want to look at the opposite of that, when none of my neighbors (within an <span class="math notranslate nohighlight">\(\epsilon\)</span> arm’s reach) are a part of <span class="math notranslate nohighlight">\(A\)</span>. The singleton part of our set is a candaidate for such a point.</p>
+<p>If you imagine standing on thie point and reaching out your arms, nothing you touch would be a member of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p><img alt="Isolated point of A" src="../_images/discrete_set_iso_point.jpg" /></p>
+<p>This point is like a hermit, living up on a mountain top with no neighbors or friends from its set.</p>
+<p>Of course, if you had very long arms you could reach a neighbor, so to be an isolated point, there just has to be one positive value for <span class="math notranslate nohighlight">\(\epsilon\)</span> where this is true to be considered an isolated point.</p>
+<p>Lets come up with a more mathematical definition for what makes a point an isolated point.</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span>, and <span class="math notranslate nohighlight">\(x \in A\)</span>.
+<span class="math notranslate nohighlight">\(x\)</span> is an isolated point of <span class="math notranslate nohighlight">\(A\)</span> if there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A = \{x\}\)</span></p>
+<p>In plain english this means, that my armspan and A have only me in common for at least one positive lengths of my arms.</p>
+<p>Another term for an isolate point, is to say they are <strong>bounded away</strong> from the rest of the set <span class="math notranslate nohighlight">\(A\)</span> by at least <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>A set is called a <strong>discrete set</strong> if all of its points are isolated.</p>
+<p>The model example for a discrete set is the set of integers as a subset of the real number line (<span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>).</p>
+<p>If we diagram out the set of integers on the number line, it looks like a a bunch of these isolated points, disconnected from one another.</p>
+<p><img alt="Z on a number line" src="../_images/integers.jpg" /></p>
+<p>All of these integers are bounded away from the rest of the set by a minimum distance of 1, so theres no other integer within a shorter arms reach than that.</p>
+<p>If we pick any arbitrary integer and stand on that point, as long as my <span class="math notranslate nohighlight">\(\epsilon\)</span> arms are shorter than 1, we satisify the defintion of an isolated points.</p>
+<p><img alt="Isolated point of Z" src="../_images/integers_iso_point.jpg" /></p>
+<div class="tip admonition">
+<p class="admonition-title">Definition: Isolated Point</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset and <span class="math notranslate nohighlight">\(x \in A\)</span></p>
+<p><span class="math notranslate nohighlight">\(x\)</span> is an <strong>isolated point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> such that</p>
+<p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A = \{x\}\)</span></p>
+</div>
+</section>
+<section id="boundary-points-of-a-set">
+<h2>Boundary Points of a Set<a class="headerlink" href="#boundary-points-of-a-set" title="Permalink to this headline">#</a></h2>
+<p>We’ve defined what an open set is, and now we want to define its opposite- a <strong>closed set</strong>. A simplistic definition that may come to mind is that a closed set is a set that includes its endpoints.</p>
+<p>The problem with that definition is that we do not know how to define the endpoints.</p>
+<p>Lets take a look at the following set, <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<p><img alt="Set" src="../_images/A.jpg" /></p>
+<p>Intuitively, we may want to say that the points “on the edge” of <span class="math notranslate nohighlight">\(A\)</span> should be the boundary points.</p>
+<p><img alt="Set with candidate boundary points" src="../_images/A_w_candidates.jpg" /></p>
+<p>If we imagine standing on point <span class="math notranslate nohighlight">\(x\)</span>, and sticking our arms out, we will be able to reach elements that are in <span class="math notranslate nohighlight">\(A\)</span> on one side, and elements that are not in <span class="math notranslate nohighlight">\(A\)</span> on the other.</p>
+<p><img alt="X person" src="../_images/x_person.jpg" /></p>
+<p>Or more mathematically,</p>
+<p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A \neq 0 \textrm{ and } B_\epsilon(x) \cap A^C \neq 0\)</span></p>
+<p>Now, if we imagine standing on point <span class="math notranslate nohighlight">\(y\)</span>, we satisfy this definition, and are therefore a boundary point, even though <span class="math notranslate nohighlight">\(y\)</span> is not an element of <span class="math notranslate nohighlight">\(A\)</span>. This is an immportant distinction from interior points, <strong>points not in <span class="math notranslate nohighlight">\(A\)</span> can still be boundary points of <span class="math notranslate nohighlight">\(A\)</span></strong>.</p>
+<p><img alt="Y person" src="../_images/y_person.jpg" /></p>
+<p>So we can proceed out mathematical definition of a boundary point by defining <span class="math notranslate nohighlight">\(A\)</span> as a subset of the real numbers, and our boundary point <span class="math notranslate nohighlight">\(x\)</span> as a member of the real numbers, rather than as a member of <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>:</p>
+<p>Now if we stand on the isolated point, point <span class="math notranslate nohighlight">\(z\)</span>, you may think that it is not a boundary point, because your arms are only touching elements outside of <span class="math notranslate nohighlight">\(A\)</span>, and nothing within it.</p>
+<p><img alt="Z person" src="../_images/z_person.jpg" /></p>
+<p>But remember our defintion of the <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood (<span class="math notranslate nohighlight">\(B_\epsilon(x)\)</span>) implicitly includes the point itself. So our defintion <span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A \neq 0\)</span> and <span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A^C \neq 0\)</span> is still true for point <span class="math notranslate nohighlight">\(z\)</span> and it is therefore a boundary point.</p>
+<p>Now imagine, standing at this point <span class="math notranslate nohighlight">\(p\)</span> and reaching your arms out extra far, so that you are able to reach outside of <span class="math notranslate nohighlight">\(A\)</span>. Does this make it a boundary point?</p>
+<p><img alt="Long arms" src="../_images/long_arms.jpg" /></p>
+<p>No! So to modify our definition we will say that for <strong>all</strong> <span class="math notranslate nohighlight">\(\epsilon\)</span> values we must satisify our definition of a boundary point.</p>
+<p>Bringing together all of our definitions we can say that:</p>
+<div class="tip admonition">
+<p class="admonition-title">Definition: Boundary Point</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset and <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> be a real number.</p>
+<p>We call <span class="math notranslate nohighlight">\(x\)</span> a <strong>boundary point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if for all <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> we have both</p>
+<p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A \neq 0 \textrm{ and } B_\epsilon(x) \cap A^C \neq 0\)</span></p>
+</div>
+</section>
+<section id="accumulation-points">
+<h2>Accumulation Points<a class="headerlink" href="#accumulation-points" title="Permalink to this headline">#</a></h2>
+<p>Most simply, accumulation points are points that have a lot of the set on one side and no set on the other side.</p>
+<p>Let’s take a look at our set <span class="math notranslate nohighlight">\(A\)</span> where we defined 4 boundary points:</p>
+<p><img alt="Boundary points of A" src="../_images/A_bnd.jpg" /></p>
+<p>Some boundary points are qualitatively different from others, there are some that really are “on the edge” of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>We know that isolated points will always be boundary poitns, because by definition they will always reach a point of <span class="math notranslate nohighlight">\(A\)</span> themselves, and points outside of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>But you can also be a boundary point without being in <span class="math notranslate nohighlight">\(A\)</span> yourself. In order to be a boundary point in this case, you have to be able to touch a point of <span class="math notranslate nohighlight">\(A\)</span> no matter how short your arms are.</p>
+<p>For a boundary point, this point within <span class="math notranslate nohighlight">\(A\)</span> can be yourself, like in isolated points.</p>
+<p>But the point within <span class="math notranslate nohighlight">\(A\)</span> could also be a point other than yourself, as is the case with a boundary point that is not a member of <span class="math notranslate nohighlight">\(A\)</span> itself.</p>
+<p>The term accumulation point differentiates between these two types of boundary points.</p>
+<p>Specifically an accumulation point touches an element of <span class="math notranslate nohighlight">\(A\)</span> that is not itself no matter how short its arms get. We denote this point other than ourself (<span class="math notranslate nohighlight">\(x\)</span>) as the point <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p><img alt="Accumulation of A" src="../_images/A_acc.jpg" /></p>
+<div class="tip admonition">
+<p class="admonition-title">Definition: Accumulation Point</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset and <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> be a real nuber.</p>
+<p>We call <span class="math notranslate nohighlight">\(x\)</span> a <strong>accumulation point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if for all <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> there exists <span class="math notranslate nohighlight">\(y \in A\)</span> such that</p>
+<p><span class="math notranslate nohighlight">\(y \neq x\)</span> and <span class="math notranslate nohighlight">\(y \in B_\epsilon(x) \cap A\)</span></p>
+</div>
+<p>For our set <span class="math notranslate nohighlight">\(A\)</span>, the accumumation points include the non isolated boundary points and all of the interior points.</p>
+<p>Interior points are by definition accumulation points because everything they touch is an element of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>We call the set of all the interior points of <span class="math notranslate nohighlight">\(A\)</span> the <strong>derived set</strong> or <span class="math notranslate nohighlight">\(A'\)</span>, it is important to note that not all memebers of <span class="math notranslate nohighlight">\(A'\)</span> will be members of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+</section>
+<section id="closure-of-a-set">
+<h2>Closure of a Set<a class="headerlink" href="#closure-of-a-set" title="Permalink to this headline">#</a></h2>
+<p>We can then create a superset that includes A and all of its accumulation points, and we call this the <strong>closure of <span class="math notranslate nohighlight">\(A\)</span></strong> or <span class="math notranslate nohighlight">\(\bar{A}\)</span>.</p>
+<p>We can now create a continuum of the set <span class="math notranslate nohighlight">\(A\)</span> in relation to its boundary points.</p>
+<p>If we have a set <span class="math notranslate nohighlight">\(A\)</span>, ee can first define the interior points (<span class="math notranslate nohighlight">\(A^{\mathrm{o}}\)</span>), which includes none of its boundary points, <span class="math notranslate nohighlight">\(A \setminus \delta A\)</span>.</p>
+<p>And we can then define the closure of A, which includes all of the boundary points, specifically the union of <span class="math notranslate nohighlight">\(A\)</span> and its accumulation points, <span class="math notranslate nohighlight">\(A \cup A'\)</span></p>
+<p>So that:
+<span class="math notranslate nohighlight">\(A^{\mathrm{o}} \subseteq A \subseteq \bar{A}\)</span></p>
+<p><img alt="Spectrum" src="../_images/spectrum.jpg" /></p>
+</section>
+<section id="closed-sets">
+<h2>Closed Sets<a class="headerlink" href="#closed-sets" title="Permalink to this headline">#</a></h2>
+<p>The intuituion behind a closed set is that anything that can touch the set is in the set.</p>
+<p>The simplest example of a closed set is <strong>the</strong> closed set from point <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, or <span class="math notranslate nohighlight">\(A = {a, b}\)</span>.</p>
+<p><img alt="The closed set from a to b" src="../_images/optimization" /></p>
+<p>To be a closed set, <span class="math notranslate nohighlight">\(A\)</span> must include all of its boundary points, including its accumulation points.</p>
+<p>We know that all of the interior points of the set are accumulation points since there those points will always be able to reach another element of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p><img alt="Interior accumulation points of A" src="../_images/closed_set_int_points.jpg" /></p>
+<p>The final points, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are also accumulation points because they can also reach a point of <span class="math notranslate nohighlight">\(A\)</span> other than themselves.</p>
+<p><img alt="Boundary accumulation points of A" src="../_images/closed_set_bnd_pts.jpg" /></p>
+<p>We could also draw a discrete set that looks like this:</p>
+<p><img alt="A discrete set" src="../_images/optimization" /></p>
+<p>This set is a closed set because every point is a boundary point, since its <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood includes a point of <span class="math notranslate nohighlight">\(A\)</span> (itself) and points outstide of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p><img alt="A discrete point is a boundary point" src="../_images/integers_bnd_pts.jpg" /></p>
+<p>But does this mean that all discrete sets are closed sets?</p>
+<p>To answer that question, lets look at the set <span class="math notranslate nohighlight">\(A = \{2^{-n}: n \geq 0\}\)</span>.</p>
+<p><img alt="A" src="../_images/optimization" /></p>
+<p>Each of these points is a bounary point, since even though the points are getting closer, there will always be an <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood that reaches outside of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p><img alt="A boundary points" src="../_images/discrete_set_bnd_pts.jpg" /></p>
+<p>But there is one boundary point that is not included in the set at the point 0. Even though 0 is not in the set it is an accumulation point because it can always reach a point of <span class="math notranslate nohighlight">\(A\)</span>, no matter how small the <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood is.</p>
+<p><img alt="0 is an accumulation point" src="../_images/discrete_set_acc_pt.jpg" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./optimization"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="fundamentals.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Fundamentals</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="convex_analysis.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Convex Analysis</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Helen Scott<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

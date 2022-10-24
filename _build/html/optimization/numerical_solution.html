@@ -50,9 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Duality Theory" href="duality.html" />
+    <link rel="next" title="Simplex Algorithm from Scratch in Python" href="code_solution.html" />
     <link rel="prev" title="Graphical Solution" href="graphical-solution.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -148,17 +150,34 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="fundamentals.html">
    Fundamentals
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="core_concepts.html">
+     Core Concepts and Definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="convex_analysis.html">
+     Convex Analysis
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="linear_programming.html">
    Linear Programming
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -174,13 +193,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="duality.html">
-     Duality Theory
+    <a class="reference internal" href="code_solution.html">
+     Simplex Algorithm from Scratch in Python
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="code_solution.html">
-     Code Solution
+    <a class="reference internal" href="duality.html">
+     Duality Theory
     </a>
    </li>
   </ul>
@@ -202,6 +221,28 @@ const thebe_selector_output = ".output, .cell_output"
    A Note about FBA Units
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../fba/fba_from_scratch.html">
+   FBA from scratch
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fba/elementary_example.html">
+     FBA from Scratch: Elementary Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fba/intermediate_example.html">
+     Intermediate Example
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -213,8 +254,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../software_and_tools/vivarium/Vivarium_intro.html">
    Vivarium
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -403,35 +444,22 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matrix-operations">
-   Matrix Operations
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Numerical Solution
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#row-redux-solving">
-   Row Redux Solving
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-a-simplex-tableau">
-   Building a Simplex Tableau
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pivoting">
-   Pivoting
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simplex-max">
-   Simplex Max
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#full-problems">
-   Full Problems
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collect-information">
+     1. Collect information
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -452,35 +480,22 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matrix-operations">
-   Matrix Operations
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Numerical Solution
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#row-redux-solving">
-   Row Redux Solving
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-a-simplex-tableau">
-   Building a Simplex Tableau
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pivoting">
-   Pivoting
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simplex-max">
-   Simplex Max
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#full-problems">
-   Full Problems
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collect-information">
+     1. Collect information
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -494,23 +509,74 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-solution">
 <h1>Numerical Solution<a class="headerlink" href="#numerical-solution" title="Permalink to this headline">#</a></h1>
-<section id="matrix-operations">
-<h2>Matrix Operations<a class="headerlink" href="#matrix-operations" title="Permalink to this headline">#</a></h2>
 </section>
-<section id="row-redux-solving">
-<h2>Row Redux Solving<a class="headerlink" href="#row-redux-solving" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="building-a-simplex-tableau">
-<h2>Building a Simplex Tableau<a class="headerlink" href="#building-a-simplex-tableau" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="pivoting">
-<h2>Pivoting<a class="headerlink" href="#pivoting" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="simplex-max">
-<h2>Simplex Max<a class="headerlink" href="#simplex-max" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="full-problems">
-<h2>Full Problems<a class="headerlink" href="#full-problems" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="example">
+<h1>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h1>
+<p>Suppose a company manufactures different electronic components for computers. Component A requires 2
+hours of fabrication and 1 hour of assembly; component B requires 3 hours of fabrication and 1 hour of assembly,
+and component C requires 2 hours of fabrication and 2 hours of assembly. The company has up to 1,000 labor
+hours for fabrication and 800 labor-hours of assembly time each week. If the profit on each component A, B, and
+C is <span class="math notranslate nohighlight">\(7, \)</span>8, $10 respectively, how many of each should be produced to maximize profit?</p>
+<section id="collect-information">
+<h2>1. Collect information<a class="headerlink" href="#collect-information" title="Permalink to this headline">#</a></h2>
+<p>Collect all of the information in the problem:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>C</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Fabrication Hrs.</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Assembly Hrs.</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Profit $</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>Goal: ____________</p>
+<p>Variables:</p>
+<div class="toggle docutils container">
+<p>Click to show the solution</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>C</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Fabrication Hrs.</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Assembly Hrs.</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Profit $</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>10</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -548,10 +614,10 @@ title="Print to PDF"
             <p class="prev-next-title">Graphical Solution</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="duality.html" title="next page">
+    <a class='right-next' id="next-link" href="code_solution.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Duality Theory</p>
+        <p class="prev-next-title">Simplex Algorithm from Scratch in Python</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -15,12 +15,14 @@ parts:
   - caption: Mathematical Optimization
     chapters:
       - file: optimization/fundamentals.md
+        sections:
+          - file: optimization/core_concepts.md
+          - file: optimization/convex_analysis.md
       - file: optimization/linear_programming.md
         sections:
           - file: optimization/graphical-solution.md
           - file: optimization/numerical_solution.md
-          - file: optimization/simplex_from_scratch.ipynb
-          - file: optimization/code_solution.md
+          - file: optimization/code_solution.ipynb
           - file: optimization/duality.md
   - caption: Flux Balance Analysis
     chapters:
