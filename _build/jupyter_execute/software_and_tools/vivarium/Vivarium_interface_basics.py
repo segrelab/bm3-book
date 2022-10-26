@@ -783,36 +783,37 @@ mw_config = {'C': 1e8 * units.g / units.mol}
 # In[19]:
 
 
-class StochasticTxTl(Composer):
-    defaults = {
-        'stochastic_Tx': {},
-        'Tl': {'time_step': 1},
-        'concs': {
-            'molecular_weights': mw_config}}
-    
-    def generate_processes(self, config):
-        counts_to_concentration = process_registry.access('counts_to_concentration')
-        return {
-            'stochastic\nTx': StochasticTx(config['stochastic_Tx']),
-            'Tl': Tl(config['Tl']),
-            'counts\nto\nmg/mL': counts_to_concentration(config['concs'])}
 
-    def generate_topology(self, config):
-        return {
-            'stochastic\nTx': {
-                'DNA': ('DNA\n(counts)',),
-                'mRNA': ('mRNA\n(counts)',)
-            },
-            'Tl': {
-                'mRNA': ('mRNA\n(mg/mL)',),
-                'Protein': ('Protein\n(mg/mL)',)
-            },
-            'counts\nto\nmg/mL': {
-                'global': ('global',),
-                'input': ('mRNA\n(counts)',),
-                'output': ('mRNA\n(mg/mL)',)
-            }}
-    
+class StochasticTxTl(Composer):
+  defaults = {
+      'stochastic_Tx': {},
+      'Tl': {'time_step': 1},
+      'concs': {
+          'molecular_weights': mw_config}}
+  
+  def generate_processes(self, config):
+      counts_to_concentration = process_registry.access('counts_to_concentration')
+      return {
+          'stochastic\nTx': StochasticTx(config['stochastic_Tx']),
+          'Tl': Tl(config['Tl']),
+          'counts\nto\nmg/mL': counts_to_concentration(config['concs'])}
+
+  def generate_topology(self, config):
+      return {
+          'stochastic\nTx': {
+              'DNA': ('DNA\n(counts)',),
+              'mRNA': ('mRNA\n(counts)',)
+          },
+          'Tl': {
+              'mRNA': ('mRNA\n(mg/mL)',),
+              'Protein': ('Protein\n(mg/mL)',)
+          },
+          'counts\nto\nmg/mL': {
+              'global': ('global',),
+              'input': ('mRNA\n(counts)',),
+              'output': ('mRNA\n(mg/mL)',)
+          }}
+  
 
 
 # ### plot StochasticTxTl topology

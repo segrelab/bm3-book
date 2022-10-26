@@ -876,7 +876,6 @@ ax.set_ylabel('Extracellular Glucose', color='b')
 ax2.set_ylabel('Extracellular Acetate', color='r')
 
 
-
 # ## Questions
 # 
 # 1. Can you extend this to two organisms (e.g. two variants of E. coli, one incapable of respiring)
