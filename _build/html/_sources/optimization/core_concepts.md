@@ -341,7 +341,7 @@ The intuituion behind a closed set is that anything that can touch the set is in
 
 The simplest example of a closed set is **the** closed set from point $a$ to $b$, or $A = {a, b}$.
 
-![The closed set from a to b]()
+![The closed set from a to b](figs/closed_sets/closed_set.jpg)
 
 To be a closed set, $A$ must include all of its boundary points, including its accumulation points.
 
@@ -355,7 +355,7 @@ The final points, $a$ and $b$ are also accumulation points because they can also
 
 We could also draw a discrete set that looks like this:
 
-![A discrete set]()
+![A discrete set](figs/closed_sets/integers.jpg)
 
 This set is a closed set because every point is a boundary point, since its $\epsilon$-neighborhood includes a point of $A$ (itself) and points outstide of $A$.
 
@@ -365,7 +365,7 @@ But does this mean that all discrete sets are closed sets?
 
 To answer that question, lets look at the set $A = \{2^{-n}: n \geq 0\}$.
 
-![A]()
+![A](figs/closed_sets/discrete_set.jpg)
 
 Each of these points is a bounary point, since even though the points are getting closer, there will always be an $\epsilon$-neighborhood that reaches outside of $A$.
 
@@ -374,3 +374,8 @@ Each of these points is a bounary point, since even though the points are gettin
 But there is one boundary point that is not included in the set at the point 0. Even though 0 is not in the set it is an accumulation point because it can always reach a point of $A$, no matter how small the $\epsilon$-neighborhood is.
 
 ![0 is an accumulation point](figs/closed_sets/discrete_set_acc_pt.jpg)
+
+# How are open and closed sets related?
+Closed sets are the complement of open sets.
+
+Everything has to belong to wither $A$ or $A^C$

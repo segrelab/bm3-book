@@ -20,7 +20,7 @@ parts:
           - file: optimization/convex_analysis.md
       - file: optimization/linear_programming.md
         sections:
-          - file: optimization/graphical-solution.md
+          - file: optimization/graphical_solution.ipynb
           - file: optimization/numerical_solution.md
           - file: optimization/code_solution.ipynb
           - file: optimization/duality.md
@@ -32,7 +32,9 @@ parts:
         sections:
           - file: fba/elementary_example.ipynb
           - file: fba/intermediate_example.ipynb
-  # - caption: Creating, Reusing & Curating GEMs
+      - file: fba/escher.ipynb
+  - caption: Creating, Reusing & Curating GEMs
+    chapters: GEMS/building_gems.ipynb
   - caption: Necessary Software & Tools
     chapters:
       - file: software_and_tools/vivarium/Vivarium_intro.md
