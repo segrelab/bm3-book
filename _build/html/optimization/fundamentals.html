@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Core Concepts and Definitions" href="core_concepts.html" />
@@ -533,12 +535,12 @@ In biology, mathematical optimization can be used to:</p>
 <h2>Optimization Vocabulary<a class="headerlink" href="#optimization-vocabulary" title="Permalink to this headline">#</a></h2>
 <p>Your basic optimization problem consists of…</p>
 <ul class="simple">
-<li><p>The <strong>objective function</strong>, $f(x)$, which is the output you’re trying to maximize or minimize.</p></li>
-<li><p>Variables, $x_1$, $x_2$, $x_3$ and so on, which are the inputs – things you can control. They are abbreviated $x_n$ to refer to individuals or $x$ to refer to them as a group (also called a set).</p></li>
+<li><p>The <strong>objective function</strong>, <span class="math notranslate nohighlight">\(f(x)\)</span>, which is the output you’re trying to maximize or minimize.</p></li>
+<li><p>Variables, <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(x_3\)</span> and so on, which are the inputs – things you can control. They are abbreviated <span class="math notranslate nohighlight">\(x_n\)</span> to refer to individuals or <span class="math notranslate nohighlight">\(x\)</span> to refer to them as a group (also called a set).</p></li>
 <li><p>Constraints, which are equations that place limits on how big or small some variables can get.</p>
 <ul>
-<li><p>Equality constraints are usually noted $h_n(x)$</p></li>
-<li><p>Inequality constraints are noted $g_n(x)$</p></li>
+<li><p>Equality constraints are usually noted <span class="math notranslate nohighlight">\(h_n(x)\)</span></p></li>
+<li><p>Inequality constraints are noted <span class="math notranslate nohighlight">\(g_n(x)\)</span></p></li>
 </ul>
 </li>
 </ul>

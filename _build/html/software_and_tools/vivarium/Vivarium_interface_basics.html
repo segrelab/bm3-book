@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="prev" title="Vivarium" href="Vivarium_intro.html" />
@@ -1040,8 +1042,8 @@ title="Print to PDF"
 <section id="make-a-process-minimal-transcription">
 <h2><strong>1. Make a Process: minimal transcription</strong><a class="headerlink" href="#make-a-process-minimal-transcription" title="Permalink to this headline">#</a></h2>
 <p>Transcription is the biological process by which RNA is synthesized from a DNA template.
-Here, we define a model with a single mRNA species, $C$, transcribed from a single gene, $G$, at transcription rate $k_{tsc}$.
-RNA also degrades at rate $k_{deg}$.</p>
+Here, we define a model with a single mRNA species, <span class="math notranslate nohighlight">\(C\)</span>, transcribed from a single gene, <span class="math notranslate nohighlight">\(G\)</span>, at transcription rate <span class="math notranslate nohighlight">\(k_{tsc}\)</span>.
+RNA also degrades at rate <span class="math notranslate nohighlight">\(k_{deg}\)</span>.</p>
 <p>This can be represented by a chemical reaction network with the form:</p>
 <br>
 <center>
@@ -1294,10 +1296,10 @@ $\Delta RNA_{C} = (k_{tsc}[Gene_{G}] - k_{deg}[RNA_{C}]) \Delta t $ <br>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation ID: TX
-Created: 10/26/2022 at 17:19:13
+Created: 10/26/2022 at 18:41:26
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Completed in 0.103526 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Completed in 0.104210 seconds
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/tx_output.pdf
@@ -1311,12 +1313,12 @@ Created: 10/26/2022 at 17:19:13
 <section id="tl-a-deterministic-translation-process">
 <h2>Tl: a deterministic translation process<a class="headerlink" href="#tl-a-deterministic-translation-process" title="Permalink to this headline">#</a></h2>
 <p>Translation is the biological process by which protein is synthesized with an mRNA template.
-Here, we define a model with a single protein species, $Protein_{X}$, transcribed from a single gene, $RNA_{C}$, at translation rate $k_{trl}$.
-Protein also degrades at rate $k_{deg}$.</p>
+Here, we define a model with a single protein species, <span class="math notranslate nohighlight">\(Protein_{X}\)</span>, transcribed from a single gene, <span class="math notranslate nohighlight">\(RNA_{C}\)</span>, at translation rate <span class="math notranslate nohighlight">\(k_{trl}\)</span>.
+Protein also degrades at rate <span class="math notranslate nohighlight">\(k_{deg}\)</span>.</p>
 <p>This can be represented by a chemical reaction network with the form:</p>
 <ul class="simple">
-<li><p>$RNA_{C} \xrightarrow[]{k_{trl}} RNA_{C} + Protein_{X} $</p></li>
-<li><p>$Protein_{X} \xrightarrow[]{k_{deg}} \emptyset$</p></li>
+<li><p><span class="math notranslate nohighlight">\(RNA_{C} \xrightarrow[]{k_{trl}} RNA_{C} + Protein_{X} \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Protein_{X} \xrightarrow[]{k_{deg}} \emptyset\)</span></p></li>
 </ul>
 <p>According to <a class="reference external" href="https://bionumbers.hms.harvard.edu/bionumber.aspx?s=n&amp;v=3&amp;id=100043">BioNumbers</a>, the concentration of RNA in an <em>E. coli</em> cell is on the order of 75-120 mg/ml. The concentration of protein is 200-320 mg/ml.</p>
 <div class="cell docutils container">
@@ -1400,16 +1402,14 @@ Protein also degrades at rate $k_{deg}$.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation ID: TL
-Created: 10/26/2022 at 17:19:14
+Created: 10/26/2022 at 18:41:26
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Completed in 0.101435 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Completed in 0.103226 seconds
+Writing out/tl_output.pdf
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/tl_output.pdf
-</pre></div>
-</div>
-<img alt="../../_images/Vivarium_interface_basics_24_3.png" src="../../_images/Vivarium_interface_basics_24_3.png" />
+<img alt="../../_images/Vivarium_interface_basics_24_2.png" src="../../_images/Vivarium_interface_basics_24_2.png" />
 </div>
 </div>
 </section>
@@ -1586,10 +1586,10 @@ Created: 10/26/2022 at 17:19:14
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation ID: TXTL
-Created: 10/26/2022 at 17:19:14
+Created: 10/26/2022 at 18:41:27
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Completed in 0.344495 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Completed in 0.344245 seconds
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/txtl_output.pdf
@@ -1788,8 +1788,8 @@ We demonstrated this by replacing the deterministic Transcription Process with a
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation ID: stochastic_txtl
-Created: 10/26/2022 at 17:19:15
-Completed in 0.142102 seconds
+Created: 10/26/2022 at 18:41:28
+Completed in 0.144008 seconds
 </pre></div>
 </div>
 <img alt="../../_images/Vivarium_interface_basics_43_1.png" src="../../_images/Vivarium_interface_basics_43_1.png" />
@@ -1909,8 +1909,8 @@ Completed in 0.142102 seconds
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation ID: stochastic_txtl
-Created: 10/26/2022 at 17:19:16
-Completed in 0.358600 seconds
+Created: 10/26/2022 at 18:41:28
+Completed in 0.354885 seconds
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/stochastic_txtl_output.pdf
@@ -2267,7 +2267,7 @@ Vivarium uses a bigraph formalism – a graph with embeddable nodes that can be 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing out/hierarchy_topology.pdf
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:520: UserWarning: Incompatible schema assignment at (&#39;agents&#39;, &#39;0&#39;, &#39;RNA&#39;, &#39;C&#39;). Trying to assign the value &lt;function divide_set at 0x1287f7f40&gt; to key divider, which already has the value &lt;function divide_split at 0x1289380d0&gt;.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:520: UserWarning: Incompatible schema assignment at (&#39;agents&#39;, &#39;0&#39;, &#39;RNA&#39;, &#39;C&#39;). Trying to assign the value &lt;function divide_set at 0x1269abf40&gt; to key divider, which already has the value &lt;function divide_split at 0x126af40d0&gt;.
   warnings.warn(
 </pre></div>
 </div>
@@ -2305,16 +2305,16 @@ Vivarium uses a bigraph formalism – a graph with embeddable nodes that can be 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simulation ID: hierarchy_experiment
-Created: 10/26/2022 at 17:19:16
+Created: 10/26/2022 at 18:41:29
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:520: UserWarning: Incompatible schema assignment at (&#39;agents&#39;, &#39;00&#39;, &#39;RNA&#39;, &#39;C&#39;). Trying to assign the value &lt;function divide_set at 0x1287f7f40&gt; to key divider, which already has the value &lt;function divide_split at 0x1289380d0&gt;.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:520: UserWarning: Incompatible schema assignment at (&#39;agents&#39;, &#39;00&#39;, &#39;RNA&#39;, &#39;C&#39;). Trying to assign the value &lt;function divide_set at 0x1269abf40&gt; to key divider, which already has the value &lt;function divide_split at 0x126af40d0&gt;.
   warnings.warn(
-/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:520: UserWarning: Incompatible schema assignment at (&#39;agents&#39;, &#39;01&#39;, &#39;RNA&#39;, &#39;C&#39;). Trying to assign the value &lt;function divide_set at 0x1287f7f40&gt; to key divider, which already has the value &lt;function divide_split at 0x1289380d0&gt;.
+/Users/helenscott/opt/miniconda3/envs/bm3-book-dev/lib/python3.10/site-packages/vivarium/core/store.py:520: UserWarning: Incompatible schema assignment at (&#39;agents&#39;, &#39;01&#39;, &#39;RNA&#39;, &#39;C&#39;). Trying to assign the value &lt;function divide_set at 0x1269abf40&gt; to key divider, which already has the value &lt;function divide_split at 0x126af40d0&gt;.
   warnings.warn(
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Completed in 1.66 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Completed in 1.72 seconds
 </pre></div>
 </div>
 </div>

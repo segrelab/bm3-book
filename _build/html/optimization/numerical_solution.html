@@ -529,21 +529,21 @@ C is $7, $8, $10 respectively, how many of each should be produced to maximize p
 <section id="collect-information">
 <h3>1. Collect information<a class="headerlink" href="#collect-information" title="Permalink to this headline">#</a></h3>
 <p>Rewrite the information in the problem in the general form of an optimization problem as follows:</p>
-<p>minimize (or maximize) $f(x)$</p>
+<p>minimize (or maximize) <span class="math notranslate nohighlight">\(f(x)\)</span></p>
 <p>subject to</p>
-<p>$h(x) = 0$</p>
-<p>$g(x) \leq 0$</p>
-<p>$x \in S$</p>
+<p><span class="math notranslate nohighlight">\(h(x) = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(g(x) \leq 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(x \in S\)</span></p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Click to show the solution</p>
-<p>maximize $7x_1 + 8x_2 + 10x_3$</p>
+<p>maximize <span class="math notranslate nohighlight">\(7x_1 + 8x_2 + 10x_3\)</span></p>
 <p>subject to</p>
-<p>$x_1, x_2, x_3 \geq 0$</p>
-<p>$2x_1 + 3x_2 + 2x_3 \leq 1,000$</p>
-<p>$1x_1 + 1x_2 + 2x_3 \leq 800$</p>
-<p>where $x_1$ is the number of components of type A</p>
-<p>where $x_2$ is the number of components of type B</p>
-<p>where $x_3$ is the number of components of type C</p>
+<p><span class="math notranslate nohighlight">\(x_1, x_2, x_3 \geq 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(2x_1 + 3x_2 + 2x_3 \leq 1,000\)</span></p>
+<p><span class="math notranslate nohighlight">\(1x_1 + 1x_2 + 2x_3 \leq 800\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(x_1\)</span> is the number of components of type A</p>
+<p>where <span class="math notranslate nohighlight">\(x_2\)</span> is the number of components of type B</p>
+<p>where <span class="math notranslate nohighlight">\(x_3\)</span> is the number of components of type C</p>
 </div>
 </section>
 <section id="rearrange-equations-to-introduce-positive-slack-variables">
@@ -551,26 +551,26 @@ C is $7, $8, $10 respectively, how many of each should be produced to maximize p
 <p>Get all variables of the objective function on one side of the equation.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Click to show the solution</p>
-<p>$p = 7x_1 + 8x_2 + 10x_3$</p>
-<p>$-7x_1 + -8x_2 + -10x_3 + p = 0$</p>
+<p><span class="math notranslate nohighlight">\(p = 7x_1 + 8x_2 + 10x_3\)</span></p>
+<p><span class="math notranslate nohighlight">\(-7x_1 + -8x_2 + -10x_3 + p = 0\)</span></p>
 </div>
 <p>Add a positive slack variable to the fabrication time constraint.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Click to show the solution</p>
-<p>$2x_1 + 3x_2 + 2x_3 \leq 1,000$</p>
-<p>$2x_1 + 3x_2 + 2x_3 + s_1 = 1,000$</p>
+<p><span class="math notranslate nohighlight">\(2x_1 + 3x_2 + 2x_3 \leq 1,000\)</span></p>
+<p><span class="math notranslate nohighlight">\(2x_1 + 3x_2 + 2x_3 + s_1 = 1,000\)</span></p>
 </div>
 <p>Add a positive slack variable to the assembly time constraint.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Click to show the solution</p>
-<p>$1x_1 + 1x_2 + 2x_3 \leq 800$</p>
-<p>$1x_1 + 1x_2 + 2x_3 + s_2 = 800$</p>
+<p><span class="math notranslate nohighlight">\(1x_1 + 1x_2 + 2x_3 \leq 800\)</span></p>
+<p><span class="math notranslate nohighlight">\(1x_1 + 1x_2 + 2x_3 + s_2 = 800\)</span></p>
 </div>
 </section>
 <section id="set-up-the-simplex-tableau">
 <h3>3. Set-up the simplex tableau<a class="headerlink" href="#set-up-the-simplex-tableau" title="Permalink to this headline">#</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-67bef230-8f6b-4c34-9102-7824e2512ed7">
-<span class="eqno">(1)<a class="headerlink" href="#equation-67bef230-8f6b-4c34-9102-7824e2512ed7" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}1 &amp; x_{1}\\
+<div class="amsmath math notranslate nohighlight" id="equation-cc460edd-3033-41b9-a6c8-e3538a55bba7">
+<span class="eqno">(1)<a class="headerlink" href="#equation-cc460edd-3033-41b9-a6c8-e3538a55bba7" title="Permalink to this equation">#</a></span>\[\begin{bmatrix}1 &amp; x_{1}\\
 1 &amp; x_{2}\\
 1 &amp; x_{3}
 \end{bmatrix}\]</div>

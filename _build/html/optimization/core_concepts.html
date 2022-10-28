@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Convex Analysis" href="convex_analysis.html" />
@@ -574,84 +576,84 @@ title="Print to PDF"
 <p>This is going to be an important idea because it is going to allow us to speak about which points inisde of a set hava a little bit
 of breathing room around them and which do not. It is those points with a little bit of breathing room that we can interior points,
 and these are goin tobe fundamental to our definition of what gets to be an open set.</p>
-<p>Our story begins with a subset $A$ of the real numbers $\mathbb{R}$. as well as a point $x$ inside of that subset.</p>
+<p>Our story begins with a subset <span class="math notranslate nohighlight">\(A\)</span> of the real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. as well as a point <span class="math notranslate nohighlight">\(x\)</span> inside of that subset.</p>
 <p><img alt="Number line drawing" src="../_images/ex_set.png" /></p>
 <p>We can write this mathematically by saying:</p>
-<p>Let $A \subseteq \mathbb{R}$ be a real subset, and $x \in A$.</p>
-<p>And now we want to ask ourselves if the point $x$ has a little bit of wiggle room
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset, and <span class="math notranslate nohighlight">\(x \in A\)</span>.</p>
+<p>And now we want to ask ourselves if the point <span class="math notranslate nohighlight">\(x\)</span> has a little bit of wiggle room
 around it without leaving the set. Any points that have this wigge room are called an
 <strong>“interior point”</strong>.</p>
-<p>Imagine you are standing on the real number line at the point $x$. Can you reach out
-your arms, even just a little bit, and not touch any elements outside of $A$? This
+<p>Imagine you are standing on the real number line at the point <span class="math notranslate nohighlight">\(x\)</span>. Can you reach out
+your arms, even just a little bit, and not touch any elements outside of <span class="math notranslate nohighlight">\(A\)</span>? This
 question probably depends on how long your arms are! If you reach out too far, eventually you are going to touch something outside of your set, so you might need to
 make your arms really really short to make this happen, but as long as there is some
 small positive length of your arms that stays within your set, you are an interior point.</p>
 <p><img alt="Number line drawing" src="../_images/ex_set_person.png" /></p>
 <p>The fundamental notion that goes into this defintion is an
-<strong>“$\epsilon$-Neighborhood”</strong> or “$\epsilon$-Ball”- a ball of radius $\epsilon$
-around the point $x$. In our example, $\epsilon$ would be the length of one of your
+<strong>“<span class="math notranslate nohighlight">\(\epsilon\)</span>-Neighborhood”</strong> or “<span class="math notranslate nohighlight">\(\epsilon\)</span>-Ball”- a ball of radius <span class="math notranslate nohighlight">\(\epsilon\)</span>
+around the point <span class="math notranslate nohighlight">\(x\)</span>. In our example, <span class="math notranslate nohighlight">\(\epsilon\)</span> would be the length of one of your
 arms (by convention our arms will always be the same length, so that we are
-reaching equal distances on both sides), and since it is a length $\epsilon$ can
+reaching equal distances on both sides), and since it is a length <span class="math notranslate nohighlight">\(\epsilon\)</span> can
 never be negative.</p>
 <p><img alt="An epsilon ball" src="../_images/epsilon-ball.jpeg" /></p>
-<p>The $\epsilon$ neighborhood is the set (that we are going to call $B_\epsilon(x)$)
+<p>The <span class="math notranslate nohighlight">\(\epsilon\)</span> neighborhood is the set (that we are going to call <span class="math notranslate nohighlight">\(B_\epsilon(x)\)</span>)
 that consists of all the real numbers which are at a distance of less than
-$\epsilon$ away from us at $x$. So that would be the open interval from $x-\epsilon$
-to $x+\epsilon$</p>
+<span class="math notranslate nohighlight">\(\epsilon\)</span> away from us at <span class="math notranslate nohighlight">\(x\)</span>. So that would be the open interval from <span class="math notranslate nohighlight">\(x-\epsilon\)</span>
+to <span class="math notranslate nohighlight">\(x+\epsilon\)</span></p>
 <p><img alt="Number line drawing" src="../_images/ex_set_labeled.png" /></p>
-<p>We can formally define the $\epsilon$-neighborhood at $x$ as the set $B_\epsilon(x) = (x-\epsilon, x+\epsilon)={t \in \mathbb{R}: |x-t| &lt; \epsilon}$.</p>
-<p>We want to call $x$ an interior point of $A$ if its true that if my arms are short enough, I can reach out to both sides of myself and not touch anything that’s outside of $A$.</p>
-<p>To make this mathmatical we can say that the $\epsilon$ neightborhood at $x$
-(everything you can touch) is a subset of $A$, or:</p>
-<p><strong>$x$ is an interior point if $B_\epsilon(x) \subseteq A$</strong></p>
-<p>This definition just says that I am an interior point if I have an $\epsilon$-ball, even if it is a really really small one, as long as it has a positive radius, centered at me which is entirely within the set A.</p>
+<p>We can formally define the <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood at <span class="math notranslate nohighlight">\(x\)</span> as the set <span class="math notranslate nohighlight">\(B_\epsilon(x) = (x-\epsilon, x+\epsilon)=\{t \in \mathbb{R}: |x-t| &lt; \epsilon\}\)</span>.</p>
+<p>We want to call <span class="math notranslate nohighlight">\(x\)</span> an interior point of <span class="math notranslate nohighlight">\(A\)</span> if its true that if my arms are short enough, I can reach out to both sides of myself and not touch anything that’s outside of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>To make this mathmatical we can say that the <span class="math notranslate nohighlight">\(\epsilon\)</span> neightborhood at <span class="math notranslate nohighlight">\(x\)</span>
+(everything you can touch) is a subset of <span class="math notranslate nohighlight">\(A\)</span>, or:</p>
+<p><strong><span class="math notranslate nohighlight">\(x\)</span> is an interior point if <span class="math notranslate nohighlight">\(B_\epsilon(x) \subseteq A\)</span></strong></p>
+<p>This definition just says that I am an interior point if I have an <span class="math notranslate nohighlight">\(\epsilon\)</span>-ball, even if it is a really really small one, as long as it has a positive radius, centered at me which is entirely within the set A.</p>
 <p>All we need is one example, we don’t need this to be true for a bunch of differnet
-arm lengths or radii- we just need a single positive value of $\epsilon$ where this
+arm lengths or radii- we just need a single positive value of <span class="math notranslate nohighlight">\(\epsilon\)</span> where this
 is true to be able to call our point an interior point.</p>
 <p>All of the interior points of a set are called the interior of the set, i.e. the
-<strong>interior of $A$</strong> (int($A$) of $A^{\mathrm{o}}$) is the set of all interior
-points of $A$.</p>
+<strong>interior of <span class="math notranslate nohighlight">\(A\)</span></strong> (int(<span class="math notranslate nohighlight">\(A\)</span>) of <span class="math notranslate nohighlight">\(A^{\mathrm{o}}\)</span>) is the set of all interior
+points of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p>Now lets take an example:</p>
-<p>What is the interior of $A = [-2,4)\cap{6}$?</p>
+<p>What is the interior of <span class="math notranslate nohighlight">\(A = [-2,4)\cap\{6\}\)</span>?</p>
 <p>Our set A is the interval from -2 to 4, includsive of -2 unioned together with the
 singleton point at 6.</p>
 <p>First, lets sketch it out:</p>
 <p><img alt="Number line drawing" src="../_images/ex.png" /></p>
 <p>-2 is a solid circle since we are including -2, 4 will be an open circle since we are
 not including 4 and another solid circle at 6.</p>
-<p>Now lets figure out what points are interiour points of $A$ by imagning standing at various points in this set and then ask the question can I reach out my arms without leaving the set, even if my arms have to really really tiny.</p>
+<p>Now lets figure out what points are interiour points of <span class="math notranslate nohighlight">\(A\)</span> by imagning standing at various points in this set and then ask the question can I reach out my arms without leaving the set, even if my arms have to really really tiny.</p>
 <p>Where can I stand and stretch my arms?</p>
-<p>The first place to test, is right smack in the middle, anywhere between -2 and 4 but not at one of those end points. Is it possible for me to stand and stretch out my arms as 1, or $-\sqrt2$ or $\pi$? Any of those numbers are between -2 and 4. Yes, I cans stretch out my arms even if it has to be a very small amount, even if I’m standing at 3.999 there is some small little radius I can stretch out and my
-$\epsilon$-neighborhood be entirely contained within $A$.</p>
+<p>The first place to test, is right smack in the middle, anywhere between -2 and 4 but not at one of those end points. Is it possible for me to stand and stretch out my arms as 1, or <span class="math notranslate nohighlight">\(-\sqrt2\)</span> or <span class="math notranslate nohighlight">\(\pi\)</span>? Any of those numbers are between -2 and 4. Yes, I cans stretch out my arms even if it has to be a very small amount, even if I’m standing at 3.999 there is some small little radius I can stretch out and my
+<span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood be entirely contained within <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p><img alt="Number line drawing" src="../_images/ex_pt_1.png" /></p>
-<p>So if x is any point between -2 and 4, exxclusuve of the endpoints, then $x$ is going
-to be one of the interior points of $A$.</p>
+<p>So if x is any point between -2 and 4, exxclusuve of the endpoints, then <span class="math notranslate nohighlight">\(x\)</span> is going
+to be one of the interior points of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p>But that does not cover the endpoints.</p>
 <p>Can I stand at number 4 and stretch out my arms? Well the problem here is that there
-is nowhere for me to stand. Because our set $A$ does not include the point 4, 4 could
+is nowhere for me to stand. Because our set <span class="math notranslate nohighlight">\(A\)</span> does not include the point 4, 4 could
 never be an interior point. This is a fundamental rule of interior points, <strong>to be an
-interior point of $A$, the point has to first be an element of that set</strong>. So 4 is
+interior point of <span class="math notranslate nohighlight">\(A\)</span>, the point has to first be an element of that set</strong>. So 4 is
 NOT and interior point.</p>
 <p><img alt="Number line drawing" src="../_images/ex_pt_2.png" /></p>
 <p>What about 6?</p>
-<p>I can stand at 6 because it is an element of $A$, but can I stretch out my arms
+<p>I can stand at 6 because it is an element of <span class="math notranslate nohighlight">\(A\)</span>, but can I stretch out my arms
 without leaving the set? The answer this time in no. No matter how short my arms are
-as soon as I reach out to either side (i.e to 5.99 or 6.01), I am outside of $A$. So
-even though 6 is an element of $A$ is does not get to be an interior point.</p>
+as soon as I reach out to either side (i.e to 5.99 or 6.01), I am outside of <span class="math notranslate nohighlight">\(A\)</span>. So
+even though 6 is an element of <span class="math notranslate nohighlight">\(A\)</span> is does not get to be an interior point.</p>
 <p><img alt="Number line drawing" src="../_images/ex_pt_3.png" /></p>
 <p>As you might imagine, the same is true about -2. When I stand at -2 and reach out my arms to both sides, ther is one direction that I can reach, but if I reach to the left (i.e. to the more negative side of the number line),  there are no more elements
-of $A$ for me to touch, no matter how short my arm is. So -2 also does not get to be
-an interior point of $A$. This is an example of a key part of the definition of an
-interior point, the $\epsilon$-neighborhood must go on both sides of the point and
+of <span class="math notranslate nohighlight">\(A\)</span> for me to touch, no matter how short my arm is. So -2 also does not get to be
+an interior point of <span class="math notranslate nohighlight">\(A\)</span>. This is an example of a key part of the definition of an
+interior point, the <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood must go on both sides of the point and
 be centered at the point.</p>
 <p><img alt="Number line drawing" src="../_images/ex_pt_4.png" /></p>
-<p>So taking stock, the interior of $A$ is going to consist of only the real numbers between -2 and 4 but its not going to include -2 because of the arm that reaches outside of $A$ and it’s not going to icnlude 4 because 4 wasn’t in the set in the first place and it’s not going to include 6 because no matter how short my arms are at 6 I can’t reach out without touching something that’s outside of the set. So the interior should consist just of the open interval -2 to 4, or:</p>
-<p>$\textrm{int}(A) = (-2, 4)$</p>
+<p>So taking stock, the interior of <span class="math notranslate nohighlight">\(A\)</span> is going to consist of only the real numbers between -2 and 4 but its not going to include -2 because of the arm that reaches outside of <span class="math notranslate nohighlight">\(A\)</span> and it’s not going to icnlude 4 because 4 wasn’t in the set in the first place and it’s not going to include 6 because no matter how short my arms are at 6 I can’t reach out without touching something that’s outside of the set. So the interior should consist just of the open interval -2 to 4, or:</p>
+<p><span class="math notranslate nohighlight">\(\textrm{int}(A) = (-2, 4)\)</span></p>
 <div class="tip admonition">
 <p class="admonition-title">Definition: Interior Point</p>
-<p>Let $A \subseteq \mathbb{R}$ be a real subset and $x \in A$</p>
-<p>$x$ is an <strong>interior point</strong> of $A$ if there exists $\epsilon &gt; 0$ such that</p>
-<p>$B_\epsilon(x) \subseteq A$</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset and <span class="math notranslate nohighlight">\(x \in A\)</span></p>
+<p><span class="math notranslate nohighlight">\(x\)</span> is an <strong>interior point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> such that</p>
+<p><span class="math notranslate nohighlight">\(B_\epsilon(x) \subseteq A\)</span></p>
 </div>
 </section>
 <section id="open-sets">
@@ -668,18 +670,18 @@ really have an edge.</p>
 <p>Now that we know what an interior point is, we can say that an <strong>open set is a set
 whose points are all interior points</strong>.</p>
 <p><img alt="An open set" src="../_images/diagram.jpg" /></p>
-<p>More mathematically, a subset $A \subseteq \mathbb{R}$ is an open set is every point $x \in A$ is an interior point of $A$.</p>
+<p>More mathematically, a subset <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> is an open set is every point <span class="math notranslate nohighlight">\(x \in A\)</span> is an interior point of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p>We can spell this out explicitly with the definition of an interior point:</p>
-<p>A is an open set if for ALL $x \in A$ there exists $\epsilon &gt; 0$ such that $B_\epsilon(x) \subseteq A$.</p>
-<p>We’ve previouslty defined the interior of a set- the set of all of its interior points. Because an open set has interior points for all of its points, for an open set $\textrm{int}(A) = A$.</p>
-<p>The most obvious example of an open set may be a finite open interval, an open interval from point $a$ to point $b$, exclusive of those points.</p>
+<p>A is an open set if for ALL <span class="math notranslate nohighlight">\(x \in A\)</span> there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> such that <span class="math notranslate nohighlight">\(B_\epsilon(x) \subseteq A\)</span>.</p>
+<p>We’ve previouslty defined the interior of a set- the set of all of its interior points. Because an open set has interior points for all of its points, for an open set <span class="math notranslate nohighlight">\(\textrm{int}(A) = A\)</span>.</p>
+<p>The most obvious example of an open set may be a finite open interval, an open interval from point <span class="math notranslate nohighlight">\(a\)</span> to point <span class="math notranslate nohighlight">\(b\)</span>, exclusive of those points.</p>
 <p><img alt="Number line drawing" src="../_images/open_set_number_line.jpg" /></p>
-<p>You can stand on any point $x$ within $I$ and you will always be able to reach out your arms, even if it is just a small amount. Even as you approach very close to either endpoint $a$ or $b$, because they are not included you will always be able to get that wiggle room.</p>
+<p>You can stand on any point <span class="math notranslate nohighlight">\(x\)</span> within <span class="math notranslate nohighlight">\(I\)</span> and you will always be able to reach out your arms, even if it is just a small amount. Even as you approach very close to either endpoint <span class="math notranslate nohighlight">\(a\)</span> or <span class="math notranslate nohighlight">\(b\)</span>, because they are not included you will always be able to get that wiggle room.</p>
 <p><img alt="Number line drawing" src="../_images/open_set_w_person.jpg" /></p>
 <div class="tip admonition">
 <p class="admonition-title">Definition: Open Set</p>
-<p>A subset $A \subseteq \mathbb{R}$ is an <strong>open set</strong> is every point $x \in A$ is an interior point of A</p>
-<p>int$(A) = A$</p>
+<p>A subset <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> is an <strong>open set</strong> is every point <span class="math notranslate nohighlight">\(x \in A\)</span> is an interior point of A</p>
+<p>int<span class="math notranslate nohighlight">\((A) = A\)</span></p>
 </div>
 </section>
 <section id="isolated-points-and-discrete-sets">
@@ -687,126 +689,126 @@ whose points are all interior points</strong>.</p>
 <p>While interior points have wiggle room, there are other points that do not. What if no one in my neighborhood is part of my set except for myself?</p>
 <p>We call these points isolated points. If you stand on an isolated point, you cannot reach your arms, everything you touch is not a part of your set.</p>
 <p>Sets that are made up entirely of isolated points are called discrete sets.</p>
-<p>Suppose that I have a subset of the real line, $A$, that looks like this:</p>
+<p>Suppose that I have a subset of the real line, <span class="math notranslate nohighlight">\(A\)</span>, that looks like this:</p>
 <p><img alt="Set A" src="../_images/discrete_set.jpg" /></p>
-<p>I want to know what it would look like to be a point that stand alone from the set in my $\epsilon$-neighborhood.</p>
-<p>First off, I know what I wouldn’t look like. I wouldn’t look like one of the interior points, where all of my neighbors are part of $A$.</p>
+<p>I want to know what it would look like to be a point that stand alone from the set in my <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood.</p>
+<p>First off, I know what I wouldn’t look like. I wouldn’t look like one of the interior points, where all of my neighbors are part of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p><img alt="Interior point of A" src="../_images/discrete_set_interior_point.jpg" /></p>
-<p>We want to look at the opposite of that, when none of my neighbors (within an $\epsilon$ arm’s reach) are a part of $A$. The singleton part of our set is a candaidate for such a point.</p>
-<p>If you imagine standing on thie point and reaching out your arms, nothing you touch would be a member of $A$.</p>
+<p>We want to look at the opposite of that, when none of my neighbors (within an <span class="math notranslate nohighlight">\(\epsilon\)</span> arm’s reach) are a part of <span class="math notranslate nohighlight">\(A\)</span>. The singleton part of our set is a candaidate for such a point.</p>
+<p>If you imagine standing on thie point and reaching out your arms, nothing you touch would be a member of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p><img alt="Isolated point of A" src="../_images/discrete_set_iso_point.jpg" /></p>
 <p>This point is like a hermit, living up on a mountain top with no neighbors or friends from its set.</p>
-<p>Of course, if you had very long arms you could reach a neighbor, so to be an isolated point, there just has to be one positive value for $\epsilon$ where this is true to be considered an isolated point.</p>
+<p>Of course, if you had very long arms you could reach a neighbor, so to be an isolated point, there just has to be one positive value for <span class="math notranslate nohighlight">\(\epsilon\)</span> where this is true to be considered an isolated point.</p>
 <p>Lets come up with a more mathematical definition for what makes a point an isolated point.</p>
-<p>Let $A \subseteq \mathbb{R}$, and $x \in A$.
-$x$ is an isolated point of $A$ if there exists $\epsilon &gt; 0$:</p>
-<p>$B_\epsilon(x) \cap A = {x}$</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span>, and <span class="math notranslate nohighlight">\(x \in A\)</span>.
+<span class="math notranslate nohighlight">\(x\)</span> is an isolated point of <span class="math notranslate nohighlight">\(A\)</span> if there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A = \{x\}\)</span></p>
 <p>In plain english this means, that my armspan and A have only me in common for at least one positive lengths of my arms.</p>
-<p>Another term for an isolate point, is to say they are <strong>bounded away</strong> from the rest of the set $A$ by at least $\epsilon$.</p>
+<p>Another term for an isolate point, is to say they are <strong>bounded away</strong> from the rest of the set <span class="math notranslate nohighlight">\(A\)</span> by at least <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
 <p>A set is called a <strong>discrete set</strong> if all of its points are isolated.</p>
-<p>The model example for a discrete set is the set of integers as a subset of the real number line ($\mathbb{Z}$).</p>
+<p>The model example for a discrete set is the set of integers as a subset of the real number line (<span class="math notranslate nohighlight">\(\mathbb{Z}\)</span>).</p>
 <p>If we diagram out the set of integers on the number line, it looks like a a bunch of these isolated points, disconnected from one another.</p>
 <p><img alt="Z on a number line" src="../_images/integers.jpg" /></p>
 <p>All of these integers are bounded away from the rest of the set by a minimum distance of 1, so theres no other integer within a shorter arms reach than that.</p>
-<p>If we pick any arbitrary integer and stand on that point, as long as my $\epsilon$ arms are shorter than 1, we satisify the defintion of an isolated points.</p>
+<p>If we pick any arbitrary integer and stand on that point, as long as my <span class="math notranslate nohighlight">\(\epsilon\)</span> arms are shorter than 1, we satisify the defintion of an isolated points.</p>
 <p><img alt="Isolated point of Z" src="../_images/integers_iso_point.jpg" /></p>
 <div class="tip admonition">
 <p class="admonition-title">Definition: Isolated Point</p>
-<p>Let $A \subseteq \mathbb{R}$ be a real subset and $x \in A$</p>
-<p>$x$ is an <strong>isolated point</strong> of $A$ if there exists $\epsilon &gt; 0$ such that</p>
-<p>$B_\epsilon(x) \cap A = {x}$</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset and <span class="math notranslate nohighlight">\(x \in A\)</span></p>
+<p><span class="math notranslate nohighlight">\(x\)</span> is an <strong>isolated point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if there exists <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> such that</p>
+<p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A = \{x\}\)</span></p>
 </div>
 </section>
 <section id="boundary-points-of-a-set">
 <h2>Boundary Points of a Set<a class="headerlink" href="#boundary-points-of-a-set" title="Permalink to this headline">#</a></h2>
 <p>We’ve defined what an open set is, and now we want to define its opposite- a <strong>closed set</strong>. A simplistic definition that may come to mind is that a closed set is a set that includes its endpoints.</p>
 <p>The problem with that definition is that we do not know how to define the endpoints.</p>
-<p>Lets take a look at the following set, $A$:</p>
+<p>Lets take a look at the following set, <span class="math notranslate nohighlight">\(A\)</span>:</p>
 <p><img alt="Set" src="../_images/A.jpg" /></p>
-<p>Intuitively, we may want to say that the points “on the edge” of $A$ should be the boundary points.</p>
+<p>Intuitively, we may want to say that the points “on the edge” of <span class="math notranslate nohighlight">\(A\)</span> should be the boundary points.</p>
 <p><img alt="Set with candidate boundary points" src="../_images/A_w_candidates.jpg" /></p>
-<p>If we imagine standing on point $x$, and sticking our arms out, we will be able to reach elements that are in $A$ on one side, and elements that are not in $A$ on the other.</p>
+<p>If we imagine standing on point <span class="math notranslate nohighlight">\(x\)</span>, and sticking our arms out, we will be able to reach elements that are in <span class="math notranslate nohighlight">\(A\)</span> on one side, and elements that are not in <span class="math notranslate nohighlight">\(A\)</span> on the other.</p>
 <p><img alt="X person" src="../_images/x_person.jpg" /></p>
 <p>Or more mathematically,</p>
-<p>$B_\epsilon(x) \cap A \neq 0 \textrm{ and } B_\epsilon(x) \cap A^C \neq 0$</p>
-<p>Now, if we imagine standing on point $y$, we satisfy this definition, and are therefore a boundary point, even though $y$ is not an element of $A$. This is an immportant distinction from interior points, <strong>points not in $A$ can still be boundary points of $A$</strong>.</p>
+<p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A \neq 0 \textrm{ and } B_\epsilon(x) \cap A^C \neq 0\)</span></p>
+<p>Now, if we imagine standing on point <span class="math notranslate nohighlight">\(y\)</span>, we satisfy this definition, and are therefore a boundary point, even though <span class="math notranslate nohighlight">\(y\)</span> is not an element of <span class="math notranslate nohighlight">\(A\)</span>. This is an immportant distinction from interior points, <strong>points not in <span class="math notranslate nohighlight">\(A\)</span> can still be boundary points of <span class="math notranslate nohighlight">\(A\)</span></strong>.</p>
 <p><img alt="Y person" src="../_images/y_person.jpg" /></p>
-<p>So we can proceed out mathematical definition of a boundary point by defining $A$ as a subset of the real numbers, and our boundary point $x$ as a member of the real numbers, rather than as a member of $A$:</p>
-<p>Let $A \subseteq \mathbb{R}$ and $x \in \mathbb{R}$:</p>
-<p>Now if we stand on the isolated point, point $z$, you may think that it is not a boundary point, because your arms are only touching elements outside of $A$, and nothing within it.</p>
+<p>So we can proceed out mathematical definition of a boundary point by defining <span class="math notranslate nohighlight">\(A\)</span> as a subset of the real numbers, and our boundary point <span class="math notranslate nohighlight">\(x\)</span> as a member of the real numbers, rather than as a member of <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>:</p>
+<p>Now if we stand on the isolated point, point <span class="math notranslate nohighlight">\(z\)</span>, you may think that it is not a boundary point, because your arms are only touching elements outside of <span class="math notranslate nohighlight">\(A\)</span>, and nothing within it.</p>
 <p><img alt="Z person" src="../_images/z_person.jpg" /></p>
-<p>But remember our defintion of the $\epsilon$-neighborhood ($B_\epsilon(x)$) implicitly includes the point itself. So our defintion $B_\epsilon(x) \cap A \neq 0$ and $B_\epsilon(x) \cap A^C \neq 0$ is still true for point $z$ and it is therefore a boundary point.</p>
-<p>Now imagine, standing at this point $p$ and reaching your arms out extra far, so that you are able to reach outside of $A$. Does this make it a boundary point?</p>
+<p>But remember our defintion of the <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood (<span class="math notranslate nohighlight">\(B_\epsilon(x)\)</span>) implicitly includes the point itself. So our defintion <span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A \neq 0\)</span> and <span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A^C \neq 0\)</span> is still true for point <span class="math notranslate nohighlight">\(z\)</span> and it is therefore a boundary point.</p>
+<p>Now imagine, standing at this point <span class="math notranslate nohighlight">\(p\)</span> and reaching your arms out extra far, so that you are able to reach outside of <span class="math notranslate nohighlight">\(A\)</span>. Does this make it a boundary point?</p>
 <p><img alt="Long arms" src="../_images/long_arms.jpg" /></p>
-<p>No! So to modify our definition we will say that for <strong>all</strong> $\epsilon$ values we must satisify our definition of a boundary point.</p>
+<p>No! So to modify our definition we will say that for <strong>all</strong> <span class="math notranslate nohighlight">\(\epsilon\)</span> values we must satisify our definition of a boundary point.</p>
 <p>Bringing together all of our definitions we can say that:</p>
 <div class="tip admonition">
 <p class="admonition-title">Definition: Boundary Point</p>
-<p>Let $A \subseteq \mathbb{R}$ be a real subset and $x \in \mathbb{R}$ be a real number.</p>
-<p>We call $x$ a <strong>boundary point</strong> of $A$ if for all $\epsilon &gt; 0$ we have both</p>
-<p>$B_\epsilon(x) \cap A \neq 0 \textrm{ and } B_\epsilon(x) \cap A^C \neq 0$</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset and <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> be a real number.</p>
+<p>We call <span class="math notranslate nohighlight">\(x\)</span> a <strong>boundary point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if for all <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> we have both</p>
+<p><span class="math notranslate nohighlight">\(B_\epsilon(x) \cap A \neq 0 \textrm{ and } B_\epsilon(x) \cap A^C \neq 0\)</span></p>
 </div>
 </section>
 <section id="accumulation-points">
 <h2>Accumulation Points<a class="headerlink" href="#accumulation-points" title="Permalink to this headline">#</a></h2>
 <p>Most simply, accumulation points are points that have a lot of the set on one side and no set on the other side.</p>
-<p>Let’s take a look at our set $A$ where we defined 4 boundary points:</p>
+<p>Let’s take a look at our set <span class="math notranslate nohighlight">\(A\)</span> where we defined 4 boundary points:</p>
 <p><img alt="Boundary points of A" src="../_images/A_bnd.jpg" /></p>
-<p>Some boundary points are qualitatively different from others, there are some that really are “on the edge” of $A$.</p>
-<p>We know that isolated points will always be boundary poitns, because by definition they will always reach a point of $A$ themselves, and points outside of $A$.</p>
-<p>But you can also be a boundary point without being in $A$ yourself. In order to be a boundary point in this case, you have to be able to touch a point of $A$ no matter how short your arms are.</p>
-<p>For a boundary point, this point within $A$ can be yourself, like in isolated points.</p>
-<p>But the point within $A$ could also be a point other than yourself, as is the case with a boundary point that is not a member of $A$ itself.</p>
+<p>Some boundary points are qualitatively different from others, there are some that really are “on the edge” of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>We know that isolated points will always be boundary poitns, because by definition they will always reach a point of <span class="math notranslate nohighlight">\(A\)</span> themselves, and points outside of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>But you can also be a boundary point without being in <span class="math notranslate nohighlight">\(A\)</span> yourself. In order to be a boundary point in this case, you have to be able to touch a point of <span class="math notranslate nohighlight">\(A\)</span> no matter how short your arms are.</p>
+<p>For a boundary point, this point within <span class="math notranslate nohighlight">\(A\)</span> can be yourself, like in isolated points.</p>
+<p>But the point within <span class="math notranslate nohighlight">\(A\)</span> could also be a point other than yourself, as is the case with a boundary point that is not a member of <span class="math notranslate nohighlight">\(A\)</span> itself.</p>
 <p>The term accumulation point differentiates between these two types of boundary points.</p>
-<p>Specifically an accumulation point touches an element of $A$ that is not itself no matter how short its arms get. We denote this point other than ourself ($x$) as the point $y$.</p>
+<p>Specifically an accumulation point touches an element of <span class="math notranslate nohighlight">\(A\)</span> that is not itself no matter how short its arms get. We denote this point other than ourself (<span class="math notranslate nohighlight">\(x\)</span>) as the point <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <p><img alt="Accumulation of A" src="../_images/A_acc.jpg" /></p>
 <div class="tip admonition">
 <p class="admonition-title">Definition: Accumulation Point</p>
-<p>Let $A \subseteq \mathbb{R}$ be a real subset and $x \in \mathbb{R}$ be a real nuber.</p>
-<p>We call $x$ a <strong>accumulation point</strong> of $A$ if for all $\epsilon &gt; 0$ there exists $y \in A$ such that</p>
-<p>$y \neq x$ and $y \in B_\epsilon(x) \cap A$</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subseteq \mathbb{R}\)</span> be a real subset and <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> be a real nuber.</p>
+<p>We call <span class="math notranslate nohighlight">\(x\)</span> a <strong>accumulation point</strong> of <span class="math notranslate nohighlight">\(A\)</span> if for all <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> there exists <span class="math notranslate nohighlight">\(y \in A\)</span> such that</p>
+<p><span class="math notranslate nohighlight">\(y \neq x\)</span> and <span class="math notranslate nohighlight">\(y \in B_\epsilon(x) \cap A\)</span></p>
 </div>
-<p>For our set $A$, the accumumation points include the non isolated boundary points and all of the interior points.</p>
-<p>Interior points are by definition accumulation points because everything they touch is an element of $A$.</p>
-<p>We call the set of all the interior points of $A$ the <strong>derived set</strong> or $A’$, it is important to note that not all memebers of $A’$ will be members of $A$.</p>
+<p>For our set <span class="math notranslate nohighlight">\(A\)</span>, the accumumation points include the non isolated boundary points and all of the interior points.</p>
+<p>Interior points are by definition accumulation points because everything they touch is an element of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>We call the set of all the interior points of <span class="math notranslate nohighlight">\(A\)</span> the <strong>derived set</strong> or <span class="math notranslate nohighlight">\(A'\)</span>, it is important to note that not all memebers of <span class="math notranslate nohighlight">\(A'\)</span> will be members of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 </section>
 <section id="closure-of-a-set">
 <h2>Closure of a Set<a class="headerlink" href="#closure-of-a-set" title="Permalink to this headline">#</a></h2>
-<p>We can then create a superset that includes A and all of its accumulation points, and we call this the <strong>closure of $A$</strong> or $\bar{A}$.</p>
-<p>We can now create a continuum of the set $A$ in relation to its boundary points.</p>
-<p>If we have a set $A$, ee can first define the interior points ($A^{\mathrm{o}}$), which includes none of its boundary points, $A \setminus \delta A$.</p>
-<p>And we can then define the closure of A, which includes all of the boundary points, specifically the union of $A$ and its accumulation points, $A \cup A’$</p>
+<p>We can then create a superset that includes A and all of its accumulation points, and we call this the <strong>closure of <span class="math notranslate nohighlight">\(A\)</span></strong> or <span class="math notranslate nohighlight">\(\bar{A}\)</span>.</p>
+<p>We can now create a continuum of the set <span class="math notranslate nohighlight">\(A\)</span> in relation to its boundary points.</p>
+<p>If we have a set <span class="math notranslate nohighlight">\(A\)</span>, ee can first define the interior points (<span class="math notranslate nohighlight">\(A^{\mathrm{o}}\)</span>), which includes none of its boundary points, <span class="math notranslate nohighlight">\(A \setminus \delta A\)</span>.</p>
+<p>And we can then define the closure of A, which includes all of the boundary points, specifically the union of <span class="math notranslate nohighlight">\(A\)</span> and its accumulation points, <span class="math notranslate nohighlight">\(A \cup A'\)</span></p>
 <p>So that:
-$A^{\mathrm{o}} \subseteq A \subseteq \bar{A}$</p>
+<span class="math notranslate nohighlight">\(A^{\mathrm{o}} \subseteq A \subseteq \bar{A}\)</span></p>
 <p><img alt="Spectrum" src="../_images/spectrum.jpg" /></p>
 </section>
 <section id="closed-sets">
 <h2>Closed Sets<a class="headerlink" href="#closed-sets" title="Permalink to this headline">#</a></h2>
 <p>The intuituion behind a closed set is that anything that can touch the set is in the set.</p>
-<p>The simplest example of a closed set is <strong>the</strong> closed set from point $a$ to $b$, or $A = {a, b}$.</p>
+<p>The simplest example of a closed set is <strong>the</strong> closed set from point <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, or <span class="math notranslate nohighlight">\(A = {a, b}\)</span>.</p>
 <p><img alt="The closed set from a to b" src="../_images/closed_set.jpg" /></p>
-<p>To be a closed set, $A$ must include all of its boundary points, including its accumulation points.</p>
-<p>We know that all of the interior points of the set are accumulation points since there those points will always be able to reach another element of $A$.</p>
+<p>To be a closed set, <span class="math notranslate nohighlight">\(A\)</span> must include all of its boundary points, including its accumulation points.</p>
+<p>We know that all of the interior points of the set are accumulation points since there those points will always be able to reach another element of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p><img alt="Interior accumulation points of A" src="../_images/closed_set_int_points.jpg" /></p>
-<p>The final points, $a$ and $b$ are also accumulation points because they can also reach a point of $A$ other than themselves.</p>
+<p>The final points, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are also accumulation points because they can also reach a point of <span class="math notranslate nohighlight">\(A\)</span> other than themselves.</p>
 <p><img alt="Boundary accumulation points of A" src="../_images/closed_set_bnd_pts.jpg" /></p>
 <p>We could also draw a discrete set that looks like this:</p>
 <p><img alt="A discrete set" src="../_images/integers1.jpg" /></p>
-<p>This set is a closed set because every point is a boundary point, since its $\epsilon$-neighborhood includes a point of $A$ (itself) and points outstide of $A$.</p>
+<p>This set is a closed set because every point is a boundary point, since its <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood includes a point of <span class="math notranslate nohighlight">\(A\)</span> (itself) and points outstide of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p><img alt="A discrete point is a boundary point" src="../_images/integers_bnd_pts.jpg" /></p>
 <p>But does this mean that all discrete sets are closed sets?</p>
-<p>To answer that question, lets look at the set $A = {2^{-n}: n \geq 0}$.</p>
+<p>To answer that question, lets look at the set <span class="math notranslate nohighlight">\(A = \{2^{-n}: n \geq 0\}\)</span>.</p>
 <p><img alt="A" src="../_images/discrete_set1.jpg" /></p>
-<p>Each of these points is a bounary point, since even though the points are getting closer, there will always be an $\epsilon$-neighborhood that reaches outside of $A$.</p>
+<p>Each of these points is a bounary point, since even though the points are getting closer, there will always be an <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood that reaches outside of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p><img alt="A boundary points" src="../_images/discrete_set_bnd_pts.jpg" /></p>
-<p>But there is one boundary point that is not included in the set at the point 0. Even though 0 is not in the set it is an accumulation point because it can always reach a point of $A$, no matter how small the $\epsilon$-neighborhood is.</p>
+<p>But there is one boundary point that is not included in the set at the point 0. Even though 0 is not in the set it is an accumulation point because it can always reach a point of <span class="math notranslate nohighlight">\(A\)</span>, no matter how small the <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood is.</p>
 <p><img alt="0 is an accumulation point" src="../_images/discrete_set_acc_pt.jpg" /></p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="how-are-open-and-closed-sets-related">
 <h1>How are open and closed sets related?<a class="headerlink" href="#how-are-open-and-closed-sets-related" title="Permalink to this headline">#</a></h1>
 <p>Closed sets are the complement of open sets.</p>
-<p>Everything has to belong to wither $A$ or $A^C$</p>
+<p>Everything has to belong to wither <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(A^C\)</span></p>
 </section>
 
     <script type="text/x-thebe-config">
