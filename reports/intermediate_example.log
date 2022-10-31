@@ -1,0 +1,62 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+reacs =["Vglc","V1","V2","Vp","VA","VB","V3","Vo2","Vco2","Vgrow","Vm","V4","Vf"]
+metabs = ["Glc","Pyr","A","B","O2","CO2","ATP","ADP","Biomass"]
+
+n = len(reacs)
+m = len(metabs)
+
+S=np.array([[1  , -1  ,  -1 ,    0  ,   0  ,   0  ,   0  ,   0  ,   0   ,  0  ,   0   ,  0   ,  0],
+[0  ,  0   ,  2   , -1   ,  0   ,  0   , -1  ,   0  ,   0  ,   0   ,  0  ,  -1  ,   0],
+[0  ,  1  ,   0   ,  0  ,  -1   ,  0  ,   0  ,   0  ,   0  ,  -1   ,  0   ,  0  ,   0],     
+[0  ,  0  ,   0   ,  0   ,  0  ,  -1   ,  0  ,   0   ,  0  ,  -1   ,  0   ,  1  ,   0],    
+[0  ,  0  ,   0   ,  0   ,  0   ,  0  ,  -1   ,  1   ,  0  ,   0   ,  0  ,   0   ,  0],     
+[0  ,  0  ,   0   ,  0  ,   0   ,  0   ,  1   ,  0  ,  -1  ,   0   ,  0  ,   0   ,  0],     
+[0  , -3  ,   2  ,   0  ,   0   ,  0   , 10  ,   0  ,  0   ,  0  ,  -1  ,  -6  ,  0],     
+[0  ,  3  ,  -2  ,   0   ,  0   ,  0  , -10  ,   0  ,   0   ,  0  ,   1   ,  6  ,  0],    
+[0  ,  0  ,   0  ,   0   ,  0   ,  0  ,   0   ,  0   ,  0   ,  1   ,  0   ,  0   , -1]])
+
+print("STOICHIOMETRIC MATRIX")
+colormap = sns.color_palette("Greens") 
+sns.heatmap(S, annot=True,  linewidths=.5, xticklabels=reacs,yticklabels=metabs,cmap="PiYG")
+plt.yticks(rotation=0) 
+plt.show()
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn [1], line 7[0m
+[1;32m      4[0m n [38;5;241m=[39m [38;5;28mlen[39m(reacs)
+[1;32m      5[0m m [38;5;241m=[39m [38;5;28mlen[39m(metabs)
+[0;32m----> 7[0m S[38;5;241m=[39m[43mnp[49m[38;5;241m.[39marray([[[38;5;241m1[39m  , [38;5;241m-[39m[38;5;241m1[39m  ,  [38;5;241m-[39m[38;5;241m1[39m ,    [38;5;241m0[39m  ,   [38;5;241m0[39m  ,   [38;5;241m0[39m  ,   [38;5;241m0[39m  ,   [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m   ,  [38;5;241m0[39m],
+[1;32m      8[0m [[38;5;241m0[39m  ,  [38;5;241m0[39m   ,  [38;5;241m2[39m   , [38;5;241m-[39m[38;5;241m1[39m   ,  [38;5;241m0[39m   ,  [38;5;241m0[39m   , [38;5;241m-[39m[38;5;241m1[39m  ,   [38;5;241m0[39m  ,   [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m  ,  [38;5;241m-[39m[38;5;241m1[39m  ,   [38;5;241m0[39m],
+[1;32m      9[0m [[38;5;241m0[39m  ,  [38;5;241m1[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m  ,  [38;5;241m-[39m[38;5;241m1[39m   ,  [38;5;241m0[39m  ,   [38;5;241m0[39m  ,   [38;5;241m0[39m  ,   [38;5;241m0[39m  ,  [38;5;241m-[39m[38;5;241m1[39m   ,  [38;5;241m0[39m   ,  [38;5;241m0[39m  ,   [38;5;241m0[39m],     
+[1;32m     10[0m [[38;5;241m0[39m  ,  [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m   ,  [38;5;241m0[39m  ,  [38;5;241m-[39m[38;5;241m1[39m   ,  [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m  ,  [38;5;241m-[39m[38;5;241m1[39m   ,  [38;5;241m0[39m   ,  [38;5;241m1[39m  ,   [38;5;241m0[39m],    
+[1;32m     11[0m [[38;5;241m0[39m  ,  [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m   ,  [38;5;241m0[39m   ,  [38;5;241m0[39m  ,  [38;5;241m-[39m[38;5;241m1[39m   ,  [38;5;241m1[39m   ,  [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m],     
+[1;32m     12[0m [[38;5;241m0[39m  ,  [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m   ,  [38;5;241m1[39m   ,  [38;5;241m0[39m  ,  [38;5;241m-[39m[38;5;241m1[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m],     
+[1;32m     13[0m [[38;5;241m0[39m  , [38;5;241m-[39m[38;5;241m3[39m  ,   [38;5;241m2[39m  ,   [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m   , [38;5;241m10[39m  ,   [38;5;241m0[39m  ,  [38;5;241m0[39m   ,  [38;5;241m0[39m  ,  [38;5;241m-[39m[38;5;241m1[39m  ,  [38;5;241m-[39m[38;5;241m6[39m  ,  [38;5;241m0[39m],     
+[1;32m     14[0m [[38;5;241m0[39m  ,  [38;5;241m3[39m  ,  [38;5;241m-[39m[38;5;241m2[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m   ,  [38;5;241m0[39m  , [38;5;241m-[39m[38;5;241m10[39m  ,   [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m  ,   [38;5;241m1[39m   ,  [38;5;241m6[39m  ,  [38;5;241m0[39m],    
+[1;32m     15[0m [[38;5;241m0[39m  ,  [38;5;241m0[39m  ,   [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m   ,  [38;5;241m0[39m  ,   [38;5;241m0[39m   ,  [38;5;241m0[39m   ,  [38;5;241m0[39m   ,  [38;5;241m1[39m   ,  [38;5;241m0[39m   ,  [38;5;241m0[39m   , [38;5;241m-[39m[38;5;241m1[39m]])
+[1;32m     17[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mSTOICHIOMETRIC MATRIX[39m[38;5;124m"[39m)
+[1;32m     18[0m colormap [38;5;241m=[39m sns[38;5;241m.[39mcolor_palette([38;5;124m"[39m[38;5;124mGreens[39m[38;5;124m"[39m) 
+
+[0;31mNameError[0m: name 'np' is not defined
+NameError: name 'np' is not defined
+

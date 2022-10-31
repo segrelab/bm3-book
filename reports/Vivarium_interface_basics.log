@@ -1,0 +1,140 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Imports and Notebook Utilities
+# import os
+import copy
+# import pylab as plt
+import numpy as np
+from scipy import constants
+import matplotlib.pyplot as plt
+import matplotlib
+
+# Process, Deriver, and Composer base classes
+from vivarium.core.process import Process, Deriver
+from vivarium.core.composer import Composer
+from vivarium.core.registry import process_registry
+
+# helper functions for composition
+from vivarium.core.composition import (
+    simulate_process,
+    process_in_experiment,
+    composer_in_experiment,
+    composite_in_experiment)
+
+# other vivarium imports
+from vivarium.core.engine import Engine, pp
+from vivarium.library.units import units
+
+# plotting functions
+from vivarium.plots.simulation_output import (
+    plot_simulation_output, plot_variables)
+from vivarium.plots.simulation_output import _save_fig_to_dir as save_fig_to_dir
+from vivarium.plots.agents_multigen import plot_agents_multigen
+from vivarium.plots.topology import plot_topology
+
+AVOGADRO = constants.N_A * 1 / units.mol
+
+store_cmap = matplotlib.cm.get_cmap('Dark2')
+dna_color = matplotlib.colors.to_rgba(store_cmap(0))
+rna_color = matplotlib.colors.to_rgba(store_cmap(1))
+protein_color = matplotlib.colors.to_rgba(store_cmap(2))
+global_color = matplotlib.colors.to_rgba(store_cmap(7))
+store_colors = {
+    'DNA': dna_color,
+    'DNA\n(counts)': dna_color,
+    'DNA\n(mg/mL)': dna_color,
+    'mRNA': rna_color,
+    'mRNA\n(counts)': rna_color,
+    'mRNA\n(mg/mL)': rna_color,
+    'Protein': protein_color,
+    'Protein\n(mg/mL)': protein_color,
+    'global': global_color}
+
+# plotting configurations
+topology_plot_config = {
+    'settings': {
+        'coordinates': {
+            'Tl': (-1,0),
+            'Tx': (-1,-1),
+            'Protein': (1,0),
+            'mRNA': (1,-1),
+            'DNA': (1,-2),
+        },
+        'node_distance': 3.0,
+        'process_color': 'k',
+        'store_colors': store_colors,
+        'dashed_edges': True,
+        'graph_format': 'vertical',
+        'color_edges': False},
+    'out_dir': 'out/'}
+
+plot_var_config = {
+    'row_height': 2,
+    'row_padding': 0.2,
+    'column_width': 10,
+    'out_dir': 'out'}
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn [3], line 11[0m
+[1;32m      8[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m
+[1;32m     10[0m [38;5;66;03m# Process, Deriver, and Composer base classes[39;00m
+[0;32m---> 11[0m [38;5;28;01mfrom[39;00m [38;5;21;01mvivarium[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mprocess[39;00m [38;5;28;01mimport[39;00m Process, Deriver
+[1;32m     12[0m [38;5;28;01mfrom[39;00m [38;5;21;01mvivarium[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcomposer[39;00m [38;5;28;01mimport[39;00m Composer
+[1;32m     13[0m [38;5;28;01mfrom[39;00m [38;5;21;01mvivarium[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mregistry[39;00m [38;5;28;01mimport[39;00m process_registry
+
+File [0;32m/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/vivarium/__init__.py:9[0m
+[1;32m      6[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m      8[0m [38;5;66;03m# import registries[39;00m
+[0;32m----> 9[0m [38;5;28;01mfrom[39;00m [38;5;21;01mvivarium[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mregistry[39;00m [38;5;28;01mimport[39;00m (
+[1;32m     10[0m     process_registry,
+[1;32m     11[0m     updater_registry,
+[1;32m     12[0m     divider_registry,
+[1;32m     13[0m     serializer_registry,
+[1;32m     14[0m     emitter_registry,
+[1;32m     15[0m )
+[1;32m     17[0m [38;5;66;03m# import processes[39;00m
+[1;32m     18[0m [38;5;28;01mfrom[39;00m [38;5;21;01mvivarium[39;00m[38;5;21;01m.[39;00m[38;5;21;01mprocesses[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmeta_division[39;00m [38;5;28;01mimport[39;00m MetaDivision
+
+File [0;32m/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/vivarium/core/registry.py:106[0m
+[1;32m    102[0m [38;5;28;01mimport[39;00m [38;5;21;01mrandom[39;00m
+[1;32m    104[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;32m--> 106[0m [38;5;28;01mfrom[39;00m [38;5;21;01mvivarium[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlibrary[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdict_utils[39;00m [38;5;28;01mimport[39;00m deep_merge
+[1;32m    107[0m [38;5;28;01mfrom[39;00m [38;5;21;01mvivarium[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlibrary[39;00m[38;5;21;01m.[39;00m[38;5;21;01munits[39;00m [38;5;28;01mimport[39;00m Quantity
+[1;32m    110[0m [38;5;28;01mclass[39;00m [38;5;21;01mRegistry[39;00m([38;5;28mobject[39m):
+
+File [0;32m/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/vivarium/library/dict_utils.py:9[0m
+[1;32m      6[0m [38;5;28;01mimport[39;00m [38;5;21;01mtraceback[39;00m
+[1;32m      7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mtyping[39;00m [38;5;28;01mimport[39;00m Optional, Any, Callable
+[0;32m----> 9[0m [38;5;28;01mfrom[39;00m [38;5;21;01mvivarium[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlibrary[39;00m[38;5;21;01m.[39;00m[38;5;21;01munits[39;00m [38;5;28;01mimport[39;00m Quantity
+[1;32m     12[0m MULTI_UPDATE_KEY [38;5;241m=[39m [38;5;124m'[39m[38;5;124m_multi_update[39m[38;5;124m'[39m
+[1;32m     14[0m tuple_separator [38;5;241m=[39m [38;5;124m'[39m[38;5;124m___[39m[38;5;124m'[39m
+
+File [0;32m/opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/site-packages/vivarium/library/units.py:27[0m
+[1;32m     25[0m [38;5;28;01mimport[39;00m [38;5;21;01mpint[39;00m
+[1;32m     26[0m [38;5;66;03m# noinspection PyProtectedMember[39;00m
+[0;32m---> 27[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpint[39;00m[38;5;21;01m.[39;00m[38;5;21;01mquantity[39;00m [38;5;28;01mimport[39;00m _Quantity [38;5;28;01mas[39;00m Quantity
+[1;32m     28[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpint[39;00m[38;5;21;01m.[39;00m[38;5;21;01munit[39;00m [38;5;28;01mimport[39;00m Unit
+[1;32m     30[0m [38;5;66;03m#: Units registry that stores the units used throughout Vivarium[39;00m
+
+[0;31mModuleNotFoundError[0m: No module named 'pint.quantity'
+ModuleNotFoundError: No module named 'pint.quantity'
+
