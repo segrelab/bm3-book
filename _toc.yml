@@ -8,7 +8,16 @@ parts:
     chapters: 
       - file: setup.md
       - file: ed_yong.md
-  # - caption: Educational Resources
+  - caption: Educational Prerequisites
+    chapters:
+      - file: education_resources/biochem/intro.md
+      - file: education_resources/micro/intro.md
+      - file: education_resource/math/intro.md
+      - file: education_resources/coding/intro.md
+        sections:
+          - file: education_resources/coding/agile.md
+          - file: education_resources/coding/github.md
+          - file: education_resources/coding/docker.md
   - caption: Ecology
     chapters:
       - file: ecology/cavaliere_summary.md
