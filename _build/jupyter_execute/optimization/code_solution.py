@@ -15,7 +15,7 @@ import numpy as np
 # 2. Until we reached the solution find pivot position and make pivot step.
 # 3. Convert tableau to the solution of the linear program.
 
-# In[2]:
+# In[4]:
 
 
 def simplex(c, A, b):
@@ -30,7 +30,7 @@ def simplex(c, A, b):
 
 # Tableau in the algorithm will contain all the information about the linear program, therefore, it will look different from what we had on paper. We will use this function to convert the equational form to the tableau.
 
-# In[3]:
+# In[5]:
 
 
 def to_tableau(c, A, b):
@@ -41,7 +41,7 @@ def to_tableau(c, A, b):
 
 # In the next function, we check where nonbasic values can be increased without making the objective function value smaller.
 
-# In[4]:
+# In[6]:
 
 
 def can_be_improved(tableau):
@@ -51,7 +51,7 @@ def can_be_improved(tableau):
 
 # If the value of an objective function can be improved we search for a pivot position.
 
-# In[5]:
+# In[7]:
 
 
 def get_pivot_position(tableau):
@@ -69,7 +69,7 @@ def get_pivot_position(tableau):
 
 # Next, we call function that will make pivot step and return new tableau.
 
-# In[6]:
+# In[8]:
 
 
 def pivot_step(tableau, pivot_position):
@@ -89,7 +89,7 @@ def pivot_step(tableau, pivot_position):
 
 # The final step in our algorithm is to extract the solution vector from the tableau. In the picture, we can see that columns where there is only one element equal to one and all other to zero have the same index as a basic variable in the right-hand tableau example.
 
-# In[7]:
+# In[9]:
 
 
 def is_basic(column):
@@ -112,7 +112,7 @@ def get_solution(tableau):
 
 # We will pass to the algorithm linear program in equational representation that looks like this.
 
-# In[8]:
+# In[ ]:
 
 
 c = [1, 1, 0, 0, 0]
@@ -124,7 +124,7 @@ A = [
 b = [2, 4, 4]
 
 
-# In[9]:
+# In[10]:
 
 
 solution = simplex(c, A, b)

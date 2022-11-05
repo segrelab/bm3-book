@@ -1,0 +1,1090 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Git &amp; GitHub &#8212; Becoming a Microbiome Metabolic Modeler</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Docker" href="docker.html" />
+    <link rel="prev" title="Agile" href="agile.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/bu_microbiome_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Becoming a Microbiome Metabolic Modeler</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../setup.html">
+   Set-Up
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ed_yong.html">
+   Get Excited!
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Educational Prerequisites
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../biochem/intro.html">
+   Biochemistry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../micro/intro.html">
+   Microbiology
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Programming
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="agile.html">
+     Agile
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Git &amp; GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="docker.html">
+     Docker
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Ecology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../ecology/cavaliere_summary.html">
+   Cooperation in Microbial Communities and their Biotechnological Application
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Mathematical Optimization
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../optimization/fundamentals.html">
+   Fundamentals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../optimization/core_concepts.html">
+     Core Concepts and Definitions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../optimization/convex_analysis.html">
+     Convex Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../optimization/linear_programming.html">
+   Linear Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../optimization/graphical-solution.html">
+     Graphical Solution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../optimization/numerical_solution.html">
+     Numerical Solution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../optimization/code_solution.html">
+     Simplex Algorithm from Scratch in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../optimization/duality.html">
+     Duality Theory
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Flux Balance Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../fba/what_is_fba.html">
+   What is FBA?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../fba/fba-units.html">
+   A Note about FBA Units
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../fba/fba_from_scratch.html">
+   FBA from scratch
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../fba/elementary_example.html">
+     FBA from Scratch: Elementary Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../fba/intermediate_example.html">
+     Intermediate Example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Necessary Software &amp; Tools
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../software_and_tools/vivarium/Vivarium_intro.html">
+   Vivarium
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../software_and_tools/vivarium/Vivarium_interface_basics.html">
+     Interface Basics
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/hgscott/bm3-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/hgscott/bm3-book/issues/new?title=Issue%20on%20page%20%2Feducation_resources/coding/github.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/education_resources/coding/github.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-tutorial-projects-and-continuous-testing">
+   GitHub Tutorial: Projects and Continuous Testing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-use-this-tutorial">
+   How to use this tutorial
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keyboard-activity-your-first-branch-with-sourcetree">
+     :keyboard: Activity: Your first branch with Sourcetree
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keyboard-activity-your-first-commit">
+     :keyboard: Activity: Your first commit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keyboard-activity-create-a-pull-request">
+     :keyboard: Activity: Create a pull request
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keyboard-activity-merge-the-pull-request">
+     :keyboard: Activity: Merge the pull request
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Git & GitHub</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-tutorial-projects-and-continuous-testing">
+   GitHub Tutorial: Projects and Continuous Testing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-use-this-tutorial">
+   How to use this tutorial
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keyboard-activity-your-first-branch-with-sourcetree">
+     :keyboard: Activity: Your first branch with Sourcetree
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keyboard-activity-your-first-commit">
+     :keyboard: Activity: Your first commit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keyboard-activity-create-a-pull-request">
+     :keyboard: Activity: Create a pull request
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keyboard-activity-merge-the-pull-request">
+     :keyboard: Activity: Merge the pull request
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="git-github">
+<h1>Git &amp; GitHub<a class="headerlink" href="#git-github" title="Permalink to this headline">#</a></h1>
+<section id="github-tutorial-projects-and-continuous-testing">
+<h2>GitHub Tutorial: Projects and Continuous Testing<a class="headerlink" href="#github-tutorial-projects-and-continuous-testing" title="Permalink to this headline">#</a></h2>
+<p><strong>What you’ll learn</strong>: We’ll introduce repositories, issues, kanban boards, branches, commits, pull requests, tests, and workflows.
+<strong>What you’ll build</strong>: We’ll write some short code (a Hello World function) and a automated test for it.</p>
+<p><strong>What is GitHub?</strong>: GitHub is a collaboration platform that uses <a class="reference external" href="https://docs.github.com/get-started/quickstart/github-glossary#git">Git</a> for versioning. GitHub is a popular place to share and contribute to <a class="reference external" href="https://docs.github.com/get-started/quickstart/github-glossary#open-source">open-source</a> software.
+<br>:tv: <a class="reference external" href="https://www.youtube.com/watch?v=w3jLJU7DT5E">Video: What is GitHub?</a></p>
+<p><strong>What is Sourcetree</strong>: <a class="reference external" href="https://www.sourcetreeapp.com/">Sourcetree</a> is a free Git client for Windows and Mac. It is useful both for beginers or people with little command line experience, AND for experts who want to do more advanced work like reviewing changesets, stashing, cherry-pick ingbetween branches and more.</p>
+</section>
+<section id="how-to-use-this-tutorial">
+<h2>How to use this tutorial<a class="headerlink" href="#how-to-use-this-tutorial" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Go to <a class="reference external" href="https://github.com/hgscott/github-tutorial">https://github.com/hgscott/github-tutorial</a>, and right-click <strong>Use this template</strong> and open the link in a new tab.
+<img alt="Use this template" src="../../_images/use-this-template.png" /></p></li>
+<li><p>In the new tab, follow the prompts to create a new repository.</p>
+<ul class="simple">
+<li><p>For owner, choose your personal account or an organization to host the repository.</p></li>
+<li><p>We recommend creating a public repository—private repositories will <a class="reference external" href="https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions">use Actions minutes</a>.
+<img alt="Create a new repository" src="../../_images/create-repository.png" /></p></li>
+</ul>
+</li>
+<li><p>After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository’s README.</p></li>
+</ol>
+<details id=1>
+<summary><h2>Step 1: Open an Issue and Track on a Kanban board</h2></summary>
+<p><strong>Issues</strong> let you track your work on GitHub, and are useful for discussing specific details of a project such as bug reports, planned improvements and feedback.</p>
+<p>Let’s open some issues about the work we are going to do today.</p>
+<ol class="simple">
+<li><p>On <a class="reference external" href="http://GitHub.com">GitHub.com</a>, navigate to the main page of the repository.</p></li>
+<li><p>Under your repository name, click Issues.
+<img alt="Click the issue button" src="../../_images/issues-button.png" /></p></li>
+<li><p>Click New issue.
+<img alt="New issue button" src="../../_images/new-issue.png" /></p></li>
+<li><p>Type a title and description for your issue. We will title our first issue “Write function that says hello to a given name”.
+<img alt="Issue name" src="../../_images/make-issue.png" /></p></li>
+<li><p>When you’re finished, click Submit new issue.
+<img alt="Issue name" src="../../_images/submit-issue.png" /></p></li>
+</ol>
+<p>Repeat that process to create the following issues:</p>
+<ul class="simple">
+<li><p>Test the hello function</p></li>
+<li><p>Automatically build and test code</p></li>
+</ul>
+<p>After that you will see all of your issues listed on the issue page.
+<img alt="Issue name" src="../../_images/all-issues.png" /></p>
+<p>Another way to track your issues is by using <strong>Projects</strong>. A project is an adaptable spreadsheet that integrates with your issues and pull requests on GitHub to help you plan and track your work effectively.</p>
+<p>We’ll make a project for our work:</p>
+<ol class="simple">
+<li><p>In the top right corner of <a class="reference external" href="http://GitHub.com">GitHub.com</a>, click your profile photo, then click Your project.
+<img alt="Image" src="../../_images/your-projects.png" /></p></li>
+<li><p>Click New project.
+<img alt="Image" src="../../_images/new-project.png" /></p></li>
+<li><p>When prompted to select a template, click Board, under Start from Scratch. Then, click Create.
+<img alt="Image" src="../../_images/create-board.png" /></p></li>
+</ol>
+<p>The board view of the project is essentially a <strong>Kanban board</strong>.</p>
+<p>A kanban board is an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow). It typically has the columns “To Do”, “In Progress”, and “Done”, but you can have any columns that fit your workflow.</p>
+<p>We can add the issues we have already created to the board by:</p>
+<ol class="simple">
+<li><p>Clicking the “Add Item” button at the bottom of the Todo column
+<img alt="Image" src="../../_images/add-item.png" /></p></li>
+<li><p>Searching for your repository using the <code class="docutils literal notranslate"><span class="pre">#</span></code> key.
+<img alt="Image" src="../../_images/search-repository.png" /></p></li>
+<li><p>Click on the individual issues you have made in the repository to add them to the board.
+<img alt="Image" src="../../_images/add-issues.png" /></p></li>
+<li><p>We can see that all of our issues remain to be done, by looking at the board.
+<img alt="Image" src="../../_images/board-300.png" /></p></li>
+</ol>
+</details>
+<details id=2>
+<summary><h2>Step 2: Clone your Repository Using SourceTree</h2></summary>
+**What is a repository?**: A [repository](https://docs.github.com/get-started/quickstart/github-glossary#repository) is a project containing files and folders. A repository tracks versions of files and folders.
+<br>:tv: [Video: Exploring a repository](https://www.youtube.com/watch?v=R8OAwrcMlRw)
+<ol class="simple">
+<li><p>From SourceTree, click Remote. All of your remote projects display.</p></li>
+<li><p>Click Clone next to the repository you wish to clone locally.
+<img alt="Image" src="../../_images/sourcetree-clone.png" /></p></li>
+<li><p>From the Clone a repository window, click Clone. Click Local to see a list of your cloned repositories.
+<img alt="Image" src="../../_images/clone.png" /></p></li>
+</ol>
+</details>
+<details id=3>
+<summary><h2>Step 3: Create branches for Trunk Based Development</h2></summary>
+<section id="keyboard-activity-your-first-branch-with-sourcetree">
+<h3>:keyboard: Activity: Your first branch with Sourcetree<a class="headerlink" href="#keyboard-activity-your-first-branch-with-sourcetree" title="Permalink to this headline">#</a></h3>
+<p><strong>What is a branch?</strong>: A <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/github-glossary#branch">branch</a> is a parallel version of your repository. By default, your repository has one branch named <code class="docutils literal notranslate"><span class="pre">main</span></code> and it is considered to be the definitive branch. You can create additional branches off of <code class="docutils literal notranslate"><span class="pre">main</span></code> in your repository. You can use branches to have different versions of a project at one time.</p>
+<p>On additional branches, you can make edits without impacting the <code class="docutils literal notranslate"><span class="pre">main</span></code> version. Branches allow you to separate your work from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. In other words, everyone’s work is safe while you contribute.
+<br>:tv: <a class="reference external" href="https://www.youtube.com/watch?v=xgQmu81G1yY">Video: Branches</a></p>
+<p><strong>What is Trunk-Based Development?</strong> <span class="xref myst">Trunk Based Development</span> is a branching model, where developers collaborate on code in a single branch called ‘trunk’ (or on their short lived feature branches). You should resist any pressure to create other long-lived development branches by employing documented techniques. You avoid merge hell, do not break the build, and live happily ever after. <img alt="Trunk Based Dev Diagram" src="https://trunkbaseddevelopment.com/trunk1c.png" /></p>
+<p>Instead of a single main branch, we will use two branches to record the history of the project. The main branch stores the official release history, and the develop branch serves as an integration branch for features. It’s also convenient to tag all commits in the main branch with a version number.</p>
+<p>The first step is to complement the default main with a develop branch. A simple way to do this to create empty develop branch locally and push it to the server.</p>
+<ol class="simple">
+<li><p>From Sourcetree, click the Branch button.
+<img alt="Image" src="../../_images/click-branch.png" /></p></li>
+<li><p>From the New Branch field, enter a name for your branch- we’ll call this one “develop”.
+<img alt="Image" src="../../_images/name-develop.png" /></p></li>
+<li><p>Click Create Branch.</p></li>
+</ol>
+<p><em>You created a branch! :tada:</em></p>
+<p>Now, do the same for a feature branch, we’ll call “hello”.
+<img alt="Image" src="../../_images/click-branch-2.png" />
+<img alt="Image" src="../../_images/name-hello.png" /></p>
+<p>Now you are all set to start developing!</p>
+</details>
+<details id=4>
+<summary><h2>Step 4: Commit a file</h2></summary>
+<p>Now that you are on your feature branch, you can edit your project without changing the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. It’s time to create a file and make your first commit!</p>
+<p>First, we will claim a task on the Kanban board, by moving a task from the Todo column to the In Progress column.
+<img alt="Image" src="../../_images/board-210.png" /></p>
+<p><strong>What is a commit?</strong>: A <a class="reference external" href="https://docs.github.com/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/about-commits">commit</a> is a set of changes to the files and folders in your project. A commit exists in a branch.</p>
+</section>
+<section id="keyboard-activity-your-first-commit">
+<h3>:keyboard: Activity: Your first commit<a class="headerlink" href="#keyboard-activity-your-first-commit" title="Permalink to this headline">#</a></h3>
+<p>The following steps will guide you through the process of committing a change on GitHub using Sourcetree. Committing a change requires first adding a new file to your new branch.</p>
+<ol>
+<li><p>In your favorite IDE, make sure you’re on your new branch <code class="docutils literal notranslate"><span class="pre">hello</span></code>.
+<img alt="Image" src="../../_images/vscode.png" /></p></li>
+<li><p>Open the file called <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> in the directory <code class="docutils literal notranslate"><span class="pre">hello</span></code>.
+<img alt="Image" src="../../_images/hello-todo.png" /></p></li>
+<li><p>In your IDE, copy the following content to your file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+     <span class="k">return</span> <span class="s1">&#39;Hello, &#39;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Open the History view in SourceTree and notice that your repository now has uncommitted changes.
+<img alt="Image" src="../../_images/history.png" /></p></li>
+<li><p>Open the File Status view, and click the check mark next to <code class="docutils literal notranslate"><span class="pre">Unstaged</span> <span class="pre">Files</span></code> to stage all of your changes.
+<img alt="Image" src="../../_images/unstaged-changes.png" /></p></li>
+<li><p>In the message box, enter a commit message.
+<img alt="Image" src="../../_images/commit-msg.png" /></p></li>
+<li><p>Click the Commit button under the box. From Sourcetree’s History, you’ll see that the file has been updated on your new branch.</p></li>
+<li><p>Click the Push button to push your new branch to the repository.
+<img alt="Image" src="../../_images/push.png" /></p></li>
+<li><p>Under the Push? column from the dialog box that appears, select your new branches to indicate that you are pushing that branch to origin and click OK.
+<img alt="Image" src="../../_images/remote-branches.png" /></p></li>
+</ol>
+<p>Now that we are doen with that task, we will move the task from In Progress to Done and close the issue.
+<img alt="Image" src="../../_images/click-branch.png" /></p>
+</details>
+<details id=5>
+<summary><h2>Step 5: Create a test</h2></summary>
+<p>The next task we will tackle is the task for testing our function, so we will move that task from Todo to In Progress.
+<img alt="Image" src="../../_images/board-111.png" /></p>
+<p><strong>What is unittest?</strong>: The unittest module provides a rich set of tools for constructing and running tests. It supports test automation, sharing of setup and shutdown code for tests, aggregation of tests into collections, and independence of the tests from the reporting framework.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">test</span></code> directory, there is a file called <code class="docutils literal notranslate"><span class="pre">test_hello.py</span></code> we will add 2 tests to the <code class="docutils literal notranslate"><span class="pre">TestHello</span></code> class.</p>
+<ol>
+<li><p>The first test passes a name to the function and checks that the output is as expected.</p>
+<ol class="simple">
+<li><p>We’ll call this function ‘test_hello_name` by typing:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_hello_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Inside that test function, call our <code class="docutils literal notranslate"><span class="pre">hello</span></code> function with a name and check that the output is as excped with <code class="docutils literal notranslate"><span class="pre">assertEqual</span></code>. For example, to test teh name “John” we would write:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">hello</span><span class="o">.</span><span class="n">hello</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">),</span> <span class="s1">&#39;Hello, John!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>We can run the tests directly in our IDE to check that our tests are passing.</p>
+<ol class="simple">
+<li><p>To set up tests in VSCode:</p>
+<ol class="simple">
+<li><p>Click the beaker in the the left side bar.
+<img alt="Image" src="../../_images/click-beaker.png" /></p></li>
+<li><p>Then click “Configure Python Tests”
+<img alt="Image" src="../../_images/configure-tests.png" /></p></li>
+<li><p>We’ll select <code class="docutils literal notranslate"><span class="pre">unittest</span></code> as the testing framework
+<img alt="Image" src="../../_images/select-unittest.png" /></p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">test</span></code> as the durectory containing the tests
+<img alt="Image" src="../../_images/pick-test-dir.png" /></p></li>
+<li><p>And select <code class="docutils literal notranslate"><span class="pre">test_*.py</span></code> as the pattern
+<img alt="Image" src="../../_images/pick-test-pattern.png" /></p></li>
+</ol>
+</li>
+<li><p>We should now see the name of our test nested under the class, file, and directory
+<img alt="Image" src="education_resources/coding/imgs/test-lsit.png" /></p></li>
+<li><p>We can run our one specific test by clicking on the “play” button next to its name
+<img alt="Image" src="../../_images/run-test_hello.png" /></p></li>
+<li><p>Or we can run all of our tests (in this case that is the same thing),, by clicking on the “play” button at the top of the menu (on the test directory)
+<img alt="Image" src="../../_images/run-all-tests.png" /></p></li>
+</ol>
+</li>
+<li><p>We can also test that the function fails when we want it to. Now, we will create a test that passes an integer instead of a string as the name, so we would expect the fucntion to raise a TypeError.</p>
+<ol class="simple">
+<li><p>We’ll call this function <code class="docutils literal notranslate"><span class="pre">test_integer</span></code>:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_integer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>We will tell the test to expect a Type error with the line</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Then inside of that <code class="docutils literal notranslate"><span class="pre">with</span></code> statement, run the function with an integer:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>       <span class="n">hello</span><span class="o">.</span><span class="n">hello</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>We can now rerun all of the tests in the <code class="docutils literal notranslate"><span class="pre">test</span></code> durectory and check that our new <code class="docutils literal notranslate"><span class="pre">test_integer</span></code> test passing:</p>
+<ol class="simple">
+<li><p>Click on the play button by <code class="docutils literal notranslate"><span class="pre">test</span></code>
+<img alt="Image" src="../../_images/new-test.png" /></p></li>
+<li><p>The green checkmarks next to all the test names means that everything is passing
+<img alt="Image" src="../../_images/passing.png" /></p></li>
+</ol>
+</li>
+<li><p>Now commit and push these changes to the repositry using SourceTree.
+<img alt="Image" src="../../_images/push-2.png" />
+<img alt="Image" src="../../_images/remote-branches-2.png" /></p></li>
+</ol>
+<p>Now that we have finished this task, we will make the task on the kanban board from In Progress to Done.
+<img alt="Image" src="../../_images/board-102.png" /></p>
+</details>
+<details id=6>
+<summary><h2>Step 6: Open a pull request</h2></summary>
+<p><em>Nice work making those commits :sparkles:</em></p>
+<p>Now that you’ve created a commit, it’s time to share your proposed change through a pull request!</p>
+<p><strong>What is a pull request?</strong>: Collaboration happens on a pull request. The pull request shows the changes in your branch to other people. This pull request is going to keep the changes you just made on your branch and propose applying them to the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch.
+<br>:tv: <a class="reference external" href="https://youtu.be/kJr-PIfLDl4">Video: Introduction to pull requests</a></p>
+</section>
+<section id="keyboard-activity-create-a-pull-request">
+<h3>:keyboard: Activity: Create a pull request<a class="headerlink" href="#keyboard-activity-create-a-pull-request" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>You may have noticed after your commit that a message displayed indicating your recent push to your branch and providing a button that says <strong>Compare &amp; pull request</strong>.</p></li>
+</ol>
+<p><img alt="Image" src="../../_images/compare-and-pull.png" /></p>
+<ol class="simple">
+<li><p>Click <strong>Compare &amp; pull request</strong>.</p></li>
+<li><p>In the <strong>base:</strong> dropdown, make sure <strong>develop</strong> is selected.</p></li>
+<li><p>Select the <strong>compare:</strong> dropdown, and click <code class="docutils literal notranslate"><span class="pre">hello</span></code>. <br></p></li>
+<li><p>Title the pull request to something meaningful, such as “Write and test Hello function”
+<img alt="Image" src="../../_images/create-pull.png" /></p></li>
+<li><p>The next field helps you provide a description of the changes you made. Feel free to add a description of what you’ve accomplished so far. As a reminder, you have: created two brances, added a function to the <code class="docutils literal notranslate"><span class="pre">hello</span></code> module, and tested that function! <br></p></li>
+<li><p>Click <strong>Create pull request</strong>.</p></li>
+<li><p>On the new pull request page you will see the information you just provided along with the commits you made and a diff of the files you edited.</p></li>
+</ol>
+</details>
+<details id=7>
+<summary><h2>Step 7: Merge your pull request</h2></summary>
+<p><em>Nicely done friend! :sunglasses:</em></p>
+<p>You successfully created a pull request. You can now merge your pull request.</p>
+<p><strong>What is a <em>merge</em></strong>: A <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/github-glossary#merge">merge</a> adds the changes in your pull request and branch into the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.
+<br>:tv: <a class="reference external" href="https://www.youtube.com/watch?v=PBI2Rz-ZOxU">Video: Understanding the GitHub flow</a></p>
+</section>
+<section id="keyboard-activity-merge-the-pull-request">
+<h3>:keyboard: Activity: Merge the pull request<a class="headerlink" href="#keyboard-activity-merge-the-pull-request" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Click <strong>Merge pull request</strong>.</p></li>
+<li><p>Click <strong>Confirm merge</strong>.
+<img alt="Image" src="../../_images/confirm-merge.png" /></p></li>
+<li><p>Once your branch has been merged, you don’t need it anymore. To delete this branch, click <strong>Delete branch</strong>.<br>
+<img alt="Image" src="../../_images/delete-branch.png" /></p></li>
+<li><p>Back in Sourcetree check out the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch by right-clicking on it and selecting “Checkout develop”
+<img alt="Image" src="../../_images/checkout-develop.png" /></p></li>
+<li><p>You can pull the merged changes by clicking pull, and when prompted, confirm.
+<img alt="Image" src="../../_images/pull-develop.png" /></p></li>
+<li><p>You can now see on the diagram that the hello branch came off of the develop branch and went back into it.
+<img alt="Image" src="../../_images/history-3.png" /></p></li>
+<li><p>Since it is fully merged, it is safe to delete the <code class="docutils literal notranslate"><span class="pre">hello</span></code> branch. To do this, right click on <code class="docutils literal notranslate"><span class="pre">hello</span></code> under <code class="docutils literal notranslate"><span class="pre">Branches</span></code> and select <code class="docutils literal notranslate"><span class="pre">Delete</span> <span class="pre">hello</span></code>.
+<img alt="Image" src="../../_images/delete-hello.png" /></p></li>
+<li><p>when prompted, say OK.
+<img alt="Image" src="../../_images/confirm-delete.png" /></p></li>
+</ol>
+</details>
+<details id=8>
+<summary><h2>Step 8: Set up an automated workflow</h2></summary>
+<p><strong>GitHub Actions</strong> is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.</p>
+<p>You can configure a GitHub Actions <em>workflow</em> to be triggered when an <em>event</em> occurs in your repository, such as a pull request being opened or an issue being created. Your workflow contains one or more <em>jobs</em> which can run in sequential order or in parallel. Each job will run inside its own virtual machine runner, or inside a container, and has one or more steps that either run a script that you define or run an action, which is a reusable extension that can simplify your workflow.</p>
+<p>We will create a workflow to run our tests every time you push to a branch, and every time you open a pull request. This will let you know if any changes have broken your code unexpectedly, and if your code is safe to merge into the development branch.</p>
+<p>To claim this task, move the final issue on the kanban chart from Todo to In Progress.
+<img alt="Image" src="education_resources/coding/imgs/branch-012.png" /></p>
+<ol class="simple">
+<li><p>In Sourcertree, make a new feature branch for setting up the action, called <code class="docutils literal notranslate"><span class="pre">action</span></code>.
+<img alt="Image" src="../../_images/action-branch.png" /></p></li>
+<li><p>In your IDE, open the file <code class="docutils literal notranslate"><span class="pre">.github/workflows/python-package.yml</span></code>.</p></li>
+<li><p>Replace the TODO with the following lines:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name: Python package
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [&quot;3.8&quot;, &quot;3.9&quot;, &quot;3.10&quot;]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Test with pytest
+      run: |
+        pip install .
+        pytest
+</pre></div>
+</div>
+<p>We’ll know go thorugh what each oth these lines do.</p>
+<ol class="simple">
+<li><p>Define the name of the workflow as it will appear in the “Actions” tab of the GitHub repository.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span> <span class="n">Python</span> <span class="n">package</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Specify the trigger(s) for the action. This example used the <code class="docutils literal notranslate"><span class="pre">push</span></code> and <code class="docutils literal notranslate"><span class="pre">pull_request</span></code> event, so a workflow run is triggered every time someone pushes a change to the repository (on any branch) or opens a pull a request.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">on</span><span class="p">:</span>
+  <span class="n">push</span><span class="p">:</span>
+  <span class="n">pull_request</span><span class="p">:</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Group together all the jobs that run in the workflow.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jobs</span><span class="p">:</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Define a job named <code class="docutils literal notranslate"><span class="pre">build</span></code>.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">build</span><span class="p">:</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Define the type of machine to run the job on. Here we will use a GitHub-hosted runner, specifically a virtual machine of the latest version of Ubuntu Linux.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span>
+      <span class="n">strategy</span><span class="p">:</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>You can control how job failures are handled with jobs. If <code class="docutils literal notranslate"><span class="pre">fail-fast</span></code> is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, GitHub will cancel all in-progress and queued jobs in the matrix if any job in the matrix fails, which is the default. Here we will set it to false so that all jobs run regardless if one fails.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">fail</span><span class="o">-</span><span class="n">fast</span><span class="p">:</span> <span class="n">false</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>We will test our code on multiple python versions, listed here.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">matrix</span><span class="p">:</span>
+         <span class="n">python</span><span class="o">-</span><span class="n">version</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;3.8&quot;</span><span class="p">,</span> <span class="s2">&quot;3.9&quot;</span><span class="p">,</span> <span class="s2">&quot;3.10&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Group together all the steps that run in the <code class="docutils literal notranslate"><span class="pre">build</span></code> job. Each item nested under this section is a separate action or shell script.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">steps</span><span class="p">:</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">uses</span></code> keyword specifies that this step will run <code class="docutils literal notranslate"><span class="pre">v3</span></code> of the <code class="docutils literal notranslate"><span class="pre">actions/checkout</span></code> action. This is an action that checks out your repository onto the runner, allowing you to run scripts or other actions against your code (such as build and test tools). You should use the checkout action any time your workflow will run against the repository’s code.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="o">-</span> <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="nd">@v2</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>This step uses the <code class="docutils literal notranslate"><span class="pre">actions/setup-python&#64;v2</span></code> action to install the specified version of python.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+           python-version: ${{ matrix.python-version }}
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">run</span></code> keywork tells the job to execute a command on the runner. In this case you are using python to pip install the tools you need to run the workflow.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Install</span> <span class="n">dependencies</span>
+      <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+         <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
+         <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">flake8</span> <span class="n">pytest</span>
+         <span class="k">if</span> <span class="p">[</span> <span class="o">-</span><span class="n">f</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span> <span class="p">];</span> <span class="n">then</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span><span class="p">;</span> <span class="n">fi</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Here, the <code class="docutils literal notranslate"><span class="pre">run</span></code> keyword is using flake8 to lint the code.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Lint</span> <span class="k">with</span> <span class="n">flake8</span>
+         <span class="n">run</span><span class="p">:</span> <span class="o">|</span>
+            <span class="c1"># stop the build if there are Python syntax errors or undefined names</span>
+            <span class="n">flake8</span> <span class="o">.</span> <span class="o">--</span><span class="n">count</span> <span class="o">--</span><span class="n">select</span><span class="o">=</span><span class="n">E9</span><span class="p">,</span><span class="n">F63</span><span class="p">,</span><span class="n">F7</span><span class="p">,</span><span class="n">F82</span> <span class="o">--</span><span class="n">show</span><span class="o">-</span><span class="n">source</span> <span class="o">--</span><span class="n">statistics</span>
+            <span class="c1"># exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide</span>
+            <span class="n">flake8</span> <span class="o">.</span> <span class="o">--</span><span class="n">count</span> <span class="o">--</span><span class="n">exit</span><span class="o">-</span><span class="n">zero</span> <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">complexity</span><span class="o">=</span><span class="mi">10</span> <span class="o">--</span><span class="nb">max</span><span class="o">-</span><span class="n">line</span><span class="o">-</span><span class="n">length</span><span class="o">=</span><span class="mi">127</span> <span class="o">--</span><span class="n">statistics</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Here the <code class="docutils literal notranslate"><span class="pre">run</span></code> keyword installs the code we wrote (in the hellofolder) and uses pytest to run the tests in our test folder.
+- name: Test with pytest
+run: |
+pip install .
+pytest</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>4. Commit these changes and push them to your GitHub repository.
+![Image](imgs/commit-workflow.png)
+![Image](imgs/push-action.png)
+5. We can view the activity for a workflow run on the GitHub website.
+   1. Under the repository name, click Actions.
+   ![Image](imgs/actions-tab.png)
+   2. Here we have only a single workflow, but if you had multiple, you could click on the name of the workflow you are interested in in the left sidebar to see only those results.
+   ![Image](imgs/select-workflow.png)
+   3. To get more details on a single workflow run, click on the name of the event that triggered the workflow.
+   ![Image](imgs/select-run.png)
+   4. From there, you can look at individual jobs, and their console output.
+   ![Image](imgs/run-output.png)
+   ![Image](imgs/console-output.png)
+6. Finally, when we open a pull request to merge this code we can check that all tests are passing before merging.
+![Image](imgs/merge-tests.png)
+
+&lt;/details&gt;
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./education_resources/coding"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="agile.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Agile</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="docker.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Docker</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Helen Scott<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
